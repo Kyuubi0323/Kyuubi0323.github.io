@@ -1,6 +1,6 @@
 ---
 title: Mounting Remote Directory via sshfs
-date: 2024-2-1 14:30:00 +0700;
+date: 2025-2-1 14:30:00 +0700;
 #categories: [Abt-me, introduce]
 tags: [linux, BBB]     
 ---
