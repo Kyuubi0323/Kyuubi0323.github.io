@@ -16,11 +16,11 @@ The first thing you will need to do is connect your BeagleBone Black board to yo
 <h3><strong>Connecting the BeagleBone Black to the Internet via USB Port</strong></h3>
 The first step you will want to do is make sure the USB connection between the BeagleBone Black and your computer is working ok. The IP address or the Gateway for the virtual network connection over USB is 192.168.7.1 . To test this connection, you can simply issue a ping command from the shell prompt:
 ```
-ping 192.168.7.1
+bone$ ping 192.168.7.1
 ```
 Now that everything is setup ok, you now need to tell the BeagleBone Black how to connect to the internet. What you need to do is direct any data destined for the internet through a gateway, which is your computer at IP address 192.168.7.1. You can do this by typing the following command in the shell prompt on the BeagleBone Black:
 ```
-sudo /sbin/route add default gw 192.168.7.1
+bone$ sudo /sbin/route add default gw 192.168.7.1
 ```
 This now adds the route to the BeagleBone Black’s IP address routing table. Now that you have configured the BeagleBone Black to handle the traffic that passes through you need to Windows how to handle the incoming traffic. This step can easily be done from the Network settings in Windows.  
 Open up the control panel in Windows and navigate to Network Connection Panel, you should see a list of network devices available such as the figure below.
@@ -33,10 +33,10 @@ Click on the “Internet Protocol Version 4 (TCP/IPv4)” from the list and then
 ![Desktop View](/assets/img/2024-12-17-Linux-BBB-eth/connect-bbb-to-internet-using-usb-8.avif){: .normal }
 At this point you should have noticed that the SSH connection has closed between the BeagleBone Black and your computer due to the network connection resetting. Just restart PuTTY and connect to the IP address 192.168.7.2 and login same as before. Now the internet is working but you still need to add a name server to translate the IP addresses into names and vice versa. You can do this by typing the following command on the BeagleBone:
 ```
-echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+bone$ echo "nameserver 8.8.8.8" | sudo tee -a /etc/resolv.conf
 ```
 This command adds the google name server IP address to the config file. You can now test the internet connection using a simple ping test to a web URL such as google.com:
 ```
-ping google.com
+bone$ ping google.com
 ```
 You should receive a positive response from the web URL server. Now that you are connected to the Internet you can run updates and install any software as required.
