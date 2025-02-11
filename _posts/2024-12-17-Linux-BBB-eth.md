@@ -11,9 +11,9 @@ Description: Set up connection from BBB to host machine to connect internet
 ---
 Like most makers, the ability to connect your projects to the internet greatly expands its capabilities and whilst the BeagleBone Black development board has an Ethernet jack sometimes it is not always possibly physically to connect your board to the internet. Even with the single USB port taken up by other peripherals a wireless dongle also may not be an option for most users.  
 So in this blog, i\'ll show you guys how to connect to internet using only USB for both connection and power.  
-<h3><strong>Get started</strong></h3>
+<h3 id="Get started" style="font-weight: bold;">Get started</h3>
 The first thing you will need to do is connect your BeagleBone Black board to your computer using the USB port. This should power the board up and also provide communication between the board and your computer. The BeagleBone board should show up on your computer as a USB flash drive. If you haven\'t done so already you will need to install the serial drivers for your operating system from this flash drive.
-<h3><strong>Connecting the BeagleBone Black to the Internet via USB Port</strong></h3>
+<h3 id="Connecting the BeagleBone Black to the Internet via USB Port" style="font-weight: bold;">Connecting the BeagleBone Black to the Internet via USB Port</h3>
 The first step you will want to do is make sure the USB connection between the BeagleBone Black and your computer is working ok. The IP address or the Gateway for the virtual network connection over USB is 192.168.7.1 . To test this connection, you can simply issue a ping command from the shell prompt:
 ```
 bone$ ping 192.168.7.1

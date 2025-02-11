@@ -9,8 +9,7 @@ tags: [linux]
 Description: Remote access Linux Desktop GUI
 
 ---
-<h3><strong>X Forwarding</strong></h3>
-
+<h3 id="X Forwarding" style="font-weight: bold;">X Forwarding</h3>
 We have to first enable X forwarding.
 We SSH to the remote Linux computer with -XC where X is the X service and C allows data compression.
 ```shell
@@ -35,7 +34,8 @@ Confirm X forwarding is enabled.
 $ echo $DISPLAY
 localhost:10.0
 ```
-<h3><strong>Linux Desktop Forwading</strong></h3>
+
+<h3 id="Linux Desktop Forwarding" style="font-weight: bold;">Linux Desktop Forwarding</h3>
 let\'s install the following dependencies
 ```shell
 sudo touch /dev/fuse
@@ -47,7 +47,7 @@ xfce4-session
 ```
 The forwarded desktop will show up on our local computer.  
 Opening X applications from the forwarded desktop is fine. But we were not able to open terminal to run commands.
-<h3><strong>Linux Desktop Forwading via VNC</strong></h3>
+<h3 id="Linux Desktop Forwading via VNC" style="font-weight: bold;">Linux Desktop Forwading via VNC</h3>
 To install the VNC server, we will install <span style="color:red">tightvncserver</span> on the remote Linux computer.
 ```
 sudo apt install -y tightvncserver
