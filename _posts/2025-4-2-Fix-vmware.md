@@ -1,7 +1,7 @@
 ---
 title: Fix Copy-Paste and Drag & Drop Not Working in VMware with Ubuntu
 date: 2025-04-05 10:00:00 +0700
-tags: [linux, vm]
+tags: [linux, sharing]
 comments: true
 ---
 
