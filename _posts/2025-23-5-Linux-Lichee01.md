@@ -1,5 +1,5 @@
 ---
-title: Licheepi Nano #1
+title: Licheepi Nano 1
 date: 2025-5-23 14:30:00 +0700;
 #categories: [Abt-me, introduce]
 tags: [linux,lichee]     
