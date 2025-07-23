@@ -12,9 +12,7 @@ tail_includes:
 
 {% include toc-status.html %}
 
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
+{% include cache-busting.html %}
 
 <article class="px-1" data-toc="{{ enable_toc }}">
   <header>
