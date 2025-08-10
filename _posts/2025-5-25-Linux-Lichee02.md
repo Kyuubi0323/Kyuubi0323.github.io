@@ -394,5 +394,5 @@ The Lichee Pi Nano's small form factor and low cost make it an excellent platfor
 
 - [Linux Sunxi U-Boot Documentation](https://linux-sunxi.org/U-Boot)
 - [U-Boot Official Documentation](https://docs.u-boot.org/)
-- [Allwinner F1C100s Datasheet](http://linux-sunxi.org/F1C100s)
-- [Lichee Pi Nano Hardware Documentation](http://wiki.sipeed.com/hardware/en/lichee/nano/nano.html)
+- [Allwinner F1C100s Datasheet](https://linux-sunxi.org/F1C100s)
+- [Lichee Pi Nano Hardware Documentation](https://wiki.sipeed.com/hardware/en/lichee/nano/nano.html)
