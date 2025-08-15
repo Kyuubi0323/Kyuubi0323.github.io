@@ -1,6 +1,7 @@
 ---
 title: Device Tree 
 date: 2025-07-21 10:20:52 +0700
+categories: [Linux]
 tags: [linux]
 ---
 

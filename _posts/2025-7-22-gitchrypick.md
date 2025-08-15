@@ -1,7 +1,7 @@
 ---
 title: Git Cherry-Pick
 date: 2025-07-22 10:20:52 +0700
-
+categories: [Linux]
 tags: [git, sharing]
 ---
 ## What is it?
