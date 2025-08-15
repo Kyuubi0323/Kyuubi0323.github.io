@@ -1,7 +1,7 @@
 ---
 title: Write basic udev rules in linux
 date: 2025-4-1 14:30:00 +0700;
-#categories: [Abt-me, introduce]
+categories: [Linux]
 tags: [linux]     
 comments: true
 ---

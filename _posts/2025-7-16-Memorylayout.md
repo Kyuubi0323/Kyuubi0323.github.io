@@ -1,6 +1,7 @@
 ---
 title: Memory layout in microcontroller
 date: 2025-07-16 06:20:52 +0000
+categories: [Embedded Systems]
 tags: [mcu, CortexM, ARM]
 ---
 

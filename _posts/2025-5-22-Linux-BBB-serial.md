@@ -1,7 +1,7 @@
 ---
 title: Black BeagleBone Serial connection
 date: 2025-5-22 14:30:00 +0700;
-#categories: [Abt-me, introduce]
+categories: [Linux]
 tags: [linux,BBB]     
 comments: false
 ---

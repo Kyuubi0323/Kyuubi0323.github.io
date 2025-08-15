@@ -1,7 +1,7 @@
 ---
 title: Licheepi Nano 1
 date: 2025-5-23 14:30:00 +0700;
-#categories: [Abt-me, introduce]
+categories: [Hardware Projects]
 tags: [linux,lichee]     
 comments: false
 ---
