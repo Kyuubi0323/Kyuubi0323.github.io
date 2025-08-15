@@ -1,7 +1,7 @@
 ---
 title: Remote to Linux Desktop 
 date: 2024-12-18 8:30:00 +0700;
-#categories: [Abt-me, introduce]
+categories: [Linux]
 tags: [linux]     
 ---
 

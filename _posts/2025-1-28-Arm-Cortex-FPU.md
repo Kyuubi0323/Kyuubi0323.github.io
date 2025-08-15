@@ -1,6 +1,7 @@
 ---
 title: Floating Point Unit 
 date: 2025-1-10 10:30:00 +0700;
+categories: [Embedded Systems]
 tags: [ARM, CortexM]    
 ---
 
