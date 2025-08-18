@@ -1,6 +1,6 @@
 ---
 title: Building Linux-Kernel for Lichee Pi Nano
-date: 2025-05-25 14:30:00 +0700
+date: 2025-05-26 14:30:00 +0700
 categories: [Hardware Projects, LicheePi]
 tags: [lichee, u-boot, linux]     
 comments: false
