@@ -163,12 +163,6 @@ paginate: 10
 latest_posts_count: 10
 posts_per_page: 10
 
-# Ensure posts are processed in the correct order
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-
 # The base URL of your site
 baseurl: ""
 
