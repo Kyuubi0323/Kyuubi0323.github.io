@@ -69,12 +69,6 @@ git tag -l | grep -E 'v202[0-9]\.[0-9]+$' | tail -10
 git checkout v2024.01
 ```
 
-### Understanding U-Boot Versions
-
-- **Development branch** (`master`): Latest features but potentially unstable
-- **Release tags** (e.g., `v2024.01`): Stable, tested versions
-- **LTS versions**: Long-term support releases for production use
-
 ## Configuring U-Boot for Lichee Pi Nano
 
 ### Find the Correct Defconfig
@@ -123,6 +117,27 @@ make distclean
 make CROSS_COMPILE=arm-linux-gnueabihf- licheepi_nano_defconfig
 ```
 
+### Booting with boot.cmd
+For booting from SD with mainline U-Boot, the recommended way is: create a file boot.cmd on the first partition (also check Kernel arguments for extra 'bootargs' options):
+
+```bash
+#create boot.cmd 
+nano boot.cmd
+```
+copy these snippet code into the boot.cmd
+```
+setenv bootargs console=ttyS0,115200 earlyprintk root=/dev/mmcblk0p2 rootwait panic=10 init=/bin/sh
+
+load mmc 0:1 0x80008000 zImage
+load mmc 0:1 0x80A00000 suniv-f1c100s-licheepi-nano.dtb
+
+bootz 0x80008000 - 0x80A00000
+```
+boot.cmd isn't used directly, but needs to be wrapped with uboot header with the command:
+
+```bash
+mkimage -C none -A arm -T script -d boot.cmd boot.scr
+```
 ### Optional: Customize Configuration
 
 If you need to modify the configuration:
@@ -131,12 +146,6 @@ If you need to modify the configuration:
 # Open configuration menu
 make CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
 ```
-
-Key areas you might want to configure:
-- **Boot delay**: Time before auto-boot
-- **Environment storage**: Where U-Boot saves settings
-- **Network support**: Ethernet/USB networking
-- **USB support**: USB host/device functionality
 
 ### Compile U-Boot
 
