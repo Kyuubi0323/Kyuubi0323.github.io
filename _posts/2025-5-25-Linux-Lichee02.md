@@ -1,7 +1,7 @@
 ---
 title: Building U-Boot for Lichee Pi Nano
 date: 2025-05-25 14:30:00 +0700
-categories: [Hardware Projects, LicheePi]
+categories: [Embedded Systems, LicheePi]
 tags: [lichee, u-boot, linux]     
 comments: false
 ---
