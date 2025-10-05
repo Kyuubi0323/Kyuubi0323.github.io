@@ -1,7 +1,7 @@
 ---
 title: Creating Bootable SD Card
 date: 2025-8-12 10:30:00 +0700
-categories: [Hardware Projects, LicheePi]
+categories: [Embedded Systems, LicheePi]
 tags: [lichee, linux]     
 comments: false
 ---
