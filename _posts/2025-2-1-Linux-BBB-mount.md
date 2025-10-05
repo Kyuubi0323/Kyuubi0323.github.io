@@ -1,7 +1,7 @@
 ---
 title: Mounting Remote Directory via sshfs
 date: 2025-2-1 14:30:00 +0700;
-categories: [Hardware Projects, BeagleBone]
+categories: [Embedded Systems, BeagleBone]
 tags: [linux, BBB]     
 ---
 

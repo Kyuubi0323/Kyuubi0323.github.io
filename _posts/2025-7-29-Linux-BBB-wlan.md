@@ -1,7 +1,7 @@
 ---
 title: BeagleBone Black WiFi Setup with TP-Link RTL8812 USB Dongle
 date: 2025-7-29 14:30:00 +0700
-categories: [Hardware Projects, BeagleBone]
+categories: [Embedded Systems, BeagleBone]
 tags: [linux, BBB]     
 comments: false
 ---

@@ -1,7 +1,7 @@
 ---
 title: Black BeagleBone Connecting without serial probe
 date: 2025-7-28 14:30:00 +0700;
-categories: [Hardware Projects, BeagleBone]
+categories: [Embedded Systems, BeagleBone]
 tags: [linux,BBB]     
 comments: false
 ---

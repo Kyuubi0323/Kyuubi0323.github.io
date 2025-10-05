@@ -1,7 +1,7 @@
 ---
 title: How to connect to the internet using USB with BBB
 date: 2024-12-17 14:30:00 +0700;
-categories: [Hardware Projects, BeagleBone]
+categories: [Embedded Systems, BeagleBone]
 tags: [linux, BBB]    
 ---
 
