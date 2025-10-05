@@ -1,7 +1,7 @@
 ---
 title: Introduction to ARM Cortex M
 date: 2025-1-10 10:30:00 +0700;
-categories: [Embedded Systems]
+categories: [Embedded Systems, AI]
 tags: [ARM, CortexM]
 ---
 
