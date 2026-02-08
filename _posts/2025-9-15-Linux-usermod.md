@@ -2,8 +2,8 @@
 layout: post
 title: "Linux User Management: usermod, Groups, and File Permissions"
 date: 2025-09-15 10:30:00 +0700
-categories: linux
-tags: [linux, usermod, permissions, groups, administration]
+categories: Linux
+tags: [linux]
 ---
 
 Managing users, groups, and file permissions is fundamental to Linux system administration. This guide covers the essential commands and concepts you need to effectively manage user accounts and access control.
@@ -124,20 +124,6 @@ sudo usermod -u 1500 username
 sudo usermod -g newgroup username
 ```
 
-### Practical Example: Setting Up a Web Developer
-
-```bash
-# Create user and add to relevant groups
-sudo useradd -m -s /bin/bash webdev
-sudo usermod -aG sudo,www-data,docker webdev
-
-# Set password
-sudo passwd webdev
-
-# Verify groups
-groups webdev
-```
-
 ## Managing Groups
 
 Groups allow multiple users to share access to files and resources efficiently.
@@ -198,21 +184,30 @@ cat /etc/group
 getent group groupname
 ```
 
-### Practical Example: Development Team Setup
+### Practical Example: Embedded Development Team Setup
 
 ```bash
-# Create development group
-sudo groupadd developers
+# Create embedded development group
+sudo groupadd embedded
 
-# Add multiple users to the group
-sudo usermod -aG developers alice
-sudo usermod -aG developers bob
-sudo usermod -aG developers charlie
+# Add multiple users to the group and grant serial port access
+sudo usermod -aG embedded,dialout alice
+sudo usermod -aG embedded,dialout bob
+sudo usermod -aG embedded,dialout charlie
 
-# Create shared project directory
-sudo mkdir /opt/projects
-sudo chgrp developers /opt/projects
-sudo chmod 2775 /opt/projects
+# Create shared firmware directory
+sudo mkdir -p /opt/firmware
+sudo chgrp embedded /opt/firmware
+sudo chmod 2775 /opt/firmware
+
+# Verify serial device permissions
+ls -l /dev/ttyACM0
+# crw-rw---- 1 root dialout 166, 0 Feb  8 10:30 /dev/ttyACM0
+
+# Users can now access serial devices without sudo
+# screen /dev/ttyACM0 115200
+# or
+# minicom -D /dev/ttyACM0
 ```
 
 ## Linux File Permissions
@@ -377,33 +372,6 @@ ls -ln
 
 ### Special Permissions
 
-#### SUID (Set User ID) - 4xxx
-
-When set on an executable, it runs with the permissions of the file owner.
-
-```bash
-# Set SUID
-chmod u+s /usr/bin/program
-chmod 4755 /usr/bin/program
-
-# Example: passwd command uses SUID
-ls -l /usr/bin/passwd
-# -rwsr-xr-x (notice the 's' instead of 'x')
-```
-
-#### SGID (Set Group ID) - 2xxx
-
-On executables: Runs with the permissions of the file's group  
-On directories: New files inherit the directory's group
-
-```bash
-# Set SGID on directory
-chmod g+s /shared/project
-chmod 2775 /shared/project
-
-# Files created in this directory will inherit the group
-```
-
 #### Sticky Bit - 1xxx
 
 On directories: Only the file owner can delete their files (useful for /tmp)
@@ -418,150 +386,6 @@ ls -ld /tmp
 # drwxrwxrwt (notice the 't' at the end)
 ```
 
-### Access Control Lists (ACL)
-
-ACLs provide more granular permission control beyond traditional Unix permissions.
-
-```bash
-# View ACL
-getfacl file.txt
-
-# Grant specific user read/write access
-setfacl -m u:username:rw file.txt
-
-# Grant specific group execute permission
-setfacl -m g:groupname:x script.sh
-
-# Remove ACL for user
-setfacl -x u:username file.txt
-
-# Remove all ACLs
-setfacl -b file.txt
-
-# Set default ACL for directory (inherited by new files)
-setfacl -d -m g:developers:rwx /project/
-```
-
-### Umask
-
-Umask determines default permissions for newly created files and directories.
-
-```bash
-# View current umask
-umask
-
-# Set umask (subtract from 666 for files, 777 for directories)
-umask 022
-# Files: 666-022 = 644
-# Directories: 777-022 = 755
-
-# Set more restrictive umask
-umask 077
-# Files: 600
-# Directories: 700
-
-# Add to ~/.bashrc for persistence
-echo "umask 022" >> ~/.bashrc
-```
-
-### Practical Security Examples
-
-#### Secure Web Server Directory
-
-```bash
-# Create structure
-sudo mkdir -p /var/www/mysite/{public,private}
-
-# Set ownership
-sudo chown -R www-data:www-data /var/www/mysite
-
-# Set directory permissions
-sudo find /var/www/mysite -type d -exec chmod 755 {} \;
-
-# Set file permissions
-sudo find /var/www/mysite -type f -exec chmod 644 {} \;
-
-# Make scripts executable
-sudo chmod +x /var/www/mysite/scripts/*.sh
-
-# Secure private files
-sudo chmod 600 /var/www/mysite/private/config.php
-```
-
-#### Shared Project Directory
-
-```bash
-# Create group and directory
-sudo groupadd projectteam
-sudo mkdir /opt/shared-project
-
-# Set ownership and SGID
-sudo chown root:projectteam /opt/shared-project
-sudo chmod 2775 /opt/shared-project
-
-# Add users to group
-sudo usermod -aG projectteam alice
-sudo usermod -aG projectteam bob
-
-# Set umask for users
-echo "umask 002" >> /home/alice/.bashrc
-echo "umask 002" >> /home/bob/.bashrc
-```
-
-## Best Practices
-
-### Security Guidelines
-
-1. **Principle of Least Privilege**: Grant only necessary permissions
-2. **Avoid 777 Permissions**: Nearly always unnecessary and dangerous
-3. **Secure SSH Keys**: Always use `chmod 600 ~/.ssh/id_rsa`
-4. **Use Groups**: Manage access through groups, not individual permissions
-5. **Regular Audits**: Review user accounts and permissions regularly
-6. **Service Accounts**: Use dedicated users for services (e.g., www-data, mysql)
-
-### Common Permission Patterns
-
-```bash
-# User home directories
-chmod 700 /home/username
-
-# Web server content
-chmod 755 (directories)
-chmod 644 (files)
-
-# Configuration files
-chmod 644 (readable configs)
-chmod 600 (sensitive configs)
-
-# Log files
-chmod 640 (owner + group read)
-
-# Executable scripts
-chmod 755 (system scripts)
-chmod 700 (user scripts)
-```
-
-### Troubleshooting Commands
-
-```bash
-# Find files with specific permissions
-find /path -perm 777
-
-# Find files owned by specific user
-find /path -user username
-
-# Find files with SUID bit
-find / -perm -4000 2>/dev/null
-
-# Find files modified in last 7 days
-find /path -mtime -7 -ls
-
-# Check which groups you're in
-id
-
-# Check effective permissions
-namei -l /path/to/file
-```
 
 ## Conclusion
 
