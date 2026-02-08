@@ -395,8 +395,7 @@ Understanding usermod, groups, and Linux permissions is essential for effective 
 - Leverage groups to simplify permission management for multiple users
 - Master both symbolic and numeric permission notation
 - Implement least privilege principle for security
-- Use special permissions (SUID, SGID, sticky bit) appropriately
-- Consider ACLs for complex permission requirements
+- Use special permissions (sticky bit) where appropriate
 
 With these tools and concepts, you can build secure, well-organized multi-user Linux systems.
 
