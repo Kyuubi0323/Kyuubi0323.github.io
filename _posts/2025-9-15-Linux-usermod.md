@@ -2,7 +2,7 @@
 layout: post
 title: "Linux User Management: usermod, Groups, and File Permissions"
 date: 2025-09-15 10:30:00 +0700
-categories: Linux
+categories: [Linux]
 tags: [linux]
 ---
 
