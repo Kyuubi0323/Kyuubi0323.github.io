@@ -415,7 +415,7 @@ CoreDebug->DEMCR |= CoreDebug_DEMCR_MON_EN_Msk;
 - Bare-metal with no RTOS: 1–4 KB is typical. 512 bytes is tight.
 - Each RTOS task has its **own independent stack**. FreeRTOS default is 128 words = 512 bytes — often too small for tasks that use `printf`.
 - Recursive functions on MCU are a red flag. A recursion depth of 10 with 64-byte frames = 640 bytes gone instantly.
-- Floating-point: when `PRESERVE8` is required and FPU context is saved, each ISR entry saves an additional 18 FP registers = 72 extra bytes.
+- Floating-point: when `PRESERVE8` is required and FPU context is saved, each ISR entry saves an additional 17 FP registers (S0–S15 + FPSCR) + alignment = 72 extra bytes.
 
 #### Tips for the stack
 
