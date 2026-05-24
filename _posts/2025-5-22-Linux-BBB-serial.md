@@ -19,8 +19,8 @@ The pinout of the serial-port is like that figure below. Connect the USB-to-TTL 
   
 Function|	USB-to-TTL Cable	| BeagleBone  
 Ground	|  GND wire |	Pin 1 J1 Header GND  
-TX→RX	| TX wire|	Pin 4 J1 Header RXD  
-RX←TX	|RX  wire	|Pin 5 J1 Header TXD  
+TX->RX	| TX wire|	Pin 4 J1 Header RXD  
+RX<-TX	|RX  wire	|Pin 5 J1 Header TXD  
 
 ![Desktop View](/assets/img/2025-22-5-Linux-BBB-serial/bbb-serial01.jpg){: .normal }   
 

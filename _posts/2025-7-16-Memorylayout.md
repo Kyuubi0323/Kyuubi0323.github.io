@@ -16,17 +16,17 @@ ARM Cortex-M defines a fixed 4 GB address space split into well-known bands. Unl
 
 ```
 0xFFFFFFFF  ┌──────────────────────────────┐
-            │  Vendor-specific / PPB       │  ← Core debug registers (DWT, ITM, …)
+            │  Vendor-specific / PPB       │  <- Core debug registers (DWT, ITM, …)
 0xE0000000  ├──────────────────────────────┤
-            │  External device             │  ← Off-chip peripherals (FMC, QSPI NOR)
+            │  External device             │  <- Off-chip peripherals (FMC, QSPI NOR)
 0xA0000000  ├──────────────────────────────┤
-            │  External RAM                │  ← SDRAM, SRAM via FMC
+            │  External RAM                │  <- SDRAM, SRAM via FMC
 0x60000000  ├──────────────────────────────┤
-            │  Peripheral                  │  ← APB/AHB peripherals (UART, SPI, GPIO)
+            │  Peripheral                  │  <- APB/AHB peripherals (UART, SPI, GPIO)
 0x40000000  ├──────────────────────────────┤
-            │  SRAM                        │  ← Internal RAM: .data .bss heap stack
+            │  SRAM                        │  <- Internal RAM: .data .bss heap stack
 0x20000000  ├──────────────────────────────┤
-            │  Code                        │  ← Flash: .text .rodata vector table
+            │  Code                        │  <- Flash: .text .rodata vector table
 0x00000000  └──────────────────────────────┘
 ```
 
@@ -38,40 +38,40 @@ For a real MCU like STM32F407:
 | Internal SRAM1 | `0x20000000` | 112 KB |
 | Internal SRAM2 | `0x2001C000` | 16 KB |
 | CCM RAM (data-only) | `0x10000000` | 64 KB |
-| Peripheral bus | `0x40000000` | — |
+| Peripheral bus | `0x40000000` |  -  |
 
 ---
 
-<h3 id="flash-rom" style="font-weight: bold;">Flash (ROM) — Where Your Code Lives</h3>
+<h3 id="flash-rom" style="font-weight: bold;">Flash (ROM)  -  Where Your Code Lives</h3>
 
-Flash is non-volatile, meaning it survives power loss. On reset, the CPU starts executing from Flash. On STM32 the default boot address is `0x08000000`; the very first word read is the **initial stack pointer**, and the second word is the **reset handler address** — both come from the vector table embedded in your firmware.
+Flash is non-volatile, meaning it survives power loss. On reset, the CPU starts executing from Flash. On STM32 the default boot address is `0x08000000`; the very first word read is the **initial stack pointer**, and the second word is the **reset handler address**  -  both come from the vector table embedded in your firmware.
 
 ```
 Flash layout (typical STM32):
 0x08000000  ┌──────────────────┐
-            │  Vector Table    │  ← Stack pointer, Reset_Handler, NMI, HardFault, …
+            │  Vector Table    │  <- Stack pointer, Reset_Handler, NMI, HardFault, …
 0x08000188  ├──────────────────┤
-            │  .text           │  ← Compiled Thumb-2 instructions
+            │  .text           │  <- Compiled Thumb-2 instructions
             ├──────────────────┤
-            │  .rodata         │  ← const variables, string literals, lookup tables
+            │  .rodata         │  <- const variables, string literals, lookup tables
             ├──────────────────┤
-            │  .data (LMA)     │  ← Initial values for RAM variables — copied at boot
+            │  .data (LMA)     │  <- Initial values for RAM variables  -  copied at boot
             ├──────────────────┤
-            │  (empty/erased)  │  ← 0xFF — unwritten flash
+            │  (empty/erased)  │  <- 0xFF  -  unwritten flash
 0x080FFFFF  └──────────────────┘
 ```
 
 #### Flash hardware facts you must know
 
-**Erase granularity** — you cannot write a single byte to Flash without first erasing the sector it belongs to. STM32F4 has sectors of 16 KB, 64 KB, and 128 KB. This matters for in-application programming (IAP) and bootloaders.
+**Erase granularity**  -  you cannot write a single byte to Flash without first erasing the sector it belongs to. STM32F4 has sectors of 16 KB, 64 KB, and 128 KB. This matters for in-application programming (IAP) and bootloaders.
 
-**Write endurance** — Flash wears out. Typical STM32 internal flash is rated for ~10 000 erase cycles per sector. Never put a write loop that hammers Flash at runtime.
+**Write endurance**  -  Flash wears out. Typical STM32 internal flash is rated for ~10 000 erase cycles per sector. Never put a write loop that hammers Flash at runtime.
 
-**Read wait states** — Flash is slower than the CPU clock. At 168 MHz (STM32F407) you need 5 wait states. The Flash prefetch buffer and instruction cache hide most of this latency. Disabling the cache can cause a 3–5× slowdown.
+**Read wait states**  -  Flash is slower than the CPU clock. At 168 MHz (STM32F407) you need 5 wait states. The Flash prefetch buffer and instruction cache hide most of this latency. Disabling the cache can cause a 3-5× slowdown.
 
-**Execute-in-place (XiP)** — code runs directly from Flash, the CPU fetches instructions over the code bus. This is the default and requires no special handling.
+**Execute-in-place (XiP)**  -  code runs directly from Flash, the CPU fetches instructions over the code bus. This is the default and requires no special handling.
 
-**Copy-to-RAM execution** — time-critical ISRs can be placed in RAM for faster execution (no Flash wait states, no cache misses):
+**Copy-to-RAM execution**  -  time-critical ISRs can be placed in RAM for faster execution (no Flash wait states, no cache misses):
 
 ```c
 // Place this function in the SRAM for lowest-latency execution
@@ -97,16 +97,16 @@ Linker script entry:
 
 #### Tips for Flash
 
-- Keep large `const` lookup tables in `.rodata` — they cost zero RAM.
+- Keep large `const` lookup tables in `.rodata`  -  they cost zero RAM.
 - Use `__attribute__((optimize("Os")))` on non-critical functions to reduce code size.
 - Run `arm-none-eabi-size` after every build and track the trend.
-- If you hit the Flash limit, try `-flto` (link-time optimization) — it can cut 10–30% from typical firmware.
+- If you hit the Flash limit, try `-flto` (link-time optimization)  -  it can cut 10-30% from typical firmware.
 
 ---
 
-<h3 id="text-section" style="font-weight: bold;">.text — Executable Code</h3>
+<h3 id="text-section" style="font-weight: bold;">.text  -  Executable Code</h3>
 
-`.text` contains all compiled function bodies. On Cortex-M the instructions are **Thumb-2** — a variable-width encoding (16-bit and 32-bit instructions intermixed) that gives near-ARM performance in near-Thumb code density.
+`.text` contains all compiled function bodies. On Cortex-M the instructions are **Thumb-2**  -  a variable-width encoding (16-bit and 32-bit instructions intermixed) that gives near-ARM performance in near-Thumb code density.
 
 ```c
 // This entire function body goes to .text
@@ -143,11 +143,11 @@ const uint32_t g_pfnVectors[] = {
 };
 ```
 
-If the vector table is wrong (e.g., misaligned or you forgot `KEEP` in the linker script), the MCU will jump to a garbage address on reset — the most common cause of "my MCU does nothing" during early bringup.
+If the vector table is wrong (e.g., misaligned or you forgot `KEEP` in the linker script), the MCU will jump to a garbage address on reset  -  the most common cause of "my MCU does nothing" during early bringup.
 
 ---
 
-<h3 id="rodata-section" style="font-weight: bold;">.rodata — Read-Only Data</h3>
+<h3 id="rodata-section" style="font-weight: bold;">.rodata  -  Read-Only Data</h3>
 
 `.rodata` (read-only data) lives in Flash alongside `.text`. It holds:
 
@@ -163,7 +163,7 @@ const char     fw_version[]  = "2.1.4";
 const uint32_t crc_table[256] = { ... };
 ```
 
-**Common mistake** — forgetting `const`:
+**Common mistake**  -  forgetting `const`:
 
 ```c
 // BAD: 1024 bytes wasted in RAM (.data section)
@@ -173,28 +173,28 @@ uint8_t sin_lut[256] = { 0, 3, 6, 9, ... };
 const uint8_t sin_lut[256] = { 0, 3, 6, 9, ... };
 ```
 
-**String literal gotcha** — string literals in C are always `const char *`, so `"hello"` goes to `.rodata`. But if you store it in a `char *` (non-const pointer), the pointer lives on the stack and the data is in Flash — writes through that pointer cause a HardFault.
+**String literal gotcha**  -  string literals in C are always `const char *`, so `"hello"` goes to `.rodata`. But if you store it in a `char *` (non-const pointer), the pointer lives on the stack and the data is in Flash  -  writes through that pointer cause a HardFault.
 
 ```c
 char *p = "hello";  // p is on stack, "hello" is in Flash (read-only!)
-p[0] = 'H';         // HardFault — writing to Flash address
+p[0] = 'H';         // HardFault  -  writing to Flash address
 ```
 
 ---
 
-<h3 id="data-section" style="font-weight: bold;">.data — Initialized Variables</h3>
+<h3 id="data-section" style="font-weight: bold;">.data  -  Initialized Variables</h3>
 
 `.data` contains global and static variables that have a non-zero initial value. They need **two addresses**:
 
-- **LMA** (Load Memory Address) — where the initial values are stored in Flash
-- **VMA** (Virtual Memory Address) — where the variable lives at runtime in RAM
+- **LMA** (Load Memory Address)  -  where the initial values are stored in Flash
+- **VMA** (Virtual Memory Address)  -  where the variable lives at runtime in RAM
 
 The startup code copies from LMA to VMA before `main()`.
 
 ```
 Flash (LMA):               RAM (VMA):
 ┌──────────────┐           ┌──────────────┐
-│ .data image  │  ──copy── │ .data        │  ← running copy, read/write
+│ .data image  │  ──copy── │ .data        │  <- running copy, read/write
 │ (initial     │           │              │
 │  values)     │           │              │
 └──────────────┘           └──────────────┘
@@ -206,14 +206,14 @@ In the linker script this is expressed as:
 .data :
 {
     . = ALIGN(4);
-    _sdata = .;        /* VMA start — used by startup copy loop */
+    _sdata = .;        /* VMA start  -  used by startup copy loop */
     *(.data)
     *(.data*)
     . = ALIGN(4);
     _edata = .;        /* VMA end */
 } >RAM AT> FLASH       /* AT> FLASH = store initial values in Flash (LMA) */
 
-_sidata = LOADADDR(.data);   /* LMA start — where values live in Flash */
+_sidata = LOADADDR(.data);   /* LMA start  -  where values live in Flash */
 ```
 
 And in `Reset_Handler`:
@@ -239,15 +239,15 @@ while (dst < &_edata) {
 
 ```c
 void foo(void) {
-    static uint32_t call_count = 1;  // .data — NOT stack
+    static uint32_t call_count = 1;  // .data  -  NOT stack
 }
 ```
 
 ---
 
-<h3 id="bss-section" style="font-weight: bold;">.bss — Uninitialized (Zero-Initialized) Data</h3>
+<h3 id="bss-section" style="font-weight: bold;">.bss  -  Uninitialized (Zero-Initialized) Data</h3>
 
-`.bss` holds global and static variables with no explicit initializer, or explicitly initialized to zero. Because the C standard guarantees these are zero at program start, the linker does **not** need to store initial values in Flash — only a start and end address.
+`.bss` holds global and static variables with no explicit initializer, or explicitly initialized to zero. Because the C standard guarantees these are zero at program start, the linker does **not** need to store initial values in Flash  -  only a start and end address.
 
 At startup, `Reset_Handler` zeroes the entire `.bss` range:
 
@@ -262,11 +262,11 @@ while (dst < &_ebss) {
 ```
 
 ```c
-// All of these go to .bss — no Flash cost for initial values:
+// All of these go to .bss  -  no Flash cost for initial values:
 uint8_t  rx_buffer[1024];          // .bss
 uint32_t error_count;              // .bss
 static float last_temp;            // .bss
-int sensor_values[64] = {0};       // .bss (explicitly zero — same section)
+int sensor_values[64] = {0};       // .bss (explicitly zero  -  same section)
 ```
 
 #### .bss vs .data cost table
@@ -280,20 +280,20 @@ int sensor_values[64] = {0};       // .bss (explicitly zero — same section)
 
 ---
 
-<h3 id="stack" style="font-weight: bold;">The Stack — How Function Calls Actually Work</h3>
+<h3 id="stack" style="font-weight: bold;">The Stack  -  How Function Calls Actually Work</h3>
 
 The stack is a region of RAM used for:
 - Local (automatic) variables
 - Function arguments (beyond what fits in registers)
-- Return addresses (LR — Link Register saved on context switch or nested calls)
+- Return addresses (LR  -  Link Register saved on context switch or nested calls)
 - Saved registers (callee-saved registers pushed/popped per ABI)
 - Exception frames (Cortex-M hardware pushes 8 registers automatically on IRQ entry)
 
-On Cortex-M the stack **grows downward** — each `PUSH` decreases the Stack Pointer (SP / R13).
+On Cortex-M the stack **grows downward**  -  each `PUSH` decreases the Stack Pointer (SP / R13).
 
 #### Stack layout during a call
 
-Consider this call chain: `main()` → `process()` → `compute()`:
+Consider this call chain: `main()` -> `process()` -> `compute()`:
 
 ```
 High address (initial SP, top of RAM)
@@ -301,20 +301,20 @@ High address (initial SP, top of RAM)
 │  main() frame                        │
 │    local_var    (4 bytes)            │
 │    saved LR     (4 bytes)            │
-├──────────────────────────────────────┤  ← SP when process() is called
+├──────────────────────────────────────┤  <- SP when process() is called
 │  process() frame                     │
 │    buffer[256]  (256 bytes)          │
 │    idx          (4 bytes)            │
 │    saved LR                          │
-├──────────────────────────────────────┤  ← SP when compute() is called
+├──────────────────────────────────────┤  <- SP when compute() is called
 │  compute() frame                     │
 │    result       (4 bytes)            │
 │    temp         (4 bytes)            │
-├──────────────────────────────────────┤  ← current SP
+├──────────────────────────────────────┤  <- current SP
 │  (free stack space)                  │
-│  ↓ grows downward                    │
+│  v grows downward                    │
 │                                      │
-│  heap grows upward ↑                 │
+│  heap grows upward ^                 │
 └──────────────────────────────────────┘
 Low address
 ```
@@ -326,24 +326,24 @@ When an interrupt fires, the hardware automatically pushes 8 registers before ca
 ```
 Exception entry (hardware does this automatically):
 ┌────────┐
-│  xPSR  │  +28  ← Program Status Register
-│  PC    │  +24  ← Return address (where to resume)
-│  LR    │  +20  ← Link Register
+│  xPSR  │  +28  <- Program Status Register
+│  PC    │  +24  <- Return address (where to resume)
+│  LR    │  +20  <- Link Register
 │  R12   │  +16
 │  R3    │  +12
 │  R2    │  +8
 │  R1    │  +4
-│  R0    │  +0   ← SP after push (8 × 4 = 32 bytes used)
+│  R0    │  +0   <- SP after push (8 × 4 = 32 bytes used)
 └────────┘
 ```
 
-This means **every interrupt costs at least 32 bytes of stack** — even a trivial one. If your ISR calls a function, the call also uses stack. A deeply nested call chain inside an ISR can overflow the stack silently.
+This means **every interrupt costs at least 32 bytes of stack**  -  even a trivial one. If your ISR calls a function, the call also uses stack. A deeply nested call chain inside an ISR can overflow the stack silently.
 
-#### Stack overflow — the silent killer
+#### Stack overflow  -  the silent killer
 
 Stack overflow on bare-metal Cortex-M does **not** generate an immediate fault in most cases. The SP just crosses into `.bss` or `.data` and silently corrupts variables. The crash happens later in a completely unrelated function. This is the most frustrating bug category in embedded.
 
-**Detection method 1 — stack canary / watermark**
+**Detection method 1  -  stack canary / watermark**
 
 Fill the stack region with a known pattern at startup, then check the low-water mark at runtime:
 
@@ -360,7 +360,7 @@ while (p < &_estack) {
 ```
 
 ```c
-// At runtime — call periodically or from a low-priority task
+// At runtime  -  call periodically or from a low-priority task
 uint32_t stack_get_unused_bytes(void)
 {
     extern uint32_t _sstack;
@@ -378,7 +378,7 @@ void monitor_task(void)
 }
 ```
 
-**Detection method 2 — MPU stack guard**
+**Detection method 2  -  MPU stack guard**
 
 Configure the MPU to make the bottom 32 bytes of the stack a no-access region. Any overflow immediately triggers a MemManage fault instead of silently corrupting data:
 
@@ -400,7 +400,7 @@ void stack_guard_init(void)
 }
 ```
 
-**Detection method 3 — DWT stack pointer monitor (Cortex-M3/4/7)**
+**Detection method 3  -  DWT stack pointer monitor (Cortex-M3/4/7)**
 
 ```c
 // Use the Data Watchpoint and Trace unit to trigger DebugMon on SP violation
@@ -412,10 +412,10 @@ CoreDebug->DEMCR |= CoreDebug_DEMCR_MON_EN_Msk;
 
 #### Stack sizing rules of thumb
 
-- Bare-metal with no RTOS: 1–4 KB is typical. 512 bytes is tight.
-- Each RTOS task has its **own independent stack**. FreeRTOS default is 128 words = 512 bytes — often too small for tasks that use `printf`.
+- Bare-metal with no RTOS: 1-4 KB is typical. 512 bytes is tight.
+- Each RTOS task has its **own independent stack**. FreeRTOS default is 128 words = 512 bytes  -  often too small for tasks that use `printf`.
 - Recursive functions on MCU are a red flag. A recursion depth of 10 with 64-byte frames = 640 bytes gone instantly.
-- Floating-point: when `PRESERVE8` is required and FPU context is saved, each ISR entry saves an additional 17 FP registers (S0–S15 + FPSCR) + alignment = 72 extra bytes.
+- Floating-point: when `PRESERVE8` is required and FPU context is saved, each ISR entry saves an additional 17 FP registers (S0-S15 + FPSCR) + alignment = 72 extra bytes.
 
 #### Tips for the stack
 
@@ -430,7 +430,7 @@ void process_data(void)
 // GOOD: static storage, allocated once
 void process_data(void)
 {
-    static uint8_t temp_buffer[4096];   // .bss — not on stack
+    static uint8_t temp_buffer[4096];   // .bss  -  not on stack
     // but NOT thread-safe / re-entrant!
 }
 
@@ -440,16 +440,16 @@ static uint8_t g_process_buf[4096];
 
 ---
 
-<h3 id="heap" style="font-weight: bold;">The Heap — Dynamic Memory on a MCU</h3>
+<h3 id="heap" style="font-weight: bold;">The Heap  -  Dynamic Memory on a MCU</h3>
 
 The heap is the region from which `malloc` / `calloc` / `realloc` / `free` allocate blocks. It grows **upward** from the end of `.bss` toward the stack.
 
 ```
-RAM layout (low → high):
+RAM layout (low -> high):
 ┌──────────┬──────────┬──────────┬────────────────┬──────────┐
-│  .data   │  .bss    │  heap →  │  (free space)  │  ← stack │
+│  .data   │  .bss    │  heap ->  │  (free space)  │  <- stack │
 └──────────┴──────────┴──────────┴────────────────┴──────────┘
-           ↑                     ↑                ↑
+           ^                     ^                ^
          _end                heap_end           current SP
          (_sbrk base)
 ```
@@ -499,10 +499,10 @@ uint8_t *b = malloc(200);   // block B: 200 bytes
 uint8_t *c = malloc(100);   // block C: 100 bytes
 
 free(a);   // hole of 100 bytes
-free(c);   // hole of 100 bytes — but they are not adjacent!
+free(c);   // hole of 100 bytes  -  but they are not adjacent!
 
 // Now try to allocate 150 bytes:
-uint8_t *d = malloc(150);   // FAILS — each hole is only 100 bytes
+uint8_t *d = malloc(150);   // FAILS  -  each hole is only 100 bytes
                              // even though total free = 200 bytes
 ```
 
@@ -512,7 +512,7 @@ Heap after the above:
 │[free]│ [B: 200] │[free]│ [in use] │
 │ 100B │          │ 100B │ ...      │
 └──────┴──────────┴──────┴──────────┘
-        ↑ cannot fit 150 bytes in any single hole
+        ^ cannot fit 150 bytes in any single hole
 ```
 
 The allocator cannot compact memory because existing pointers would become invalid.
@@ -550,11 +550,11 @@ The standard embedded answer is **avoid it in production firmware** unless you h
 | Concern | Detail |
 |---|---|
 | Fragmentation | Leads to allocation failures over time (days/weeks of runtime) |
-| Non-deterministic timing | `malloc` time varies with heap state — bad for real-time |
+| Non-deterministic timing | `malloc` time varies with heap state  -  bad for real-time |
 | No recovery path | If `malloc` returns NULL in deep embedded code, your options are limited |
 | Stack/heap collision | A wild `_sbrk` can silently corrupt the stack |
 
-**Pattern 1 — static pre-allocated pools (best for MCU)**
+**Pattern 1  -  static pre-allocated pools (best for MCU)**
 
 ```c
 // Instead of malloc(sizeof(Packet)) everywhere, manage a fixed pool
@@ -563,7 +563,7 @@ typedef struct {
     bool     in_use;
 } Packet;
 
-static Packet packet_pool[16];   // .bss — 16 packets max, known at compile time
+static Packet packet_pool[16];   // .bss  -  16 packets max, known at compile time
 
 Packet *packet_alloc(void)
 {
@@ -573,7 +573,7 @@ Packet *packet_alloc(void)
             return &packet_pool[i];
         }
     }
-    return NULL;   // pool exhausted — deterministic, no fragmentation
+    return NULL;   // pool exhausted  -  deterministic, no fragmentation
 }
 
 void packet_free(Packet *p)
@@ -582,7 +582,7 @@ void packet_free(Packet *p)
 }
 ```
 
-**Pattern 2 — arena / region allocator (allocate-only, reset in bulk)**
+**Pattern 2  -  arena / region allocator (allocate-only, reset in bulk)**
 
 ```c
 // Good for request-response patterns: allocate freely during a request,
@@ -612,11 +612,11 @@ void arena_reset(void)
 
 ---
 
-<h3 id="special-ram" style="font-weight: bold;">Special RAM Regions — DTCM, ITCM, CCM</h3>
+<h3 id="special-ram" style="font-weight: bold;">Special RAM Regions  -  DTCM, ITCM, CCM</h3>
 
 High-performance Cortex-M7 MCUs (STM32F7, STM32H7) and some Cortex-M4 (STM32F4 CCM) have additional tightly-coupled RAM regions that are **separate from the main SRAM bus**.
 
-#### CCM RAM (Core Coupled Memory) — STM32F4
+#### CCM RAM (Core Coupled Memory)  -  STM32F4
 
 STM32F407 has 64 KB of CCM RAM at `0x10000000`. The CPU accesses it directly without going through the AHB bus, giving **zero-wait-state** access at any clock speed.
 
@@ -648,10 +648,10 @@ _siccmram = LOADADDR(.ccmram);
 ```c
 // Annotate variables/functions to go into CCM
 __attribute__((section(".ccmram")))
-uint32_t pid_state[4];     // PID controller state — zero-wait-state access
+uint32_t pid_state[4];     // PID controller state  -  zero-wait-state access
 
 __attribute__((section(".ccmram")))
-void motor_control_isr(void)  // 10 kHz ISR — runs from CCM at full speed
+void motor_control_isr(void)  // 10 kHz ISR  -  runs from CCM at full speed
 {
     // ...
 }
@@ -668,11 +668,11 @@ while (dst < &_eccmram) {
 }
 ```
 
-#### DTCM / ITCM — STM32H7 / Cortex-M7
+#### DTCM / ITCM  -  STM32H7 / Cortex-M7
 
 Cortex-M7 has:
-- **ITCM** (Instruction TCM, `0x00000000`): 64 KB — tightly coupled to the instruction fetch unit, no I-cache needed
-- **DTCM** (Data TCM, `0x20000000`): 128 KB — tightly coupled to load/store unit, no D-cache needed
+- **ITCM** (Instruction TCM, `0x00000000`): 64 KB  -  tightly coupled to the instruction fetch unit, no I-cache needed
+- **DTCM** (Data TCM, `0x20000000`): 128 KB  -  tightly coupled to load/store unit, no D-cache needed
 
 ```c
 // Place ISR in ITCM for guaranteed single-cycle instruction fetch
@@ -688,7 +688,7 @@ static float filter_coeffs[64];
 
 ---
 
-<h3 id="linker-scripts" style="font-weight: bold;">Linker Scripts — The Memory Orchestrator</h3>
+<h3 id="linker-scripts" style="font-weight: bold;">Linker Scripts  -  The Memory Orchestrator</h3>
 
 The linker script is the single file that decides where every byte of your firmware goes. It is written in a special GNU LD language.
 
@@ -800,7 +800,7 @@ SECTIONS
 | Keyword | Meaning |
 |---|---|
 | `MEMORY { }` | Declares the physical memory regions and their attributes |
-| `SECTIONS { }` | Maps input sections → output sections → memory regions |
+| `SECTIONS { }` | Maps input sections -> output sections -> memory regions |
 | `>RAM` | Place the output section's VMA in RAM |
 | `AT> FLASH` | Place the output section's LMA (stored image) in Flash |
 | `LOADADDR(section)` | Returns the LMA of a section (used to set `_sidata`) |
@@ -810,12 +810,12 @@ SECTIONS
 
 ---
 
-<h3 id="startup" style="font-weight: bold;">Startup Code — What Happens Before main()</h3>
+<h3 id="startup" style="font-weight: bold;">Startup Code  -  What Happens Before main()</h3>
 
 The complete startup sequence on Cortex-M:
 
 ```c
-// startup_stm32f407xx.c — simplified but complete
+// startup_stm32f407xx.c  -  simplified but complete
 
 extern uint32_t _estack;
 
@@ -883,7 +883,7 @@ void Reset_Handler(void)
 
 void Default_Handler(void)
 {
-    // Hang here — attach debugger and check PC to identify the IRQ
+    // Hang here  -  attach debugger and check PC to identify the IRQ
     __BKPT(0);
     while (1);
 }
@@ -917,7 +917,7 @@ grep -E "^\.text|^\.data|^\.bss|^\.rodata" firmware.map
 
 The map file shows which object file contributed to each section and exactly how many bytes. Invaluable for finding "who is eating my Flash."
 
-#### nm — symbol sizes
+#### nm  -  symbol sizes
 
 ```bash
 # Sort all symbols by size, largest first
@@ -925,9 +925,9 @@ arm-none-eabi-nm --size-sort --print-size firmware.elf | tail -20
 ```
 
 ```
-00000400 B rx_dma_buffer       ← 1 KB in .bss
-00000200 D calibration_table   ← 512 bytes in .data (should it be .rodata?)
-00001200 T jpeg_decode          ← 4.5 KB of code in .text
+00000400 B rx_dma_buffer       <- 1 KB in .bss
+00000200 D calibration_table   <- 512 bytes in .data (should it be .rodata?)
+00001200 T jpeg_decode          <- 4.5 KB of code in .text
 ```
 
 #### Linker overflow is a compile-time error
@@ -936,7 +936,7 @@ arm-none-eabi-nm --size-sort --print-size firmware.elf | tail -20
 region `FLASH' overflowed by 2048 bytes
 ```
 
-This is caught at link time — the build fails. But **stack overflow at runtime is silent** — that is why watermarking matters.
+This is caught at link time  -  the build fails. But **stack overflow at runtime is silent**  -  that is why watermarking matters.
 
 ---
 
@@ -947,19 +947,19 @@ This is caught at link time — the build fails. But **stack overflow at runtime
 #include <string.h>
 #include <stdlib.h>
 
-/* ─── Flash (.rodata) — zero RAM cost ─────────────────────────── */
+/* ─── Flash (.rodata)  -  zero RAM cost ─────────────────────────── */
 const uint16_t adc_gain_lut[256] = { /* ... 256 calibration values ... */ };
 const char     fw_build_tag[]    = "v2.3.1-release";
 
-/* ─── RAM .data — initial value stored in Flash, copied to RAM ── */
+/* ─── RAM .data  -  initial value stored in Flash, copied to RAM ── */
 uint32_t sample_rate_hz     = 8000;     /* 4 bytes Flash + 4 bytes RAM */
 float    filter_cutoff_hz   = 1000.0f;  /* 4 bytes Flash + 4 bytes RAM */
 
-/* ─── RAM .bss — no Flash cost, zero-init ────────────────────── */
+/* ─── RAM .bss  -  no Flash cost, zero-init ────────────────────── */
 uint8_t  adc_rx_buf[512];              /* 512 bytes RAM, 0 bytes Flash */
 uint32_t dropped_frames;              /* 4 bytes RAM */
 
-/* ─── CCM RAM — fast, CPU-only, no DMA ────────────────────────── */
+/* ─── CCM RAM  -  fast, CPU-only, no DMA ────────────────────────── */
 __attribute__((section(".ccmram")))
 int32_t  fir_state[64];               /* 256 bytes CCM RAM */
 
@@ -983,7 +983,7 @@ void DMA2_Stream0_IRQHandler(void)
 
 int main(void)
 {
-    uint8_t local_buf[64];   /* 64 bytes on stack — OK for small temp buffers */
+    uint8_t local_buf[64];   /* 64 bytes on stack  -  OK for small temp buffers */
     memset(local_buf, 0, sizeof(local_buf));
 
     while (1) { }
@@ -1010,15 +1010,15 @@ Memory breakdown:
 #### Flash / .rodata
 - Mark every table, string, and constant as `const`. One missed `const` on a 1 KB LUT wastes 1 KB of precious RAM.
 - Use `-flto -Os` for size-critical builds. LTO can inline and eliminate dead code across translation units.
-- Avoid storing large BMP/JPEG data directly in firmware — use QSPI external Flash and stream from there.
+- Avoid storing large BMP/JPEG data directly in firmware  -  use QSPI external Flash and stream from there.
 
 #### .data
 - Audit `.data` in your map file. Any non-trivial `.data` entry is a candidate for `const` conversion.
 - `static` local variables with initializers are in `.data`, not the stack. They persist across calls and are **not** thread-safe.
 
 #### .bss
-- Prefer `.bss` over `.data` — same RAM, but zero Flash cost for the initial image.
-- Don't `memset(buf, 0, sizeof(buf))` at the top of `main()` — it's already zero from startup. (This is a common beginner pattern that wastes cycles.)
+- Prefer `.bss` over `.data`  -  same RAM, but zero Flash cost for the initial image.
+- Don't `memset(buf, 0, sizeof(buf))` at the top of `main()`  -  it's already zero from startup. (This is a common beginner pattern that wastes cycles.)
 
 #### Stack
 - Set `_Min_Stack_Size` conservatively in the linker script. The linker will error at link time if the stack + heap don't fit in RAM.
@@ -1035,13 +1035,13 @@ cat main.su
 
 #### Heap
 - If you must use `malloc`, allocate everything during init and never free. This eliminates fragmentation.
-- Always check `malloc` return values. On MCU there is no OOM killer — a NULL dereference causes a HardFault.
-- Consider FreeRTOS heap5 (`heap_5.c`) instead of newlib malloc — it lets you span multiple non-contiguous RAM regions and is better suited to RTOS use.
+- Always check `malloc` return values. On MCU there is no OOM killer  -  a NULL dereference causes a HardFault.
+- Consider FreeRTOS heap5 (`heap_5.c`) instead of newlib malloc  -  it lets you span multiple non-contiguous RAM regions and is better suited to RTOS use.
 
 #### CCM / DTCM
 - Put the most frequently-called ISRs and their data in CCM/DTCM.
-- **Never** point a DMA source or destination at CCM (STM32F4) or DTCM (STM32H7). The DMA bus cannot reach those regions — the transfer will silently fail or corrupt data.
-- Use `__attribute__((section(".ccmram")))` sparingly — only for code/data with proven cache-miss bottlenecks.
+- **Never** point a DMA source or destination at CCM (STM32F4) or DTCM (STM32H7). The DMA bus cannot reach those regions  -  the transfer will silently fail or corrupt data.
+- Use `__attribute__((section(".ccmram")))` sparingly  -  only for code/data with proven cache-miss bottlenecks.
 
 ---
 
@@ -1051,7 +1051,7 @@ cat main.su
 |---|---|---|---|---|
 | `.text` | Flash | No | Read-only | Keep functions here by default |
 | `.rodata` | Flash | No | Read-only | Every constant table should be `const` |
-| `.data` (LMA) | Flash | No | — | Costs both Flash + RAM — audit carefully |
+| `.data` (LMA) | Flash | No |  -  | Costs both Flash + RAM  -  audit carefully |
 | `.data` (VMA) | RAM | Yes | Yes | Copied from Flash at boot |
 | `.bss` | RAM | Yes | Yes | Free Flash; prefer over `.data` |
 | Stack | RAM | Yes | No | Watermark it; never put large arrays here |

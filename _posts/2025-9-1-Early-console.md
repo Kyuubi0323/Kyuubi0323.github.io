@@ -35,9 +35,9 @@ Before fixing software configuration, ensure proper hardware connections:
 
 ```
 USB-TTL Adapter    Raspberry Pi GPIO
-GND           →    Pin 6 (GND)
-RX            →    Pin 8 (GPIO 14, TXD)
-TX            →    Pin 10 (GPIO 15, RXD)
+GND           ->    Pin 6 (GND)
+RX            ->    Pin 8 (GPIO 14, TXD)
+TX            ->    Pin 10 (GPIO 15, RXD)
 ```
 
 

@@ -75,7 +75,7 @@ SYMLINK+="myserial"
 ```
 
 <h3 id="Example-rule" style="font-weight: bold;">Example rule</h3>
-Here’s a simple example rule that creates a symlink for a USB-to-serial device:
+Here's a simple example rule that creates a symlink for a USB-to-serial device:
 
 ```
 KERNEL=="ttyUSB[0-9]*", ATTR{idVendor}=="0403", ATTR{idProduct}=="6001", SYMLINK+="ftdi_serial"
@@ -97,7 +97,7 @@ This rule matches any USB serial device with a specific vendor and product ID, a
 4. Unplug and replug your device to test.
 
 <h3 id="Debugging-rules" style="font-weight: bold;">Debugging rules</h3>
-If your rules aren’t working as expected, increase udev logging:
+If your rules aren't working as expected, increase udev logging:
 
 - Check the system log (`journalctl -u systemd-udevd` or `dmesg`).
 - Use `udevadm test` to simulate rule application:
