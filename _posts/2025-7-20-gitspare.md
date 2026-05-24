@@ -1,7 +1,7 @@
 ---
 title: Git sparse-checkout
 date: 2025-07-20 10:20:52 +0700
-categories: [XXX, git]
+categories: [TIL, git]
 tags: [git, sharing]
 ---
 

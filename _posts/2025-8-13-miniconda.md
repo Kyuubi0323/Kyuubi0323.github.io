@@ -1,7 +1,7 @@
 ---
 title: Anaconda for python
 date: 2025-8-13 10:30:00 +0700
-categories: [XXX]
+categories: [Development Tools]
 tags: [linux, sharing]     
 comments: false
 ---

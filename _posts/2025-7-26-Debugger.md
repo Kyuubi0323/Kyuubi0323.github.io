@@ -1,7 +1,7 @@
 ---
 title: Debuggers
 date: 2025-07-26 10:30:00 +0700
-categories: [Embedded Systems]
+categories: [Embedded Systems, MCU]
 tags: [mcu, ARM]    
 ---
 
