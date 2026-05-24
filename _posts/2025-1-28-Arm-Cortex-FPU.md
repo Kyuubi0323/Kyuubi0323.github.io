@@ -51,24 +51,24 @@ This ensures smoother transitions around zero and allows representation of value
 
 ### 🔁 Example 1: Convert Decimal to IEEE 754 Single-Precision  
 **Input:** `-7.0`  
-We’ll convert `-7.0` to IEEE 754 **single-precision (32-bit)** floating-point format.
+We'll convert `-7.0` to IEEE 754 **single-precision (32-bit)** floating-point format.
 
 #### Step 1: Sign bit  
-Since it's negative → `Sign = 1`
+Since it's negative -> `Sign = 1`
 
 #### Step 2: Convert to binary  
 `7.0` in binary = `111.0` = `1.11 × 2²` (normalized form)
 
 #### Step 3: Exponent  
 - Bias for single precision = 127  
-- Exponent = 2 → `2 + 127 = 129`  
+- Exponent = 2 -> `2 + 127 = 129`  
 - `129` in binary = `10000001`
 
 #### Step 4: Mantissa (23 bits)  
 Keep the fraction part after the `1.` (since `1.` is implicit in normalized form)  
-`1.11` → take `.11` → `11000000000000000000000`
+`1.11` -> take `.11` -> `11000000000000000000000`
 
-#### ✅ Final IEEE 754 Format
+####  Final IEEE 754 Format
 
 | Sign | Exponent  | Mantissa                  |
 |------|-----------|---------------------------|
@@ -85,18 +85,18 @@ In Hex:
 **Input:** `0xC0E00000`
 
 #### Step 1: Binary Breakdown  
-`0xC0E00000` →  
+`0xC0E00000` ->  
 `11000000111000000000000000000000`
 
-- Sign: `1` → negative  
-- Exponent: `10000001` → 129  
+- Sign: `1` -> negative  
+- Exponent: `10000001` -> 129  
 - Mantissa: `11000000000000000000000`
 
 #### Step 2: Compute Exponent  
 `129 - 127 = 2`
 
 #### Step 3: Compute Mantissa  
-Add implicit `1.` in front → `1.11`  
+Add implicit `1.` in front -> `1.11`  
 Binary `1.11` = `1 + 0.5 + 0.25 = 1.75`
 
 #### Step 4: Final Result  
@@ -104,7 +104,7 @@ Binary `1.11` = `1 + 0.5 + 0.25 = 1.75`
 
 ---
 
-### 🧠 Summary Table
+###  Summary Table
 
 | Decimal | IEEE 754 Binary                     | Hex         |
 |---------|-------------------------------------|-------------|
@@ -170,15 +170,15 @@ In STM32:
 <h3 id="STM32-Usage" style="font-weight: bold;">Using FPU in STM32 Projects</h3>  
 To benefit from the hardware FPU on STM32:
 
-✅ Enable FPU in Compiler Settings  
+ Enable FPU in Compiler Settings  
 MDK-ARM (Keil): Enable -mfpu=fpv4-sp-d16 or fpv5-d16 based on your target.
 
 GCC: Use -mfpu=fpv4-sp-d16 -mfloat-abi=hard for single-precision FPU.
 
-⚙️ Use Native Float Instructions
+⚙ Use Native Float Instructions
 Use float or double in your C code. The compiler will generate optimized FPU instructions if -mfloat-abi=hard is set.
 
-🧠 Avoid Mixing Soft/Hard FPU
+ Avoid Mixing Soft/Hard FPU
 Mixing -mfloat-abi=soft and -mfloat-abi=hard across modules may lead to linking errors. Stick to one strategy.
 
-💾 Context Saving
+ Context Saving

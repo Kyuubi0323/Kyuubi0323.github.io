@@ -185,7 +185,7 @@ int8_t quantize(float value, float scale, int8_t zero_point) {
 ```
 
 **Benefits:**
-- **Memory efficiency**: 4x reduction (32-bit → 8-bit)
+- **Memory efficiency**: 4x reduction (32-bit -> 8-bit)
 - **Speed**: Integer operations faster than FPU
 - **Power**: Lower energy per operation
 
@@ -201,7 +201,7 @@ void quantized_inference_with_fpu() {
         normalized_input[i] = (raw_input[i] - mean) / std_dev;
     }
     
-    // Quantization (FPU → Integer)
+    // Quantization (FPU -> Integer)
     int8_t quantized_input[INPUT_SIZE];
     quantize_array(normalized_input, quantized_input, INPUT_SIZE);
     

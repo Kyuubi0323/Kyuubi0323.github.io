@@ -13,14 +13,14 @@ Licheepi Nano is a small single board computer. It was developed and launched by
 <h3 id="Specifications" style="font-weight: bold;">Specifications </h3>  
 
 ![Desktop View](/assets/img/2025-23-5-Linux-Lichee01/lichee.jpg){: .normal }  
-🔌 Power Specifications
+ Power Specifications
 - **Input Power:** 5V DC via Micro USB
 - **Power Consumption:**
   - ~54mA (idle) running Linux
   - ~250mA with display connected  
 - **Note:** Power supply current should be ≥ 500mA  
 
-🧠 CPU & Memory
+ CPU & Memory
 - **CPU:** Allwinner F1C100s  
   - ARM926EJ-S core  
   - Up to 900MHz
@@ -32,7 +32,7 @@ Licheepi Nano is a small single board computer. It was developed and launched by
 
 
 
- 🖥️ Display
+ 🖥 Display
 - **40-pin RGB LCD FPC connector**
   - Supports resolutions: 272×480, 480×800, 1024×600
   - Supports resistive displays (capacitive via adapter board)
@@ -41,7 +41,7 @@ Licheepi Nano is a small single board computer. It was developed and launched by
   - Video decoding: H.264, MPEG, and more  
 
 
-📡 Communication Interfaces
+ Communication Interfaces
 - **WiFi:** SDIO interface for external WiFi module
 - **Interfaces:**
   - SPI ×2

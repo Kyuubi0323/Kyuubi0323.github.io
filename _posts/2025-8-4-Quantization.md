@@ -132,7 +132,7 @@ Train the model with quantization in mind from the start:
 Modern MCU AI frameworks generate highly optimized C kernels for specific data type combinations:
 
 ```c
-// Binary convolution kernel (1-bit × 1-bit → 1-bit)
+// Binary convolution kernel (1-bit × 1-bit -> 1-bit)
 // Uses ARM SXTAB16, USAD8 instructions for efficiency on Cortex-M
 void conv2d_binary_kernel(
     const uint32_t *input,     // Packed binary input
