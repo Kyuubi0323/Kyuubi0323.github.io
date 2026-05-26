@@ -1,7 +1,7 @@
 ---
 title: Fixing Early Serial Console Issues with Raspberry Pi Imager
 date: 2025-9-1 10:30:00 +0700
-categories: [XXX]
+categories: [TIL]
 tags: [linux, sharing]     
 comments: false
 ---
