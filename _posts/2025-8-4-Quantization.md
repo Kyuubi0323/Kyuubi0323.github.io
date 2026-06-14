@@ -27,19 +27,7 @@ Let's start with the problem. A simple image classification network might have:
 - Activations: 32KB (8-bit)
 - Total: Fits in many modern MCUs!
 
-The magic is that you can often keep 90%+ of the accuracy while shrinking the model by 32x or more.
-- Intermediate activations: 512KB during inference
-- Total: Way more than your 32KB STM32
-
-**After 8-bit Quantization:**
-- 1 million parameters × 1 byte = 1MB storage  
-- Intermediate activations: 128KB during inference
-- Total: Still big, but much more manageable
-
-**After Aggressive Quantization (1-bit + 8-bit mixed):**
-- Core weights: 125KB (1-bit binary)
-- Activations: 32KB (8-bit)
-- Total: Fits in many MCUs!
+The usual first step is 8-bit integer quantization, which gives about a 4x reduction for weights and activations compared with float32. More aggressive schemes, such as binary weights, can shrink selected tensors further, but the accuracy tradeoff is model-dependent and the MCU toolchain must support that quantization scheme.
 
 
 <h3 id="HowItWorks" style="font-weight: bold;">How Quantization Actually Works</h3>
@@ -52,18 +40,23 @@ The most common approach maps float values to signed 8-bit integers (-128 to +12
 
 ```c
 // Quantization formula
-int8_t quantized = (int8_t)(float_value / scale + zero_point);
+int32_t q = (int32_t)roundf(float_value / scale + zero_point);
+q = q < -128 ? -128 : (q > 127 ? 127 : q);
+int8_t quantized = (int8_t)q;
 
 // Dequantization (when needed)
 float dequantized = (quantized - zero_point) * scale;
 ```
 
+![alt text](/assets/img/2025-8-4-Quantization/image.png)
+
+
 **Example:**
 ```c
-// Original weights: [0.1, -0.05, 0.3, -0.2, 0.15]
-// Scale = 0.002, Zero_point = 0
+// Original weights: [0.1, -0.05, 0.24, -0.2, 0.15]
+// Scale = 0.002, zero_point = 0
 
-// Quantized: [50, -25, 150, -100, 75] (8-bit signed)
+// Quantized: [50, -25, 120, -100, 75] (8-bit signed)
 // Storage: 5 bytes instead of 20 bytes
 ```
 
@@ -74,6 +67,8 @@ float dequantized = (quantized - zero_point) * scale;
 - `f32`: 32-bit floating point (original)
 - `s8`: 8-bit signed integer (-128 to +127)  
 - `u8`: 8-bit unsigned integer (0 to 255)
+
+For small embedded targets, the most useful deployment path is usually integer-only inference: both weights and activations are stored and processed as integers. Some frameworks also support mixed models, but every float fallback costs extra memory and latency.
 
 ### Performance Comparison
 
@@ -111,7 +106,15 @@ model_stats_t int8_model = {
 
 Take an already-trained float model and convert it:
 
-
+```python
+converter = tf.lite.TFLiteConverter.from_saved_model(saved_model_dir)
+converter.optimizations = [tf.lite.Optimize.DEFAULT]
+converter.representative_dataset = representative_dataset_gen
+converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]
+converter.inference_input_type = tf.int8
+converter.inference_output_type = tf.int8
+quant_model = converter.convert()
+```
 
 **Pros:** Easy to apply to existing models  
 **Cons:** Can lose significant accuracy
@@ -120,10 +123,21 @@ Take an already-trained float model and convert it:
 
 Train the model with quantization in mind from the start:
 
-
+```python
+# TensorFlow Model Optimization Toolkit example shape:
+# annotate/apply quantization during training, then export to TFLite int8.
+```
 
 **Pros:** Better accuracy retention  
 **Cons:** Need to retrain your model, take more time
+
+For MCU deployment, PTQ normally needs a representative calibration dataset so the converter can estimate activation ranges. Without calibration, some tools only quantize weights, which reduces file size but may still require floating-point computation during inference.
+
+### Per-Tensor vs Per-Channel Quantization
+
+Per-tensor quantization uses one `scale` and `zero_point` for the whole tensor. Per-channel quantization uses separate parameters per output channel or filter, which usually improves convolution weight accuracy with little runtime overhead.
+
+In many int8 deployment flows, weights are symmetric and often per-channel, while activations are per-tensor and may be asymmetric. This matters because optimized MCU kernels are usually written for a small set of weight/activation schemes.
 
 <h3 id="MCUOptimizations" style="font-weight: bold;">MCU-Specific Optimizations</h3>
 
@@ -140,9 +154,9 @@ void conv2d_binary_kernel(
     uint32_t *output,          // Packed binary output
     const conv_params_t *params
 ) {
-    // Highly optimized ARM assembly implementation
-    // Uses SXOR (sign XOR) operations instead of multiply
-    // 32 operations per cycle on modern MCUs
+    // Highly optimized implementation
+    // Uses packed bit operations/popcount-style accumulation
+    // instead of ordinary multiply-accumulate operations.
 }
 ```
 
@@ -203,22 +217,6 @@ void run_inference(uint8_t* image_data) {
         printf("Predicted digit: %d (confidence: %d)\n", best_class, best_score);
     }
 }
-    ai_mnist_model_run(network, ai_input, ai_output);
-    
-    // Process results
-    int8_t* predictions = (int8_t*)out_data;
-    int best_class = 0;
-    int8_t best_score = predictions[0];
-    
-    for (int i = 1; i < 10; i++) {
-        if (predictions[i] > best_score) {
-            best_score = predictions[i];
-            best_class = i;
-        }
-    }
-    
-    printf("Predicted digit: %d (confidence: %d)\n", best_class, best_score);
-}
 ```
 
 
@@ -229,9 +227,9 @@ void run_inference(uint8_t* image_data) {
 
 Most MCU AI frameworks provide analysis tools to understand your model's performance:
 
-**STM32 X-CUBE-AI Example:**
+**Generic Analysis Example:**
 ```bash
-$ stm32ai analyze mnist_quantized.h5
+$ mcu-ai-tool analyze mnist_quantized.tflite
 
 Model complexity analysis:
 -------------------------
@@ -252,5 +250,3 @@ Model size: 8.5 KB
 Inference time (estimated): 15.2 ms
 Memory usage: 12.8 KB
 ```
-
-
