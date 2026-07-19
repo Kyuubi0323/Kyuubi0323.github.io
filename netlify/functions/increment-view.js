@@ -3,6 +3,11 @@
 // picks up to bump _data/views.yml. Keeps the GitHub PAT server-side only.
 
 const ALLOWED_ORIGIN = 'https://kyuubi0323.github.io';
+// Not a secret — it's this repo's own public owner/name, only used to build
+// the GitHub API URL. Kept as a constant (not an env var) so Netlify's
+// build-time secret scanner doesn't flag it wherever it naturally shows up
+// in the site's own pages (canonical links, "edit on GitHub", etc).
+const GITHUB_REPO = 'Kyuubi0323/Kyuubi0323.github.io';
 
 function corsHeaders(origin) {
   const headers = {
@@ -38,15 +43,14 @@ exports.handler = async (event) => {
   }
 
   const githubPat = process.env.GITHUB_PAT;
-  const githubRepo = process.env.GITHUB_REPO; // e.g. "Kyuubi0323/Kyuubi0323.github.io"
 
-  if (!githubPat || !githubRepo) {
-    console.error('increment-view: missing GITHUB_PAT or GITHUB_REPO env var');
+  if (!githubPat) {
+    console.error('increment-view: missing GITHUB_PAT env var');
     return { statusCode: 500, headers, body: JSON.stringify({ error: 'Server misconfigured' }) };
   }
 
   try {
-    const res = await fetch(`https://api.github.com/repos/${githubRepo}/dispatches`, {
+    const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/dispatches`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${githubPat}`,
