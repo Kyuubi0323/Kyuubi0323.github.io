@@ -1,0 +1,15 @@
+# This repo is deployed to GitHub Pages (see .github/workflows/pages-deploy.yml).
+# Netlify is only used here to host the view-counter serverless function —
+# there is nothing to build or publish on the Netlify side.
+[build]
+  functions = "netlify/functions"
+  publish = "netlify/public"
+  command = "true"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"

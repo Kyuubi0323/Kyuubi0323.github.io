@@ -1,0 +1,6 @@
+# Page view counter data, updated by .github/workflows/increment-views.yml
+# current_month_label tracks which month `current_month` belongs to, so the
+# workflow can tell whether to keep incrementing or roll over into `history`.
+current_month_label:
+current_month: 0
+history: []
