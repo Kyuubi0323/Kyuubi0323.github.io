@@ -1,0 +1,34 @@
+name: "Increment Page Views"
+on:
+  repository_dispatch:
+    types: [increment_view]
+
+permissions:
+  contents: write
+
+# Serialize runs so concurrent page views can't race each other while
+# reading/writing _data/views.yml (see README note in the script below).
+concurrency:
+  group: increment-views
+  cancel-in-progress: false
+
+jobs:
+  increment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3
+
+      - name: Update _data/views.yml
+        run: ruby .github/scripts/update_views.rb
+
+      - name: Commit views.yml
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: increment page views [skip ci]"
+          file_pattern: "_data/views.yml"

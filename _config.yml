@@ -86,6 +86,12 @@ analytics:
 pageviews:
   provider: # now only supports 'goatcounter'
 
+# Custom page view counter (see assets/js/view-counter.js)
+# Fill in with your deployed Netlify Functions endpoint, e.g.:
+# https://your-site.netlify.app/.netlify/functions/increment-view
+view_counter:
+  endpoint: ""
+
 # Prefer color scheme setting.
 #
 # Note: Keep empty will follow the system prefer color by default,
@@ -224,6 +230,8 @@ exclude:
   - "*.gemspec"
   - docs
   - tools
+  - netlify
+  - netlify.toml
   - README.md
   - LICENSE
   - purgecss.js
