@@ -90,7 +90,7 @@ pageviews:
 # Fill in with your deployed Netlify Functions endpoint, e.g.:
 # https://your-site.netlify.app/.netlify/functions/increment-view
 view_counter:
-  endpoint: ""
+  endpoint: "https://hadilao-embedded.netlify.app/.netlify/functions/increment-view"
 
 # Prefer color scheme setting.
 #
