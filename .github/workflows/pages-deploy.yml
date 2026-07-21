@@ -9,6 +9,12 @@ on:
       - README.md
       - LICENSE
 
+  # Rebuild every 2 days so the view counter (updated out-of-band by
+  # increment-views.yml, which pushes with [skip ci]) gets picked up by a
+  # fresh Jekyll build even if nothing else triggers a deploy in between.
+  schedule:
+    - cron: "0 18 */2 * *"
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
