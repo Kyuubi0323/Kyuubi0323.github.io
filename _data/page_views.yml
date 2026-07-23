@@ -1,2 +1,3 @@
-# Per-page cumulative view counts, updated by .github/workflows/flush-views.yml
-pages: {}
+---
+pages:
+  "/verify-final-commit-test-2": 1
