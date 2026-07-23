@@ -23,14 +23,11 @@ exports.handler = async (event) => {
   }
 
   try {
-    const store = getViewsStore();
-    const keys = [];
-    let cursor;
-    do {
-      const page = await store.list({ prefix: EVENT_PREFIX, cursor });
-      for (const blob of page.blobs) keys.push(blob.key);
-      cursor = page.cursor;
-    } while (cursor);
+    const store = getViewsStore(event);
+    // list() with no `paginate` option auto-fetches every page (up to 1000
+    // entries/page) internally — no manual cursor loop needed.
+    const { blobs } = await store.list({ prefix: EVENT_PREFIX });
+    const keys = blobs.map((blob) => blob.key);
 
     let total = 0;
     const pages = {};
