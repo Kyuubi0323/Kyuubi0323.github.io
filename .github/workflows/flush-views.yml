@@ -1,0 +1,43 @@
+name: "Flush Page Views"
+on:
+  schedule:
+    - cron: "0 17 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Serialize runs so a slow run can't overlap the next scheduled one while
+# reading/writing the data files (same pattern as the old increment-views.yml).
+concurrency:
+  group: flush-views
+  cancel-in-progress: false
+
+jobs:
+  flush:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3
+
+      - name: Fetch pending views
+        env:
+          FLUSH_SECRET: ${{ secrets.FLUSH_SECRET }}
+        run: |
+          curl -sf -X POST "https://hadilao-embedded.netlify.app/.netlify/functions/flush-views" \
+            -H "x-flush-secret: $FLUSH_SECRET" \
+            -o flush-result.json
+
+      - name: Update views data
+        run: ruby .github/scripts/flush_views.rb flush-result.json
+
+      - name: Commit views data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: flush page views [skip ci]"
+          file_pattern: "_data/views.yml _data/page_views.yml"
