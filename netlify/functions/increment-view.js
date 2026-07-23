@@ -83,7 +83,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const store = getViewsStore();
+    const store = getViewsStore(event);
     const ipHash = hashIp(getClientIp(event));
     const rateLimitKey = `ratelimit:${ipHash}:${path}`;
 
