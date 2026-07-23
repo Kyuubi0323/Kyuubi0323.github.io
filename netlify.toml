@@ -5,6 +5,12 @@
   functions = "netlify/functions"
   publish = "netlify/public"
   command = "true"
+  # Netlify bills 15 credits per production deploy regardless of what
+  # changed. Without this, every push to main — including unrelated Jekyll
+  # content (_posts/, _layouts/, etc.) — triggers a full Netlify rebuild for
+  # no reason, since this site only serves the functions below. Skip the
+  # build unless the function code itself actually changed.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- netlify netlify.toml package.json package-lock.json"
 
 [functions]
   node_bundler = "esbuild"
