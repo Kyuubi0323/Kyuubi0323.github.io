@@ -1,2 +1,12 @@
 ---
-pages: {}
+pages:
+  "/": 2
+  "/posts/op4a05/": 1
+  "/posts/mpu0/": 1
+  "/posts/op4a01/": 1
+  "/posts/Linux-Lichee01/": 1
+  "/posts/Linux-Lichee03/": 1
+  "/posts/mpu2/": 1
+  "/posts/mpu1/": 1
+  "/posts/op4a04/": 1
+  "/posts/op4a03/": 1
