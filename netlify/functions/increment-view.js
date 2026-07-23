@@ -9,6 +9,16 @@ const ALLOWED_ORIGIN = 'https://kyuubi0323.github.io';
 // in the site's own pages (canonical links, "edit on GitHub", etc).
 const GITHUB_REPO = 'Kyuubi0323/Kyuubi0323.github.io';
 
+function getGeo(event) {
+  try {
+    const raw = event.headers['x-nf-geo'];
+    if (!raw) return null;
+    return JSON.parse(Buffer.from(raw, 'base64').toString('utf8'));
+  } catch {
+    return null;
+  }
+}
+
 function corsHeaders(origin) {
   const headers = {
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -41,6 +51,14 @@ exports.handler = async (event) => {
   if (!originAllowed) {
     return { statusCode: 403, headers, body: JSON.stringify({ error: 'Forbidden' }) };
   }
+
+  // Just for curiosity — visible in Netlify's function logs, no pipeline needed.
+  const geo = getGeo(event);
+  console.log('increment-view: visitor', {
+    country: geo?.country?.name,
+    city: geo?.city,
+    timezone: geo?.timezone
+  });
 
   const githubPat = process.env.GITHUB_PAT;
 
