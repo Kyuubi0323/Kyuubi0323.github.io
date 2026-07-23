@@ -6,13 +6,28 @@ pages:
   "/posts/op4a01/": 1
   "/posts/Linux-Lichee01/": 1
   "/posts/Linux-Lichee03/": 1
-  "/posts/mpu2/": 1
+  "/posts/mpu2/": 2
   "/posts/mpu1/": 1
   "/posts/op4a04/": 1
   "/posts/op4a03/": 1
-  "/page3/": 1
+  "/page3/": 2
   "/posts/MCU-Pico3/": 1
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 1
   "/posts/Linux-Lichee02/": 1
   "/posts/Linux-BBB-serial/": 1
+  "/tags/lichee/": 1
+  "/posts/Linux-Lichee04/": 1
+  "/posts/Buildroot/": 1
+  "/tags/linux/": 1
+  "/tags/mcu/": 1
+  "/tags/arm/": 1
+  "/tags/sharing/": 1
+  "/tags/bbb/": 1
+  "/tags/cortexm/": 1
+  "/tags/npu/": 1
+  "/tags/riscv/": 1
+  "/tags/build-system/": 1
+  "/posts/op4a02/": 1
+  "/posts/Linux-BBB-wlan/": 1
+  "/posts/Fix-vmware/": 1
