@@ -1,3 +1,0 @@
-Temporary file to verify netlify.toml's `ignore` build command actually skips
-deploys for changes outside netlify/, netlify.toml, package.json,
-package-lock.json. Safe to delete once confirmed in the Netlify dashboard.
