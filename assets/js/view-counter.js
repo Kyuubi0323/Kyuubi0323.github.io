@@ -8,35 +8,42 @@
     return meta ? meta.getAttribute('content') : null;
   }
 
-  function hasCounted(month) {
+  function dedupKey(month, path) {
+    return 'viewed_' + month + '_' + path;
+  }
+
+  function hasCounted(key) {
     try {
-      return window.localStorage.getItem('viewed_' + month) === '1';
+      return window.sessionStorage.getItem(key) === '1';
     } catch (e) {
-      // localStorage unavailable (private mode, disabled storage, etc.)
+      // sessionStorage unavailable (private mode, disabled storage, etc.)
       return true;
     }
   }
 
-  function markCounted(month) {
+  function markCounted(key) {
     try {
-      window.localStorage.setItem('viewed_' + month, '1');
+      window.sessionStorage.setItem(key, '1');
     } catch (e) {
-      // ignore — worst case we re-count next load
+      // ignore — worst case we re-count later in the same session
     }
   }
 
   function recordView() {
     var month = getCurrentMonth();
+    var path = window.location.pathname;
     if (!month || !ENDPOINT) return;
-    if (hasCounted(month)) return;
+
+    var key = dedupKey(month, path);
+    if (hasCounted(key)) return;
 
     fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ month: month })
+      body: JSON.stringify({ path: path })
     })
       .then(function (res) {
-        if (res.ok) markCounted(month);
+        if (res.ok) markCounted(key);
       })
       .catch(function () {
         // network/CORS failure — fail silently, retry on next page load

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "description": "Dependencies for netlify/functions/ — installed by Netlify's build step, not part of the Jekyll site itself.",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}

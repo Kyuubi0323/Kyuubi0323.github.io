@@ -89,6 +89,11 @@ tail_includes:
             </span>
           {% endif %}
 
+          <!-- custom page view counter, see assets/js/view-counter.js -->
+          {% if site.data.page_views.pages[page.url] %}
+            <span>· {{ site.data.page_views.pages[page.url] }} views</span>
+          {% endif %}
+
           <!-- read time -->
           {% include read-time.html content=content prompt=true lang=lang %}
         </div>
