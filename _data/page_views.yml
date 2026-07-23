@@ -1,6 +1,6 @@
 ---
 pages:
-  "/": 2
+  "/": 4
   "/posts/op4a05/": 1
   "/posts/mpu0/": 1
   "/posts/op4a01/": 1
@@ -13,3 +13,6 @@ pages:
   "/page3/": 1
   "/posts/MCU-Pico3/": 1
   "/verify-ignore-build-test": 1
+  "/posts/Linux-Lichee05/": 1
+  "/posts/Linux-Lichee02/": 1
+  "/posts/Linux-BBB-serial/": 1
