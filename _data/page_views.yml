@@ -1,6 +1,6 @@
 ---
 pages:
-  "/": 6
+  "/": 7
   "/posts/op4a05/": 1
   "/posts/mpu0/": 2
   "/posts/op4a01/": 1
@@ -39,3 +39,4 @@ pages:
   "/categories/": 1
   "/posts/CH32V003-01/": 1
   "/posts/Linux-BBB-eth/": 1
+  "/posts/Clang/": 1
