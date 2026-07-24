@@ -1,13 +1,13 @@
 ---
 pages:
-  "/": 4
+  "/": 6
   "/posts/op4a05/": 1
-  "/posts/mpu0/": 1
+  "/posts/mpu0/": 2
   "/posts/op4a01/": 1
-  "/posts/Linux-Lichee01/": 1
-  "/posts/Linux-Lichee03/": 1
-  "/posts/mpu2/": 2
-  "/posts/mpu1/": 1
+  "/posts/Linux-Lichee01/": 2
+  "/posts/Linux-Lichee03/": 2
+  "/posts/mpu2/": 3
+  "/posts/mpu1/": 2
   "/posts/op4a04/": 1
   "/posts/op4a03/": 1
   "/page3/": 2
@@ -28,10 +28,14 @@ pages:
   "/tags/npu/": 1
   "/tags/riscv/": 1
   "/tags/build-system/": 1
-  "/posts/op4a02/": 1
+  "/posts/op4a02/": 2
   "/posts/Linux-BBB-wlan/": 1
   "/posts/Fix-vmware/": 1
   "/posts/Linux-udev/": 1
   "/posts/MCU-Pico2/": 1
   "/posts/SIMD/": 1
   "/posts/MCU-Pico4/": 1
+  "/about/": 1
+  "/categories/": 1
+  "/posts/CH32V003-01/": 1
+  "/posts/Linux-BBB-eth/": 1
