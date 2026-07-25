@@ -1,26 +1,26 @@
 ---
 pages:
-  "/": 7
+  "/": 11
   "/posts/op4a05/": 1
   "/posts/mpu0/": 2
   "/posts/op4a01/": 1
   "/posts/Linux-Lichee01/": 2
   "/posts/Linux-Lichee03/": 2
   "/posts/mpu2/": 3
-  "/posts/mpu1/": 2
-  "/posts/op4a04/": 1
+  "/posts/mpu1/": 3
+  "/posts/op4a04/": 2
   "/posts/op4a03/": 1
   "/page3/": 2
   "/posts/MCU-Pico3/": 1
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 1
   "/posts/Linux-Lichee02/": 1
-  "/posts/Linux-BBB-serial/": 1
+  "/posts/Linux-BBB-serial/": 2
   "/tags/lichee/": 1
   "/posts/Linux-Lichee04/": 1
   "/posts/Buildroot/": 1
   "/tags/linux/": 1
-  "/tags/mcu/": 1
+  "/tags/mcu/": 2
   "/tags/arm/": 1
   "/tags/sharing/": 1
   "/tags/bbb/": 1
@@ -29,14 +29,22 @@ pages:
   "/tags/riscv/": 1
   "/tags/build-system/": 1
   "/posts/op4a02/": 2
-  "/posts/Linux-BBB-wlan/": 1
+  "/posts/Linux-BBB-wlan/": 2
   "/posts/Fix-vmware/": 1
-  "/posts/Linux-udev/": 1
-  "/posts/MCU-Pico2/": 1
+  "/posts/Linux-udev/": 3
+  "/posts/MCU-Pico2/": 2
   "/posts/SIMD/": 1
-  "/posts/MCU-Pico4/": 1
+  "/posts/MCU-Pico4/": 2
   "/about/": 1
-  "/categories/": 1
-  "/posts/CH32V003-01/": 1
-  "/posts/Linux-BBB-eth/": 1
-  "/posts/Clang/": 1
+  "/categories/": 2
+  "/posts/CH32V003-01/": 2
+  "/posts/Linux-BBB-eth/": 2
+  "/posts/Clang/": 2
+  "/posts/MCU-DP1/": 1
+  "/posts/Arm-Cortex-FPU/": 1
+  "/posts/MCU-Pico/": 2
+  "/posts/Debugger/": 1
+  "/posts/MCU-DP2/": 1
+  "/tags/cortexm": 1
+  "/posts/Terminal/": 1
+  "/posts/MCU-DP4/": 1
