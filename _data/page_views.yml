@@ -1,21 +1,21 @@
 ---
 pages:
-  "/": 42
-  "/posts/op4a05/": 4
-  "/posts/mpu0/": 4
-  "/posts/op4a01/": 8
+  "/": 49
+  "/posts/op4a05/": 5
+  "/posts/mpu0/": 7
+  "/posts/op4a01/": 9
   "/posts/Linux-Lichee01/": 3
   "/posts/Linux-Lichee03/": 2
-  "/posts/mpu2/": 6
+  "/posts/mpu2/": 7
   "/posts/mpu1/": 10
   "/posts/op4a04/": 6
   "/posts/op4a03/": 5
-  "/page3/": 3
+  "/page3/": 4
   "/posts/MCU-Pico3/": 6
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 3
   "/posts/Linux-Lichee02/": 7
-  "/posts/Linux-BBB-serial/": 2
+  "/posts/Linux-BBB-serial/": 3
   "/tags/lichee/": 1
   "/posts/Linux-Lichee04/": 1
   "/posts/Buildroot/": 1
@@ -30,40 +30,40 @@ pages:
   "/tags/build-system/": 1
   "/posts/op4a02/": 4
   "/posts/Linux-BBB-wlan/": 4
-  "/posts/Fix-vmware/": 8
-  "/posts/Linux-udev/": 10
-  "/posts/MCU-Pico2/": 9
+  "/posts/Fix-vmware/": 9
+  "/posts/Linux-udev/": 12
+  "/posts/MCU-Pico2/": 10
   "/posts/SIMD/": 7
-  "/posts/MCU-Pico4/": 6
+  "/posts/MCU-Pico4/": 8
   "/about/": 1
   "/categories/": 2
-  "/posts/CH32V003-01/": 4
+  "/posts/CH32V003-01/": 6
   "/posts/Linux-BBB-eth/": 3
   "/posts/Clang/": 3
   "/posts/MCU-DP1/": 7
   "/posts/Arm-Cortex-FPU/": 1
   "/posts/MCU-Pico/": 3
-  "/posts/Debugger/": 1
+  "/posts/Debugger/": 2
   "/posts/MCU-DP2/": 1
   "/tags/cortexm": 1
   "/posts/Terminal/": 4
   "/posts/MCU-DP4/": 1
   "/posts/Arm-Cortex-FPU2/": 3
   "/posts/MCU-Pico1/": 3
-  "/posts/Timing/": 14
+  "/posts/Timing/": 15
   "/posts/devicetree/": 3
   "/posts/Linux-BBB/": 4
   "/posts/OpenOcd/": 2
-  "/posts/tmux/": 4
+  "/posts/tmux/": 5
   "/posts/poetry": 1
   "/categories/poetry": 1
   "/posts/glibc-libc": 1
   "/posts/timing": 1
   "/posts/arm-cortex-fpu2": 1
   "/page2/": 1
-  "/posts/gitspare/": 5
+  "/posts/gitspare/": 6
   "/posts/early-console": 1
-  "/posts/PCAN/": 2
+  "/posts/PCAN/": 3
   "/posts/Early-console/": 1
   "/posts/op4a06/": 2
   "/posts/Memorylayout/": 5
@@ -72,3 +72,6 @@ pages:
   "/posts/Linux-BBB-mount/": 5
   "/posts/Linux-usermod/": 5
   "/posts/Quantization/": 1
+  "/archives": 1
+  "/tags": 1
+  "/posts/glibc-libc/": 1
