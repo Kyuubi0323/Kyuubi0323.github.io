@@ -1,9 +1,9 @@
 ---
 pages:
-  "/": 49
+  "/": 59
   "/posts/op4a05/": 5
   "/posts/mpu0/": 7
-  "/posts/op4a01/": 9
+  "/posts/op4a01/": 10
   "/posts/Linux-Lichee01/": 3
   "/posts/Linux-Lichee03/": 2
   "/posts/mpu2/": 7
@@ -11,62 +11,62 @@ pages:
   "/posts/op4a04/": 6
   "/posts/op4a03/": 5
   "/page3/": 4
-  "/posts/MCU-Pico3/": 6
+  "/posts/MCU-Pico3/": 8
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 3
-  "/posts/Linux-Lichee02/": 7
-  "/posts/Linux-BBB-serial/": 3
+  "/posts/Linux-Lichee02/": 10
+  "/posts/Linux-BBB-serial/": 5
   "/tags/lichee/": 1
   "/posts/Linux-Lichee04/": 1
   "/posts/Buildroot/": 1
   "/tags/linux/": 2
-  "/tags/mcu/": 2
+  "/tags/mcu/": 3
   "/tags/arm/": 1
   "/tags/sharing/": 1
   "/tags/bbb/": 2
   "/tags/cortexm/": 1
   "/tags/npu/": 1
-  "/tags/riscv/": 1
+  "/tags/riscv/": 2
   "/tags/build-system/": 1
   "/posts/op4a02/": 4
   "/posts/Linux-BBB-wlan/": 4
-  "/posts/Fix-vmware/": 9
-  "/posts/Linux-udev/": 12
-  "/posts/MCU-Pico2/": 10
-  "/posts/SIMD/": 7
+  "/posts/Fix-vmware/": 17
+  "/posts/Linux-udev/": 14
+  "/posts/MCU-Pico2/": 11
+  "/posts/SIMD/": 8
   "/posts/MCU-Pico4/": 8
   "/about/": 1
   "/categories/": 2
   "/posts/CH32V003-01/": 6
   "/posts/Linux-BBB-eth/": 3
-  "/posts/Clang/": 3
-  "/posts/MCU-DP1/": 7
+  "/posts/Clang/": 7
+  "/posts/MCU-DP1/": 8
   "/posts/Arm-Cortex-FPU/": 1
-  "/posts/MCU-Pico/": 3
-  "/posts/Debugger/": 2
-  "/posts/MCU-DP2/": 1
+  "/posts/MCU-Pico/": 6
+  "/posts/Debugger/": 3
+  "/posts/MCU-DP2/": 2
   "/tags/cortexm": 1
   "/posts/Terminal/": 4
-  "/posts/MCU-DP4/": 1
+  "/posts/MCU-DP4/": 2
   "/posts/Arm-Cortex-FPU2/": 3
-  "/posts/MCU-Pico1/": 3
-  "/posts/Timing/": 15
+  "/posts/MCU-Pico1/": 5
+  "/posts/Timing/": 18
   "/posts/devicetree/": 3
   "/posts/Linux-BBB/": 4
   "/posts/OpenOcd/": 2
-  "/posts/tmux/": 5
+  "/posts/tmux/": 6
   "/posts/poetry": 1
   "/categories/poetry": 1
   "/posts/glibc-libc": 1
   "/posts/timing": 1
   "/posts/arm-cortex-fpu2": 1
   "/page2/": 1
-  "/posts/gitspare/": 6
+  "/posts/gitspare/": 7
   "/posts/early-console": 1
-  "/posts/PCAN/": 3
+  "/posts/PCAN/": 5
   "/posts/Early-console/": 1
-  "/posts/op4a06/": 2
-  "/posts/Memorylayout/": 5
+  "/posts/op4a06/": 5
+  "/posts/Memorylayout/": 6
   "/posts/op4a05": 1
   "/posts/PortableFW/": 6
   "/posts/Linux-BBB-mount/": 5
@@ -75,3 +75,6 @@ pages:
   "/archives": 1
   "/tags": 1
   "/posts/glibc-libc/": 1
+  "/posts/simd": 1
+  "/posts/MCU-DP3/": 4
+  "/posts/openocd": 1
