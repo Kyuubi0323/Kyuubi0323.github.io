@@ -1,4 +1,6 @@
 ---
-current_month_label: 2026-07
-current_month: 462
-history: []
+current_month_label: 2026-08
+current_month: 28
+history:
+- month: 2026-07
+  count: 462
