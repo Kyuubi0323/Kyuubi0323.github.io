@@ -1,15 +1,15 @@
 ---
 pages:
-  "/": 71
+  "/": 79
   "/posts/op4a05/": 5
   "/posts/mpu0/": 7
   "/posts/op4a01/": 13
   "/posts/Linux-Lichee01/": 3
   "/posts/Linux-Lichee03/": 2
   "/posts/mpu2/": 8
-  "/posts/mpu1/": 14
+  "/posts/mpu1/": 15
   "/posts/op4a04/": 7
-  "/posts/op4a03/": 5
+  "/posts/op4a03/": 6
   "/page3/": 4
   "/posts/MCU-Pico3/": 8
   "/verify-ignore-build-test": 1
@@ -28,32 +28,32 @@ pages:
   "/tags/npu/": 1
   "/tags/riscv/": 2
   "/tags/build-system/": 1
-  "/posts/op4a02/": 5
+  "/posts/op4a02/": 6
   "/posts/Linux-BBB-wlan/": 6
-  "/posts/Fix-vmware/": 18
+  "/posts/Fix-vmware/": 20
   "/posts/Linux-udev/": 18
-  "/posts/MCU-Pico2/": 13
-  "/posts/SIMD/": 8
-  "/posts/MCU-Pico4/": 11
+  "/posts/MCU-Pico2/": 14
+  "/posts/SIMD/": 11
+  "/posts/MCU-Pico4/": 13
   "/about/": 1
   "/categories/": 4
-  "/posts/CH32V003-01/": 6
+  "/posts/CH32V003-01/": 7
   "/posts/Linux-BBB-eth/": 4
   "/posts/Clang/": 7
   "/posts/MCU-DP1/": 8
   "/posts/Arm-Cortex-FPU/": 1
   "/posts/MCU-Pico/": 7
-  "/posts/Debugger/": 5
+  "/posts/Debugger/": 6
   "/posts/MCU-DP2/": 3
   "/tags/cortexm": 1
   "/posts/Terminal/": 4
   "/posts/MCU-DP4/": 3
-  "/posts/Arm-Cortex-FPU2/": 3
-  "/posts/MCU-Pico1/": 6
-  "/posts/Timing/": 21
-  "/posts/devicetree/": 5
+  "/posts/Arm-Cortex-FPU2/": 4
+  "/posts/MCU-Pico1/": 7
+  "/posts/Timing/": 23
+  "/posts/devicetree/": 8
   "/posts/Linux-BBB/": 5
-  "/posts/OpenOcd/": 2
+  "/posts/OpenOcd/": 5
   "/posts/tmux/": 6
   "/posts/poetry": 1
   "/categories/poetry": 1
@@ -66,15 +66,15 @@ pages:
   "/posts/PCAN/": 7
   "/posts/Early-console/": 2
   "/posts/op4a06/": 5
-  "/posts/Memorylayout/": 6
+  "/posts/Memorylayout/": 8
   "/posts/op4a05": 1
   "/posts/PortableFW/": 6
   "/posts/Linux-BBB-mount/": 5
-  "/posts/Linux-usermod/": 5
+  "/posts/Linux-usermod/": 6
   "/posts/Quantization/": 3
   "/archives": 1
   "/tags": 1
-  "/posts/glibc-libc/": 1
+  "/posts/glibc-libc/": 2
   "/posts/simd": 1
   "/posts/MCU-DP3/": 5
   "/posts/openocd": 1
@@ -85,3 +85,7 @@ pages:
   "/categories/linux/": 1
   "/categories/til/": 1
   "/posts/gitchrypick/": 1
+  "/posts/Buildroot": 3
+  "/posts/op4a03": 1
+  "/tags/sharing": 1
+  "/posts/linux-bbb-screen": 1
