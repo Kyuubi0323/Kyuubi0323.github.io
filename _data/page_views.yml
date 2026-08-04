@@ -1,27 +1,27 @@
 ---
 pages:
-  "/": 79
+  "/": 85
   "/posts/op4a05/": 5
   "/posts/mpu0/": 7
-  "/posts/op4a01/": 13
+  "/posts/op4a01/": 15
   "/posts/Linux-Lichee01/": 3
   "/posts/Linux-Lichee03/": 2
   "/posts/mpu2/": 8
   "/posts/mpu1/": 15
-  "/posts/op4a04/": 7
+  "/posts/op4a04/": 8
   "/posts/op4a03/": 6
   "/page3/": 4
   "/posts/MCU-Pico3/": 8
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 3
   "/posts/Linux-Lichee02/": 10
-  "/posts/Linux-BBB-serial/": 5
+  "/posts/Linux-BBB-serial/": 7
   "/tags/lichee/": 1
   "/posts/Linux-Lichee04/": 1
   "/posts/Buildroot/": 1
   "/tags/linux/": 2
   "/tags/mcu/": 3
-  "/tags/arm/": 1
+  "/tags/arm/": 2
   "/tags/sharing/": 1
   "/tags/bbb/": 2
   "/tags/cortexm/": 1
@@ -30,31 +30,31 @@ pages:
   "/tags/build-system/": 1
   "/posts/op4a02/": 6
   "/posts/Linux-BBB-wlan/": 6
-  "/posts/Fix-vmware/": 20
+  "/posts/Fix-vmware/": 21
   "/posts/Linux-udev/": 18
-  "/posts/MCU-Pico2/": 14
-  "/posts/SIMD/": 11
-  "/posts/MCU-Pico4/": 13
+  "/posts/MCU-Pico2/": 17
+  "/posts/SIMD/": 12
+  "/posts/MCU-Pico4/": 14
   "/about/": 1
   "/categories/": 4
-  "/posts/CH32V003-01/": 7
+  "/posts/CH32V003-01/": 8
   "/posts/Linux-BBB-eth/": 4
-  "/posts/Clang/": 7
+  "/posts/Clang/": 8
   "/posts/MCU-DP1/": 8
   "/posts/Arm-Cortex-FPU/": 1
-  "/posts/MCU-Pico/": 7
-  "/posts/Debugger/": 6
+  "/posts/MCU-Pico/": 8
+  "/posts/Debugger/": 7
   "/posts/MCU-DP2/": 3
   "/tags/cortexm": 1
   "/posts/Terminal/": 4
-  "/posts/MCU-DP4/": 3
+  "/posts/MCU-DP4/": 4
   "/posts/Arm-Cortex-FPU2/": 4
   "/posts/MCU-Pico1/": 7
-  "/posts/Timing/": 23
+  "/posts/Timing/": 24
   "/posts/devicetree/": 8
   "/posts/Linux-BBB/": 5
-  "/posts/OpenOcd/": 5
-  "/posts/tmux/": 6
+  "/posts/OpenOcd/": 8
+  "/posts/tmux/": 7
   "/posts/poetry": 1
   "/categories/poetry": 1
   "/posts/glibc-libc": 1
@@ -66,7 +66,7 @@ pages:
   "/posts/PCAN/": 7
   "/posts/Early-console/": 2
   "/posts/op4a06/": 5
-  "/posts/Memorylayout/": 8
+  "/posts/Memorylayout/": 9
   "/posts/op4a05": 1
   "/posts/PortableFW/": 6
   "/posts/Linux-BBB-mount/": 5
@@ -89,3 +89,5 @@ pages:
   "/posts/op4a03": 1
   "/tags/sharing": 1
   "/posts/linux-bbb-screen": 1
+  "/tags/lichee": 1
+  "/categories/git": 1
