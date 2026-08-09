@@ -1,21 +1,21 @@
 ---
 pages:
-  "/": 105
+  "/": 113
   "/posts/op4a05/": 5
   "/posts/mpu0/": 9
   "/posts/op4a01/": 16
   "/posts/Linux-Lichee01/": 4
   "/posts/Linux-Lichee03/": 4
   "/posts/mpu2/": 9
-  "/posts/mpu1/": 15
+  "/posts/mpu1/": 17
   "/posts/op4a04/": 9
   "/posts/op4a03/": 7
   "/page3/": 5
   "/posts/MCU-Pico3/": 8
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 3
+  "/posts/Linux-Lichee05/": 4
   "/posts/Linux-Lichee02/": 13
-  "/posts/Linux-BBB-serial/": 9
+  "/posts/Linux-BBB-serial/": 10
   "/tags/lichee/": 1
   "/posts/Linux-Lichee04/": 1
   "/posts/Buildroot/": 1
@@ -30,21 +30,21 @@ pages:
   "/tags/build-system/": 1
   "/posts/op4a02/": 7
   "/posts/Linux-BBB-wlan/": 7
-  "/posts/Fix-vmware/": 30
+  "/posts/Fix-vmware/": 31
   "/posts/Linux-udev/": 21
-  "/posts/MCU-Pico2/": 25
+  "/posts/MCU-Pico2/": 26
   "/posts/SIMD/": 13
-  "/posts/MCU-Pico4/": 18
-  "/about/": 1
+  "/posts/MCU-Pico4/": 19
+  "/about/": 2
   "/categories/": 5
-  "/posts/CH32V003-01/": 11
+  "/posts/CH32V003-01/": 12
   "/posts/Linux-BBB-eth/": 5
-  "/posts/Clang/": 16
+  "/posts/Clang/": 17
   "/posts/MCU-DP1/": 11
   "/posts/Arm-Cortex-FPU/": 3
   "/posts/MCU-Pico/": 9
   "/posts/Debugger/": 10
-  "/posts/MCU-DP2/": 3
+  "/posts/MCU-DP2/": 4
   "/tags/cortexm": 1
   "/posts/Terminal/": 5
   "/posts/MCU-DP4/": 5
@@ -53,20 +53,20 @@ pages:
   "/posts/Timing/": 32
   "/posts/devicetree/": 11
   "/posts/Linux-BBB/": 8
-  "/posts/OpenOcd/": 9
-  "/posts/tmux/": 7
+  "/posts/OpenOcd/": 11
+  "/posts/tmux/": 8
   "/posts/poetry": 1
   "/categories/poetry": 1
   "/posts/glibc-libc": 1
   "/posts/timing": 1
   "/posts/arm-cortex-fpu2": 1
   "/page2/": 2
-  "/posts/gitspare/": 10
+  "/posts/gitspare/": 11
   "/posts/early-console": 1
   "/posts/PCAN/": 11
   "/posts/Early-console/": 2
   "/posts/op4a06/": 5
-  "/posts/Memorylayout/": 14
+  "/posts/Memorylayout/": 15
   "/posts/op4a05": 1
   "/posts/PortableFW/": 7
   "/posts/Linux-BBB-mount/": 6
@@ -84,7 +84,7 @@ pages:
   "/tags/": 1
   "/categories/linux/": 1
   "/categories/til/": 1
-  "/posts/gitchrypick/": 1
+  "/posts/gitchrypick/": 2
   "/posts/Buildroot": 3
   "/posts/op4a03": 1
   "/tags/sharing": 1
@@ -97,4 +97,5 @@ pages:
   "/posts/cmake0": 1
   "/posts/hallo": 1
   "/posts/Cmake1/": 1
-  "/posts/miniconda/": 1
+  "/posts/miniconda/": 2
+  "/posts/Poetry/": 1
