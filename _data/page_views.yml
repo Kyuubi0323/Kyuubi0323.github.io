@@ -1,16 +1,16 @@
 ---
 pages:
-  "/": 129
+  "/": 135
   "/posts/op4a05/": 5
   "/posts/mpu0/": 9
   "/posts/op4a01/": 19
-  "/posts/Linux-Lichee01/": 5
-  "/posts/Linux-Lichee03/": 4
+  "/posts/Linux-Lichee01/": 6
+  "/posts/Linux-Lichee03/": 5
   "/posts/mpu2/": 14
   "/posts/mpu1/": 18
   "/posts/op4a04/": 9
   "/posts/op4a03/": 8
-  "/page3/": 5
+  "/page3/": 6
   "/posts/MCU-Pico3/": 8
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 4
@@ -20,7 +20,7 @@ pages:
   "/posts/Linux-Lichee04/": 3
   "/posts/Buildroot/": 1
   "/tags/linux/": 2
-  "/tags/mcu/": 4
+  "/tags/mcu/": 5
   "/tags/arm/": 4
   "/tags/sharing/": 1
   "/tags/bbb/": 2
@@ -30,19 +30,19 @@ pages:
   "/tags/build-system/": 1
   "/posts/op4a02/": 8
   "/posts/Linux-BBB-wlan/": 7
-  "/posts/Fix-vmware/": 34
-  "/posts/Linux-udev/": 22
-  "/posts/MCU-Pico2/": 26
+  "/posts/Fix-vmware/": 36
+  "/posts/Linux-udev/": 23
+  "/posts/MCU-Pico2/": 27
   "/posts/SIMD/": 15
-  "/posts/MCU-Pico4/": 20
+  "/posts/MCU-Pico4/": 24
   "/about/": 3
-  "/categories/": 6
-  "/posts/CH32V003-01/": 14
+  "/categories/": 7
+  "/posts/CH32V003-01/": 17
   "/posts/Linux-BBB-eth/": 5
   "/posts/Clang/": 19
-  "/posts/MCU-DP1/": 11
+  "/posts/MCU-DP1/": 12
   "/posts/Arm-Cortex-FPU/": 4
-  "/posts/MCU-Pico/": 11
+  "/posts/MCU-Pico/": 12
   "/posts/Debugger/": 11
   "/posts/MCU-DP2/": 4
   "/tags/cortexm": 1
@@ -54,17 +54,17 @@ pages:
   "/posts/devicetree/": 12
   "/posts/Linux-BBB/": 9
   "/posts/OpenOcd/": 12
-  "/posts/tmux/": 8
+  "/posts/tmux/": 10
   "/posts/poetry": 1
   "/categories/poetry": 1
   "/posts/glibc-libc": 1
   "/posts/timing": 1
   "/posts/arm-cortex-fpu2": 1
-  "/page2/": 2
+  "/page2/": 3
   "/posts/gitspare/": 11
   "/posts/early-console": 1
-  "/posts/PCAN/": 15
-  "/posts/Early-console/": 2
+  "/posts/PCAN/": 16
+  "/posts/Early-console/": 4
   "/posts/op4a06/": 5
   "/posts/Memorylayout/": 19
   "/posts/op4a05": 1
@@ -83,7 +83,7 @@ pages:
   "/posts/linux-remote": 1
   "/tags/": 3
   "/categories/linux/": 1
-  "/categories/til/": 1
+  "/categories/til/": 2
   "/posts/gitchrypick/": 2
   "/posts/Buildroot": 3
   "/posts/op4a03": 1
@@ -107,5 +107,7 @@ pages:
   "/posts/Hallo/": 1
   "/page5/": 1
   "/posts/Linux-Remote/": 1
-  "/archives/": 1
+  "/archives/": 2
   "/posts/tun/": 3
+  "/categories/fix/": 2
+  "/categories/development-tools/": 1
