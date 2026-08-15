@@ -1,45 +1,45 @@
 ---
 pages:
-  "/": 150
+  "/": 156
   "/posts/op4a05/": 7
   "/posts/mpu0/": 10
-  "/posts/op4a01/": 22
-  "/posts/Linux-Lichee01/": 7
+  "/posts/op4a01/": 23
+  "/posts/Linux-Lichee01/": 8
   "/posts/Linux-Lichee03/": 5
   "/posts/mpu2/": 15
-  "/posts/mpu1/": 18
+  "/posts/mpu1/": 19
   "/posts/op4a04/": 9
   "/posts/op4a03/": 10
   "/page3/": 6
   "/posts/MCU-Pico3/": 8
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 4
-  "/posts/Linux-Lichee02/": 16
-  "/posts/Linux-BBB-serial/": 13
+  "/posts/Linux-Lichee02/": 17
+  "/posts/Linux-BBB-serial/": 14
   "/tags/lichee/": 1
   "/posts/Linux-Lichee04/": 3
   "/posts/Buildroot/": 1
   "/tags/linux/": 2
   "/tags/mcu/": 5
-  "/tags/arm/": 5
-  "/tags/sharing/": 1
+  "/tags/arm/": 6
+  "/tags/sharing/": 2
   "/tags/bbb/": 2
   "/tags/cortexm/": 1
   "/tags/npu/": 2
   "/tags/riscv/": 2
   "/tags/build-system/": 1
-  "/posts/op4a02/": 8
+  "/posts/op4a02/": 9
   "/posts/Linux-BBB-wlan/": 8
-  "/posts/Fix-vmware/": 41
+  "/posts/Fix-vmware/": 42
   "/posts/Linux-udev/": 23
   "/posts/MCU-Pico2/": 30
-  "/posts/SIMD/": 17
+  "/posts/SIMD/": 18
   "/posts/MCU-Pico4/": 26
   "/about/": 4
   "/categories/": 8
-  "/posts/CH32V003-01/": 19
+  "/posts/CH32V003-01/": 20
   "/posts/Linux-BBB-eth/": 6
-  "/posts/Clang/": 19
+  "/posts/Clang/": 20
   "/posts/MCU-DP1/": 12
   "/posts/Arm-Cortex-FPU/": 5
   "/posts/MCU-Pico/": 14
@@ -50,11 +50,11 @@ pages:
   "/posts/MCU-DP4/": 6
   "/posts/Arm-Cortex-FPU2/": 5
   "/posts/MCU-Pico1/": 9
-  "/posts/Timing/": 38
+  "/posts/Timing/": 39
   "/posts/devicetree/": 14
   "/posts/Linux-BBB/": 10
   "/posts/OpenOcd/": 13
-  "/posts/tmux/": 12
+  "/posts/tmux/": 13
   "/posts/poetry": 1
   "/categories/poetry": 1
   "/posts/glibc-libc": 1
@@ -63,18 +63,18 @@ pages:
   "/page2/": 4
   "/posts/gitspare/": 13
   "/posts/early-console": 1
-  "/posts/PCAN/": 17
+  "/posts/PCAN/": 18
   "/posts/Early-console/": 4
   "/posts/op4a06/": 6
-  "/posts/Memorylayout/": 20
+  "/posts/Memorylayout/": 21
   "/posts/op4a05": 1
   "/posts/PortableFW/": 7
   "/posts/Linux-BBB-mount/": 6
   "/posts/Linux-usermod/": 6
-  "/posts/Quantization/": 4
+  "/posts/Quantization/": 5
   "/archives": 1
   "/tags": 1
-  "/posts/glibc-libc/": 8
+  "/posts/glibc-libc/": 9
   "/posts/simd": 1
   "/posts/MCU-DP3/": 5
   "/posts/openocd": 1
@@ -108,7 +108,7 @@ pages:
   "/page5/": 1
   "/posts/Linux-Remote/": 2
   "/archives/": 2
-  "/posts/tun/": 5
+  "/posts/tun/": 6
   "/categories/fix/": 2
   "/categories/development-tools/": 1
   "/tags/can/": 1
