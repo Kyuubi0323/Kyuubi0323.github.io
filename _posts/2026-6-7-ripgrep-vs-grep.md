@@ -1,34 +1,37 @@
 ---
-title: "ripgrep (rg) vs grep: Why I Switched"
+title: "ripgrep (rg) vs grep"
 date: 2026-6-7 09:00:00 +0700
 categories: [TIL, tools]
 tags: [sharing, linux]
 comments: false
 ---
 
-## What is ripgrep?
+<h3 id="What is ripgrep?" style="font-weight: bold;"> What is ripgrep?</h3>
+
 
 `ripgrep` is a line-oriented search tool written in Rust, built to do the same job as `grep` but faster and with better defaults for working inside a codebase.
 
-```code
-rg "mon"
+
+```text
+rg -i -n "TODO" ./
 ```
 
 That's it. No flags needed to search recursively (if using grep, we need to explicit the -r flag), and it already skips the stuff you almost never want to search.
 
-## The main differences
+<h3 id="The main differences" style="font-weight: bold;">The main differences</h3>
+
 
 **1. Recursive by default**
 
 With `grep` you need `-r` to search a whole directory:
 
-```code
+```text
 grep -r "TODO" .
 ```
 
 With `rg`, recursive is the default behavior:
 
-```code
+```text
 rg "TODO"
 ```
 
@@ -36,14 +39,14 @@ rg "TODO"
 
 `grep -r` will search inside `node_modules`, `.git`, build artifacts, everything. `rg` reads your `.gitignore` (and `.ignore`) files and skips all of that automatically:
 
-```code
+```text
 rg "TODO"          # skips node_modules, .git, dist, etc.
 grep -r "TODO" .    # searches everything, including junk
 ```
 
 If you actually want to search ignored files too, you can force it:
 
-```code
+```text
 rg -uu "TODO"
 ```
 
@@ -55,7 +58,7 @@ rg -uu "TODO"
 
 Line numbers, colored matches, and grouping by file all come out of the box with `rg`:
 
-```code
+```text
 rg "TODO"
 src/main.rs
 12: // TODO: handle error case
@@ -64,9 +67,9 @@ src/main.rs
 
 With `grep` you'd need to add `-n` and `--color` yourself.
 
-## Quick install
+<h3 id="Quick install" style="font-weight: bold;">Quick install</h3>
 
-```code
+```text
 # debian/ubuntu
 sudo apt install ripgrep
 ```
