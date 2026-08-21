@@ -32,7 +32,7 @@ Licheepi Nano is a small single board computer. It was developed and launched by
 
 
 
- 🖥 Display
+ Display
 - **40-pin RGB LCD FPC connector**
   - Supports resolutions: 272×480, 480×800, 1024×600
   - Supports resistive displays (capacitive via adapter board)
