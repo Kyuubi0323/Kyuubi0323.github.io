@@ -20,17 +20,6 @@ comments: false
 - U-Boot (previously built)
 - Make and build essentials
 
-### Install Cross-Compiler
-
-```bash
-# Ubuntu/Debian
-sudo apt-get update
-sudo apt-get install gcc-arm-linux-gnueabihf
-
-# Verify installation
-arm-linux-gnueabihf-gcc --version
-```
-
 ## Kernel Source Acquisition
 
 Mainline Kernel (Stable)
@@ -47,6 +36,14 @@ git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git --dep
 
 ## Kernel Configuration
 
+### multiconfig
+To get a useful kernel, use the following for configuration:
+
+```bash 
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- multi_v7_defconfig
+```
+This is a kernel built for many compatible platforms, not only sunxi/allwinner. The resulting kernel and modules is rather big, and you might want to remove other platforms through menuconfig.
+
 ### Using Default Configuration
 
 The `sunxi_defconfig` provides a working baseline for Allwinner SoCs:
@@ -55,6 +52,8 @@ The `sunxi_defconfig` provides a working baseline for Allwinner SoCs:
 # Configure kernel for ARM with sunxi defaults
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- sunxi_defconfig
 ```
+
+This comes as a single zImage, no modules, with many useful features missing.
 
 ### Manual Configuration (Optional)
 
@@ -95,12 +94,30 @@ The compiled kernel will be located at `arch/arm/boot/zImage`.
 ### Build Device Tree Blobs
 
 ```bash
+scripts/config --enable MACH_SUNIV
 # Compile device tree binaries
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j$(nproc) dtbs
 ```
+:) If fail on building the dtb, modify this line 
+
+```bash
+diff --git a/Makefile b/Makefile
+index 3d58dfa97..568dba38e 100644
+--- a/Makefile
++++ b/Makefile
+@@ -301,7 +301,7 @@ no-dot-config-targets := $(clean-targets) \
+                         run-command
+ no-sync-config-targets := $(no-dot-config-targets) %install modules_sign kernelrelease \
+                          image_name
+-single-targets := %.a %.i %.ko %.lds %.ll %.lst %.mod %.o %.rsi %.s %/
++single-targets := %.a %.dtb %.dtbo %.i %.ko %.lds %.ll %.lst %.mod %.o %.rsi %.s %/
+ 
+ config-build   :=
+ mixed-build    :=
+```
 
 For Lichee Pi Nano, the relevant DTB is:
-- `arch/arm/boot/dts/suniv-f1c100s-licheepi-nano.dtb`
+- `arch/arm/boot/dts/allwinner/suniv-f1c100s-licheepi-nano.dtb`
 
 ### Build Modules (Optional)
 

@@ -57,7 +57,7 @@ sudo umount /dev/sdX*
 export card=/dev/sdX
 export p=""
 # Clear the beginning of the SD card
-dd if=/dev/zero of=${card} bs=1M count=1 status=progress
+sudo dd if=/dev/zero of=${card} bs=1M count=1 status=progress
 ```
 
 ### Step 2: Bootloader
@@ -65,7 +65,7 @@ dd if=/dev/zero of=${card} bs=1M count=1 status=progress
 You will need to write the u-boot-sunxi-with-spl.bin to the sd-card
 
 ```bash
-dd if=u-boot-sunxi-with-spl.bin of=${card} bs=1024 seek=8
+sudo dd if=u-boot/u-boot-sunxi-with-spl.bin of=${card} bs=1024 seek=8
 ```
 
 ### Step 3: Partition
@@ -75,11 +75,12 @@ With recent U-Boot it's fine to use ext2/ext4 as boot partition, and other files
 ```bash
 sudo blockdev --rereadpt ${card}
 sudo sfdisk ${card} <<EOT
-1M,,L
+1M,16M,c
+,,L
 EOT
 #create partition format
-mkfs.vfat ${card}${p}1
-mkfs.ext4 ${card}${p}2
+sudo mkfs.vfat ${card}${p}1
+sudo mkfs.ext4 ${card}${p}2
 cardroot=${card}${p}2
 ```
 
@@ -87,7 +88,9 @@ add boot.scr and kernel image
 
 ```bash
 sudo mount ${card}${p}1 /mnt/
-sudo cp linux-sunxi/arch/arm/boot/zImage /mnt/
+sudo cp linux/arch/arm/boot/zImage /mnt/
+sudo cp linux/arch/arm/boot/dts/allwinner/suniv-f1c100s-licheepi-nano.dtb /mnt/
+
 sudo cp boot.scr /mnt/
 sudo umount /mnt/
 ```
