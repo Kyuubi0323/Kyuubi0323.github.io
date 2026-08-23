@@ -1,5 +1,5 @@
 ---
-title: Licheepi Nano 1
+title: Licheepi Nano Introduction
 date: 2025-5-23 14:30:00 +0700;
 categories: [Embedded Systems, LicheePi]
 tags: [linux,lichee]     
@@ -55,5 +55,4 @@ The LicheePi Nano is compatible with three different operating systems: Linux, R
 The Lichee Nano was released for a price of around €8, but it is currently difficult to obtain one. You can find them for €11-12 if you are lucky in your search.
 On the other hand, the documentation available about the board is scarce and is exclusively in Chinese. Also, as is often the case with this type of product, it is not an easy device to use.
 
-Beyond the interest of the board itself, which I tell you is more than relative, the most interesting thing is the fact that low-power development boards based on Linux are appearing. A trend that we have been observing for some time, and which is likely to become more and more frequent.
 In these next posts, i will describe the process to combine U-boot, linux kernel and other bits together to create a useful SDcard from scratch.

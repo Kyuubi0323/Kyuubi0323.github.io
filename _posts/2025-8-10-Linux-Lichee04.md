@@ -1,5 +1,5 @@
 ---
-title: Buildroot Build File System
+title: Building Rootfs for Lichee Pi Nano
 date: 2025-8-10 8:30:00 +0700
 categories: [Embedded Systems, LicheePi]
 tags: [lichee, linux]     
