@@ -1,27 +1,27 @@
 ---
 pages:
-  "/": 204
+  "/": 214
   "/posts/op4a05/": 8
   "/posts/mpu0/": 14
-  "/posts/op4a01/": 27
-  "/posts/Linux-Lichee01/": 13
-  "/posts/Linux-Lichee03/": 7
+  "/posts/op4a01/": 28
+  "/posts/Linux-Lichee01/": 16
+  "/posts/Linux-Lichee03/": 10
   "/posts/mpu2/": 20
   "/posts/mpu1/": 24
   "/posts/op4a04/": 9
   "/posts/op4a03/": 11
-  "/page3/": 8
+  "/page3/": 9
   "/posts/MCU-Pico3/": 10
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 8
-  "/posts/Linux-Lichee02/": 22
+  "/posts/Linux-Lichee05/": 9
+  "/posts/Linux-Lichee02/": 26
   "/posts/Linux-BBB-serial/": 19
-  "/tags/lichee/": 4
-  "/posts/Linux-Lichee04/": 6
+  "/tags/lichee/": 7
+  "/posts/Linux-Lichee04/": 8
   "/posts/Buildroot/": 1
   "/tags/linux/": 2
   "/tags/mcu/": 7
-  "/tags/arm/": 11
+  "/tags/arm/": 12
   "/tags/sharing/": 3
   "/tags/bbb/": 4
   "/tags/cortexm/": 1
@@ -30,30 +30,30 @@ pages:
   "/tags/build-system/": 2
   "/posts/op4a02/": 10
   "/posts/Linux-BBB-wlan/": 10
-  "/posts/Fix-vmware/": 54
+  "/posts/Fix-vmware/": 56
   "/posts/Linux-udev/": 30
-  "/posts/MCU-Pico2/": 37
-  "/posts/SIMD/": 22
-  "/posts/MCU-Pico4/": 34
-  "/about/": 6
+  "/posts/MCU-Pico2/": 38
+  "/posts/SIMD/": 23
+  "/posts/MCU-Pico4/": 37
+  "/about/": 7
   "/categories/": 14
-  "/posts/CH32V003-01/": 25
-  "/posts/Linux-BBB-eth/": 9
+  "/posts/CH32V003-01/": 26
+  "/posts/Linux-BBB-eth/": 10
   "/posts/Clang/": 22
   "/posts/MCU-DP1/": 12
   "/posts/Arm-Cortex-FPU/": 7
   "/posts/MCU-Pico/": 17
-  "/posts/Debugger/": 16
-  "/posts/MCU-DP2/": 5
+  "/posts/Debugger/": 19
+  "/posts/MCU-DP2/": 6
   "/tags/cortexm": 1
   "/posts/Terminal/": 5
   "/posts/MCU-DP4/": 7
   "/posts/Arm-Cortex-FPU2/": 5
-  "/posts/MCU-Pico1/": 14
+  "/posts/MCU-Pico1/": 15
   "/posts/Timing/": 45
-  "/posts/devicetree/": 16
+  "/posts/devicetree/": 18
   "/posts/Linux-BBB/": 12
-  "/posts/OpenOcd/": 18
+  "/posts/OpenOcd/": 19
   "/posts/tmux/": 18
   "/posts/poetry": 1
   "/categories/poetry": 1
@@ -74,7 +74,7 @@ pages:
   "/posts/Quantization/": 8
   "/archives": 1
   "/tags": 1
-  "/posts/glibc-libc/": 13
+  "/posts/glibc-libc/": 14
   "/posts/simd": 1
   "/posts/MCU-DP3/": 6
   "/posts/openocd": 1
@@ -114,5 +114,5 @@ pages:
   "/tags/can/": 1
   "/categories/ch32v/": 1
   "/categories/git/": 1
-  "/posts/ripgrep-vs-grep/": 3
+  "/posts/ripgrep-vs-grep/": 4
   "/posts/Linux-BBB-screen/": 1
