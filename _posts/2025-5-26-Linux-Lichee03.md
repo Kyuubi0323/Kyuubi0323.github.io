@@ -38,7 +38,7 @@ This matches the `lichee_nano_linux.config` floating around the docs, but is a *
 
 ```bash
 cp lichee_nano_linux.config .config
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- oldconfig   # answers prompts for symbols new to your tree
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- oldconfig   # answers prompts for symbols new to your tree
 ```
 
 `oldconfig` re-derives your config against the Kconfig of the tree you actually have — a raw `cp` of a years-old config over a modern source tree leaves it inconsistent (missing symbols that didn't exist yet, stale ones that were removed).
@@ -46,7 +46,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- oldconfig   # answers prompts f
 ### Manual Configuration
 
 ```bash
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig
 ```
 
 ### Essential Configuration Options
@@ -118,8 +118,7 @@ The compiled kernel will be located at `arch/arm/boot/zImage`.
 ### Build Device Tree Blobs
 
 ```bash
-scripts/config --enable MACH_SUNIV
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j$(nproc) dtbs
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- -j$(nproc) dtbs
 ```
 
 :) If it fails building the dtb on a modern tree, apply this:
@@ -146,8 +145,8 @@ For Lichee Pi Nano, the relevant DTB is:
 ### Build Modules (Optional)
 
 ```bash
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j$(nproc) modules
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=./modules_install modules_install
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- -j$(nproc) HOSTCFLAGS="-fcommon" modules
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- INSTALL_MOD_PATH=./modules_install modules_install
 ```
 
 ### Build Headers (Optional)
