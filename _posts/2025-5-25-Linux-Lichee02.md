@@ -244,9 +244,9 @@ can help with finding available/correct partition names.
 If the SD card is connected via USB and is sdX (replace X for a correct letter)
 
 ```bash
-#my card is connected via /dev/sdd1 --> X = d and p =1
-export card=/dev/sdd
-export p="1"
+#my card is connected via /dev/sdd1 --> X = d
+export card=/dev/sdc
+export p=""
 ```
 
 If the SD card is connected via mmc and is mmcblk0
@@ -270,7 +270,7 @@ sudo dd if=/dev/zero of=${card} bs=1k count=1023 seek=1
 The build produces `u-boot-sunxi-with-spl.bin`, which already bundles the SPL and U-Boot proper together at the correct relative offsets. This means it can be written directly to the SD card at the 8KB offset with a single `dd` command — no partitioning is required for the bootloader to work.
 
 ```bash
-sudo dd if=u-boot-sunxi-with-spl.bin of=${card} bs=1024 seek=8
+sudo dd if=u-boot/u-boot-sunxi-with-spl.bin of=${card} bs=1024 seek=8
 sync
 ```
 
@@ -379,4 +379,19 @@ Environment size: 2710/65532 bytes
 
 => mmc list
 mmc@1c0f000: 0 (SD)
+```
+
+
+### For kernel autoload
+```boot.cmd
+setenv bootargs 'console=ttyS0,115200 root=/dev/mmcblk0p2 rootwait panic=10'
+
+load mmc 0:1 0x81000000 zImage
+load mmc 0:1 0x81d00000 suniv-f1c100s-licheepi-nano.dtb
+
+bootz 0x81000000 - 0x81d00000
+```
+and convert it to boot.scr
+```code
+mkimage -C none -A arm -T script -d boot.cmd boot.scr
 ```
