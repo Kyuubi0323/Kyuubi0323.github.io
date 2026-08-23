@@ -29,17 +29,8 @@ For sunxi devices, the SD card requires a specific partition structure:
 | Start | Sector | Size | Usage
 |----------------|------------------|----------------|------------------|
 | 0KB 	| 0 	| 8KB 	| Unused, available for an MBR or (limited) GPT partition table
-| 8KB 	| 16 	| 32KB 	| Initial SPL loader
-| 40KB 	| 80 	| - 	| U-Boot proper 
+| 8KB 	| 16 	| - 	| SPL + U-Boot proper (combined image, see note below)
 
-
-### Critical Sector Locations
-
-The boot components must be placed at exact sector positions:
-
-- **Sector 16 (8KB)**: SPL location - this is where BROM looks for the SPL
-- **Sector 32768 (16MB)**: U-Boot main binary location
-- **Sector 40960 (20MB)**: Start of first partition (recommended)
 
 ## Creating the Bootable SD Card
 
@@ -56,6 +47,12 @@ sudo umount /dev/sdX*
 
 export card=/dev/sdX
 export p=""
+# If flashing directly to an onboard SD/eMMC slot instead of a USB reader,
+# the device is usually /dev/mmcblk0 and partitions are /dev/mmcblk0p1, p2, ...
+# (this matches root=/dev/mmcblk0p2 used in bootargs throughout this series) — in that case:
+#   export card=/dev/mmcblk0
+#   export p="p"
+
 # Clear the beginning of the SD card
 sudo dd if=/dev/zero of=${card} bs=1M count=1 status=progress
 ```
@@ -89,19 +86,24 @@ add boot.scr and kernel image
 ```bash
 sudo mount ${card}${p}1 /mnt/
 sudo cp linux/arch/arm/boot/zImage /mnt/
-sudo cp linux/arch/arm/boot/dts/allwinner/suniv-f1c100s-licheepi-nano.dtb /mnt/
+sudo cp linux/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano.dtb /mnt/
 
 sudo cp boot.scr /mnt/
+sync
 sudo umount /mnt/
 ```
+
+> Always run `sync` before `umount`/removing the card. A `cp` without a following `sync` can leave the old file's data still on the card even though the directory entry looks updated — the single most common reason a freshly-copied image still boots the previous one. (`suniv-f1c100s-licheepi-nano.dtb` above is the path for the 4.14-era kernel tree used in this series; on the mainline tree it lives under `arch/arm/boot/dts/allwinner/` instead.)
 ### Step 4: Rootfs
 
 This depends on what distribution you want to install. Which partition layout you use does not matter much, since the root device is passed to the kernel as argument. You might need tweaks to /etc/fstab or other files if your layout does not match what the rootfs expects. As of this writing most available images use two partitions with separate /boot.
 Using rootfs tarball
 
 ```bash
+sudo mkfs.ext4 ${card}${p}2   # if not already formatted from Step 3
 sudo mount ${card}${p}2 /mnt/
-sudo tar -C /mnt/ -xjpf my-chosen-rootfs.tar.bz2
+sudo tar -C /mnt/ -xpf my-chosen-rootfs.tar.bz2   # add -j if your tarball is actually bzip2-compressed
+sync
 sudo umount /mnt
 ```
 
