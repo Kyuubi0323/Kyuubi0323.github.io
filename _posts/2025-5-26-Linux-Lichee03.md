@@ -8,12 +8,6 @@ comments: false
 
 ## Prerequisites
 
-### Hardware Requirements
-- Lichee Pi Nano board (Allwinner F1C100s, ARM926EJ-S / ARMv5TE core, **no hardware FPU**)
-- MicroSD card (8GB or larger)
-- USB-to-Serial adapter (for debugging)
-- Linux development machine
-
 ### Software Requirements
 - Cross-compilation toolchain (see the **hard-float vs soft-float** section below — picking the wrong one silently breaks the build on older kernels)
 - Git
@@ -59,7 +53,9 @@ General setup --->
 
 #### Early console / low-level debug for seeing any boot output
 
-**1. Console is actually configured, not left to the bootloader**
+**1. Console is actually configured**
+
+(This section is to confirm that we got kernel log out of ttyS0 UART if you not configure that in boot.cmd (in previous u-boot post))
 
 By default the kernel's command line comes entirely from what U-Boot passes in (`ARM_ATAG_DTB_COMPAT_CMDLINE_FROM_BOOTLOADER`). If your `boot.cmd`/`boot.scr` never sets a `console=` in `bootargs`, the kernel has nowhere to print regardless of anything else below. Force a sane default that still lets the bootloader add its own args on top:
 
@@ -69,24 +65,9 @@ Boot options --->
     Default kernel command string (CMDLINE): "console=ttyS0,115200n8 earlyprintk"
 ```
 
-**2. Low-level debug (`DEBUG_LL`) + early printk, with the *correct* UART driver for this specific chip**
-
-
-```
-Kernel hacking --->
-    [*] Kernel debugging (DEBUG_KERNEL)
-    [*] Kernel low-level debugging functions (DEBUG_LL)
-        Kernel low-level debugging port (X) Kernel low-level debugging via 8250 UART (DEBUG_LL_UART_8250)
-        Physical base address of debug UART (DEBUG_UART_PHYS): 0x01c25000
-        Virtual base address of debug UART (DEBUG_UART_VIRT): 0xf1c25000
-        Register offset shift for the 8250 debug UART (DEBUG_UART_8250_SHIFT): 2
-        [*] Use 32-bit accesses for 8250 UART (DEBUG_UART_8250_WORD)   <-- critical, see below
-    [*] Early printk (EARLY_PRINTK)
-```
-
 ## Toolchain: hard-float vs soft-float
 
-The F1C100s core (ARM926EJ-S, ARMv5TE) has **no hardware FPU**. `arm-linux-gnueabihf-gcc` defaults to `-mfloat-abi=hard`, which is incompatible with that architecture level:
+The F1C100s core (ARM926EJ-S, ARMv5TE) has **no hardware FPU**. But in some sunxi guideline, they often recommend using the gnueabihf one. `arm-linux-gnueabihf-gcc` defaults to `-mfloat-abi=hard`, which is incompatible with that architecture level:
 
 ```bash
 $ arm-linux-gnueabihf-gcc -march=armv5te -c test.c -o test.o
@@ -95,13 +76,13 @@ cc1: error: '-mfloat-abi=hard': selected architecture lacks an FPU
 
 Modern kernel trees (mainline, 6.x/7.x) explicitly force `-msoft-float` in `KBUILD_CFLAGS`, so `arm-linux-gnueabihf-` still works fine there — build with `hf` for a current tree without issue.
 
-**Older kernels (e.g. the 4.14 Lichee-Pi fork) are a different story.** `arch/arm/Makefile` decides the `-march` flag with a compiler probe
+**Older kernels (e.g. the 4.14 Lichee-Pi fork) are different.** `arch/arm/Makefile` decides the `-march` flag with a compiler probe
 
-**Fix: use the soft-float toolchain for this era of kernel**, matching what the original Lichee-Pi guide specifies:
+**Fix: use the soft-float toolchain for this kernel**, matching what the original Lichee-Pi guide specifies:
 
 ```bash
 sudo apt-get install gcc-arm-linux-gnueabi   # note: no "hf" suffix
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- HOSTCFLAGS="-fcommon" zImage -j$(nproc)
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- HOSTCFLAGS="-fcommon" zImage -j$(nproc) 
 ```
 
 ## Kernel Compilation
@@ -119,24 +100,6 @@ The compiled kernel will be located at `arch/arm/boot/zImage`.
 
 ```bash
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- -j$(nproc) dtbs
-```
-
-:) If it fails building the dtb on a modern tree, apply this:
-
-```bash
-diff --git a/Makefile b/Makefile
-index 3d58dfa97..568dba38e 100644
---- a/Makefile
-+++ b/Makefile
-@@ -301,7 +301,7 @@ no-dot-config-targets := $(clean-targets) \
-                         run-command
- no-sync-config-targets := $(no-dot-config-targets) %install modules_sign kernelrelease \
-                          image_name
--single-targets := %.a %.i %.ko %.lds %.ll %.lst %.mod %.o %.rsi %.s %/
-+single-targets := %.a %.dtb %.dtbo %.i %.ko %.lds %.ll %.lst %.mod %.o %.rsi %.s %/
- 
- config-build   :=
- mixed-build    :=
 ```
 
 For Lichee Pi Nano, the relevant DTB is:
@@ -165,6 +128,8 @@ load mmc 0:1 0x80C00000 suniv-f1c100s-licheepi-nano.dtb
 load mmc 0:1 0x80008000 zImage
 bootz 0x80008000 - 0x80C00000
 ```
+
+See the [SD card partitioning guide]({{ site.baseurl }}{% post_url 2025-8-12-Linux-Lichee05 %}) for the full bootloader-to-kernel partition layout. This will help you to partition the sdcard into 3 region for boot, kernel and rootfs. 
 
 **After copying `zImage`/`*.dtb` onto the SD card's FAT partition, always `sync` before unmounting.** A `cp` without a following `sync`/`umount` can leave the old file's data still on the card even though the directory entry looks updated — the single most common reason a "rebuilt" image boots identically to the previous one.
 
