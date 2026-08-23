@@ -6,7 +6,7 @@ tags: [lichee, u-boot, linux]
 comments: false
 ---
 
-# Building U-Boot for Lichee Pi Nano 2
+# Building U-Boot for Lichee Pi Nano
 
 The **Lichee Pi Nano** is a compact Linux-capable development board based on the **Allwinner F1C100s** ARM9 SoC. This guide walks through the complete process of building mainline U-Boot for this tiny but powerful board.
 
@@ -32,7 +32,7 @@ First, install the essential build dependencies:
 sudo apt update
 
 # Install cross-compilation toolchain
-sudo apt install gcc-arm-linux-gnueabihf
+sudo apt install gcc-arm-linux-gnueabihf gcc-arm-linux-gnueabi
 
 # Install build dependencies
 sudo apt install build-essential git bc bison flex libssl-dev
@@ -192,11 +192,11 @@ The F1C100s follows this boot sequence:
 ### Prepare SD Card
 
 Depending on how the SD card is connected, the location to write data to can be different. Throughout this document ${card} refers to the SD card and ${p} to the partition if any. 
-If the SD card is connected via a USB adapter, linux will know it for example as /dev/sdb (with /dev/sda being a boot drive). Please notice that this device can be different based on numerous factors, so when not sure, check the last few lines of dmesg after plugging in the device (dmesg | tail). If connected via a SD slot on a device, linux will know it as /dev/mmcblk0 (or mmcblk1, mmcblk2 depending on which mmc slot is used).
 
 To summarize: ${card} and ${card}${p}1 mean /dev/sdb and /dev/sdb1 on a USB connected SD card, and /dev/mmcblk0, /dev/mmcblk0p1 on an mmc controller connected device.
 
-SD Card Layout
+### SD Card Layout
+
 A default U-Boot build for an Allwinner based board uses the following layout on (micro-)SD cards or eMMC storage (from v2018.05 or newer):
 
 ```table
@@ -214,7 +214,7 @@ Newer SoCs (tested on H2+, A64, H5, H6, T113) can also load the SPL from sector 
 
 Mainline U-Boot used to have a more complex, fixed layout for the SD card/eMMC sectors in the first Megabyte:
 
-Legacy SD card layout
+Legacy SD card layout (we do not using them)
 
 ```table
 start	sector	size	usage
@@ -227,14 +227,13 @@ start	sector	size	usage
 1024KB	2048	-	Free for partitions
 ```
 
-As the feature set of U-Boot proper grew over time, this proved to be too restricting, as we completely filled the area before the environment and started to corrupt it. To avoid future issues, it was decided to move the default location for the environment to a FAT partition, which is more flexible and has no real size limits.
-
 ### Identify the card
 
 
 First identify the device of the card and export it as ${card}. The commands
+
 ```bash
-cat /proc/partitions
+lsblk
 or
 blkid -c /dev/null
 ```
@@ -244,7 +243,7 @@ can help with finding available/correct partition names.
 If the SD card is connected via USB and is sdX (replace X for a correct letter)
 
 ```bash
-#my card is connected via /dev/sdd1 --> X = d
+#my sd card is connected via /dev/sdd1 --> X = d
 export card=/dev/sdc
 export p=""
 ```
@@ -281,7 +280,7 @@ sync
 
 
 
-### To update the bootloader from the U-Boot prompt itself:
+### To update the bootloader from the U-Boot prompt itself(just for reference :D) :
 
 ```bash
 mw.b 0x48000000 0x00 0x100000                 # Zero buffer
@@ -296,6 +295,8 @@ Connect a USB-to-TTL serial adapter to the F1C100s UART pins (typically 3.3V TX/
 
 ```bash
 sudo picocom -b 115200 /dev/ttyUSB0
+#or 
+sudo screen /dev/ttyUSB0 115200
 ```
 
 Insert the SD card into the Lichee Pi Nano and power it on. On success you should see SPL and U-Boot banners on the serial console, followed by the U-Boot prompt:
@@ -382,7 +383,8 @@ mmc@1c0f000: 0 (SD)
 ```
 
 
-### For kernel autoload
+### For kernel autoload (for next posts if you guys want to add kernel)
+
 ```boot.cmd
 setenv bootargs 'console=ttyS0,115200 root=/dev/mmcblk0p2 rootwait panic=10'
 
@@ -391,7 +393,9 @@ load mmc 0:1 0x81d00000 suniv-f1c100s-licheepi-nano.dtb
 
 bootz 0x81000000 - 0x81d00000
 ```
+
 and convert it to boot.scr
+
 ```code
 mkimage -C none -A arm -T script -d boot.cmd boot.scr
 ```
