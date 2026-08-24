@@ -1,60 +1,60 @@
 ---
 pages:
-  "/": 214
+  "/": 224
   "/posts/op4a05/": 8
-  "/posts/mpu0/": 14
-  "/posts/op4a01/": 28
-  "/posts/Linux-Lichee01/": 16
-  "/posts/Linux-Lichee03/": 10
-  "/posts/mpu2/": 20
+  "/posts/mpu0/": 15
+  "/posts/op4a01/": 29
+  "/posts/Linux-Lichee01/": 17
+  "/posts/Linux-Lichee03/": 11
+  "/posts/mpu2/": 22
   "/posts/mpu1/": 24
   "/posts/op4a04/": 9
   "/posts/op4a03/": 11
   "/page3/": 9
   "/posts/MCU-Pico3/": 10
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 9
+  "/posts/Linux-Lichee05/": 10
   "/posts/Linux-Lichee02/": 26
   "/posts/Linux-BBB-serial/": 19
   "/tags/lichee/": 7
   "/posts/Linux-Lichee04/": 8
   "/posts/Buildroot/": 1
   "/tags/linux/": 2
-  "/tags/mcu/": 7
-  "/tags/arm/": 12
+  "/tags/mcu/": 8
+  "/tags/arm/": 13
   "/tags/sharing/": 3
-  "/tags/bbb/": 4
+  "/tags/bbb/": 5
   "/tags/cortexm/": 1
   "/tags/npu/": 4
   "/tags/riscv/": 2
-  "/tags/build-system/": 2
+  "/tags/build-system/": 3
   "/posts/op4a02/": 10
   "/posts/Linux-BBB-wlan/": 10
   "/posts/Fix-vmware/": 56
-  "/posts/Linux-udev/": 30
-  "/posts/MCU-Pico2/": 38
+  "/posts/Linux-udev/": 31
+  "/posts/MCU-Pico2/": 40
   "/posts/SIMD/": 23
-  "/posts/MCU-Pico4/": 37
+  "/posts/MCU-Pico4/": 39
   "/about/": 7
   "/categories/": 14
   "/posts/CH32V003-01/": 26
   "/posts/Linux-BBB-eth/": 10
-  "/posts/Clang/": 22
+  "/posts/Clang/": 23
   "/posts/MCU-DP1/": 12
   "/posts/Arm-Cortex-FPU/": 7
-  "/posts/MCU-Pico/": 17
-  "/posts/Debugger/": 19
-  "/posts/MCU-DP2/": 6
+  "/posts/MCU-Pico/": 18
+  "/posts/Debugger/": 20
+  "/posts/MCU-DP2/": 7
   "/tags/cortexm": 1
   "/posts/Terminal/": 5
   "/posts/MCU-DP4/": 7
   "/posts/Arm-Cortex-FPU2/": 5
   "/posts/MCU-Pico1/": 15
-  "/posts/Timing/": 45
-  "/posts/devicetree/": 18
+  "/posts/Timing/": 48
+  "/posts/devicetree/": 20
   "/posts/Linux-BBB/": 12
-  "/posts/OpenOcd/": 19
-  "/posts/tmux/": 18
+  "/posts/OpenOcd/": 20
+  "/posts/tmux/": 19
   "/posts/poetry": 1
   "/categories/poetry": 1
   "/posts/glibc-libc": 1
@@ -63,15 +63,15 @@ pages:
   "/page2/": 4
   "/posts/gitspare/": 17
   "/posts/early-console": 1
-  "/posts/PCAN/": 26
+  "/posts/PCAN/": 29
   "/posts/Early-console/": 4
   "/posts/op4a06/": 7
-  "/posts/Memorylayout/": 28
+  "/posts/Memorylayout/": 30
   "/posts/op4a05": 1
   "/posts/PortableFW/": 8
   "/posts/Linux-BBB-mount/": 8
   "/posts/Linux-usermod/": 8
-  "/posts/Quantization/": 8
+  "/posts/Quantization/": 9
   "/archives": 1
   "/tags": 1
   "/posts/glibc-libc/": 14
@@ -108,7 +108,7 @@ pages:
   "/page5/": 1
   "/posts/Linux-Remote/": 2
   "/archives/": 4
-  "/posts/tun/": 24
+  "/posts/tun/": 25
   "/categories/fix/": 3
   "/categories/development-tools/": 1
   "/tags/can/": 1
