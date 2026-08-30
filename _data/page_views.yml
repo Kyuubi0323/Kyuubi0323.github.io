@@ -1,59 +1,59 @@
 ---
 pages:
-  "/": 264
+  "/": 268
   "/posts/op4a05/": 11
   "/posts/mpu0/": 15
-  "/posts/op4a01/": 37
-  "/posts/Linux-Lichee01/": 19
-  "/posts/Linux-Lichee03/": 11
-  "/posts/mpu2/": 23
+  "/posts/op4a01/": 38
+  "/posts/Linux-Lichee01/": 20
+  "/posts/Linux-Lichee03/": 12
+  "/posts/mpu2/": 24
   "/posts/mpu1/": 28
   "/posts/op4a04/": 11
-  "/posts/op4a03/": 14
+  "/posts/op4a03/": 15
   "/page3/": 11
   "/posts/MCU-Pico3/": 13
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 18
-  "/posts/Linux-Lichee02/": 30
-  "/posts/Linux-BBB-serial/": 23
+  "/posts/Linux-Lichee02/": 31
+  "/posts/Linux-BBB-serial/": 24
   "/tags/lichee/": 7
   "/posts/Linux-Lichee04/": 14
-  "/posts/Buildroot/": 1
+  "/posts/Buildroot/": 2
   "/tags/linux/": 3
-  "/tags/mcu/": 8
+  "/tags/mcu/": 9
   "/tags/arm/": 16
   "/tags/sharing/": 3
-  "/tags/bbb/": 5
+  "/tags/bbb/": 6
   "/tags/cortexm/": 2
   "/tags/npu/": 4
   "/tags/riscv/": 2
   "/tags/build-system/": 3
-  "/posts/op4a02/": 11
+  "/posts/op4a02/": 12
   "/posts/Linux-BBB-wlan/": 10
-  "/posts/Fix-vmware/": 64
+  "/posts/Fix-vmware/": 66
   "/posts/Linux-udev/": 40
-  "/posts/MCU-Pico2/": 45
-  "/posts/SIMD/": 25
-  "/posts/MCU-Pico4/": 48
+  "/posts/MCU-Pico2/": 46
+  "/posts/SIMD/": 26
+  "/posts/MCU-Pico4/": 49
   "/about/": 8
   "/categories/": 18
   "/posts/CH32V003-01/": 37
   "/posts/Linux-BBB-eth/": 11
-  "/posts/Clang/": 28
+  "/posts/Clang/": 29
   "/posts/MCU-DP1/": 14
   "/posts/Arm-Cortex-FPU/": 12
   "/posts/MCU-Pico/": 23
-  "/posts/Debugger/": 24
+  "/posts/Debugger/": 25
   "/posts/MCU-DP2/": 11
   "/tags/cortexm": 1
   "/posts/Terminal/": 5
-  "/posts/MCU-DP4/": 8
+  "/posts/MCU-DP4/": 9
   "/posts/Arm-Cortex-FPU2/": 14
   "/posts/MCU-Pico1/": 16
-  "/posts/Timing/": 57
+  "/posts/Timing/": 58
   "/posts/devicetree/": 23
   "/posts/Linux-BBB/": 13
-  "/posts/OpenOcd/": 21
+  "/posts/OpenOcd/": 22
   "/posts/tmux/": 24
   "/posts/poetry": 1
   "/categories/poetry": 1
@@ -63,7 +63,7 @@ pages:
   "/page2/": 5
   "/posts/gitspare/": 27
   "/posts/early-console": 1
-  "/posts/PCAN/": 38
+  "/posts/PCAN/": 39
   "/posts/Early-console/": 11
   "/posts/op4a06/": 10
   "/posts/Memorylayout/": 41
@@ -108,7 +108,7 @@ pages:
   "/page5/": 2
   "/posts/Linux-Remote/": 3
   "/archives/": 5
-  "/posts/tun/": 36
+  "/posts/tun/": 38
   "/categories/fix/": 3
   "/categories/development-tools/": 1
   "/tags/can/": 1
