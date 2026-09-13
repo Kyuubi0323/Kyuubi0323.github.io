@@ -1,27 +1,27 @@
 ---
 pages:
-  "/": 360
-  "/posts/op4a05/": 13
+  "/": 369
+  "/posts/op4a05/": 14
   "/posts/mpu0/": 17
   "/posts/op4a01/": 50
   "/posts/Linux-Lichee01/": 24
-  "/posts/Linux-Lichee03/": 15
+  "/posts/Linux-Lichee03/": 16
   "/posts/mpu2/": 29
-  "/posts/mpu1/": 33
+  "/posts/mpu1/": 34
   "/posts/op4a04/": 15
-  "/posts/op4a03/": 19
+  "/posts/op4a03/": 20
   "/page3/": 16
   "/posts/MCU-Pico3/": 16
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 29
-  "/posts/Linux-Lichee02/": 40
+  "/posts/Linux-Lichee05/": 31
+  "/posts/Linux-Lichee02/": 41
   "/posts/Linux-BBB-serial/": 31
   "/tags/lichee/": 10
   "/posts/Linux-Lichee04/": 24
   "/posts/Buildroot/": 2
   "/tags/linux/": 6
   "/tags/mcu/": 12
-  "/tags/arm/": 22
+  "/tags/arm/": 23
   "/tags/sharing/": 6
   "/tags/bbb/": 6
   "/tags/cortexm/": 2
@@ -29,22 +29,22 @@ pages:
   "/tags/riscv/": 4
   "/tags/build-system/": 5
   "/posts/op4a02/": 16
-  "/posts/Linux-BBB-wlan/": 11
-  "/posts/Fix-vmware/": 90
-  "/posts/Linux-udev/": 48
-  "/posts/MCU-Pico2/": 58
-  "/posts/SIMD/": 36
-  "/posts/MCU-Pico4/": 65
+  "/posts/Linux-BBB-wlan/": 12
+  "/posts/Fix-vmware/": 92
+  "/posts/Linux-udev/": 49
+  "/posts/MCU-Pico2/": 62
+  "/posts/SIMD/": 37
+  "/posts/MCU-Pico4/": 66
   "/about/": 14
   "/categories/": 27
-  "/posts/CH32V003-01/": 48
-  "/posts/Linux-BBB-eth/": 14
-  "/posts/Clang/": 45
+  "/posts/CH32V003-01/": 49
+  "/posts/Linux-BBB-eth/": 16
+  "/posts/Clang/": 47
   "/posts/MCU-DP1/": 15
   "/posts/Arm-Cortex-FPU/": 15
   "/posts/MCU-Pico/": 25
   "/posts/Debugger/": 33
-  "/posts/MCU-DP2/": 13
+  "/posts/MCU-DP2/": 14
   "/tags/cortexm": 1
   "/posts/Terminal/": 6
   "/posts/MCU-DP4/": 15
@@ -64,9 +64,9 @@ pages:
   "/posts/gitspare/": 31
   "/posts/early-console": 1
   "/posts/PCAN/": 58
-  "/posts/Early-console/": 17
+  "/posts/Early-console/": 19
   "/posts/op4a06/": 12
-  "/posts/Memorylayout/": 53
+  "/posts/Memorylayout/": 54
   "/posts/op4a05": 1
   "/posts/PortableFW/": 10
   "/posts/Linux-BBB-mount/": 8
@@ -74,7 +74,7 @@ pages:
   "/posts/Quantization/": 21
   "/archives": 1
   "/tags": 1
-  "/posts/glibc-libc/": 28
+  "/posts/glibc-libc/": 29
   "/posts/simd": 1
   "/posts/MCU-DP3/": 12
   "/posts/openocd": 2
@@ -97,8 +97,8 @@ pages:
   "/posts/cmake0": 1
   "/posts/hallo": 1
   "/posts/Cmake1/": 3
-  "/posts/miniconda/": 10
-  "/posts/Poetry/": 11
+  "/posts/miniconda/": 11
+  "/posts/Poetry/": 12
   "/categories/ai/": 3
   "/categories/licheepi/": 2
   "/posts/Arm-CortexM/": 8
@@ -128,10 +128,11 @@ pages:
   "/tags/git/": 2
   "/tags/toolchain/": 2
   "/tags/u-boot/": 2
-  "/index.html": 9
+  "/index.html": 11
   "/posts/fix-vmware": 1
   "/tags/linux": 1
-  "/posts/trip0/": 9
+  "/posts/trip0/": 11
   "/page7/": 6
   "/tags/riscv": 1
   "/posts/op4a02/index.html": 1
+  "/posts/imx-dram/": 5
