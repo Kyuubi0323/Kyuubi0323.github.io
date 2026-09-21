@@ -1,21 +1,21 @@
 ---
 pages:
-  "/": 410
+  "/": 414
   "/posts/op4a05/": 18
   "/posts/mpu0/": 21
-  "/posts/op4a01/": 57
-  "/posts/Linux-Lichee01/": 28
+  "/posts/op4a01/": 58
+  "/posts/Linux-Lichee01/": 30
   "/posts/Linux-Lichee03/": 17
   "/posts/mpu2/": 32
   "/posts/mpu1/": 35
   "/posts/op4a04/": 18
-  "/posts/op4a03/": 27
+  "/posts/op4a03/": 28
   "/page3/": 17
   "/posts/MCU-Pico3/": 16
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 35
+  "/posts/Linux-Lichee05/": 36
   "/posts/Linux-Lichee02/": 45
-  "/posts/Linux-BBB-serial/": 34
+  "/posts/Linux-BBB-serial/": 36
   "/tags/lichee/": 10
   "/posts/Linux-Lichee04/": 28
   "/posts/Buildroot/": 2
@@ -28,11 +28,11 @@ pages:
   "/tags/npu/": 6
   "/tags/riscv/": 4
   "/tags/build-system/": 5
-  "/posts/op4a02/": 21
+  "/posts/op4a02/": 22
   "/posts/Linux-BBB-wlan/": 15
-  "/posts/Fix-vmware/": 111
+  "/posts/Fix-vmware/": 115
   "/posts/Linux-udev/": 55
-  "/posts/MCU-Pico2/": 74
+  "/posts/MCU-Pico2/": 75
   "/posts/SIMD/": 38
   "/posts/MCU-Pico4/": 75
   "/about/": 15
@@ -41,20 +41,20 @@ pages:
   "/posts/Linux-BBB-eth/": 23
   "/posts/Clang/": 49
   "/posts/MCU-DP1/": 15
-  "/posts/Arm-Cortex-FPU/": 17
+  "/posts/Arm-Cortex-FPU/": 18
   "/posts/MCU-Pico/": 31
   "/posts/Debugger/": 42
   "/posts/MCU-DP2/": 14
   "/tags/cortexm": 1
   "/posts/Terminal/": 11
   "/posts/MCU-DP4/": 16
-  "/posts/Arm-Cortex-FPU2/": 19
-  "/posts/MCU-Pico1/": 23
-  "/posts/Timing/": 96
+  "/posts/Arm-Cortex-FPU2/": 20
+  "/posts/MCU-Pico1/": 24
+  "/posts/Timing/": 100
   "/posts/devicetree/": 37
   "/posts/Linux-BBB/": 19
   "/posts/OpenOcd/": 33
-  "/posts/tmux/": 38
+  "/posts/tmux/": 40
   "/posts/poetry": 1
   "/categories/poetry": 1
   "/posts/glibc-libc": 1
@@ -63,15 +63,15 @@ pages:
   "/page2/": 12
   "/posts/gitspare/": 36
   "/posts/early-console": 1
-  "/posts/PCAN/": 65
+  "/posts/PCAN/": 67
   "/posts/Early-console/": 20
   "/posts/op4a06/": 14
-  "/posts/Memorylayout/": 65
+  "/posts/Memorylayout/": 67
   "/posts/op4a05": 1
   "/posts/PortableFW/": 10
-  "/posts/Linux-BBB-mount/": 8
-  "/posts/Linux-usermod/": 20
-  "/posts/Quantization/": 24
+  "/posts/Linux-BBB-mount/": 9
+  "/posts/Linux-usermod/": 21
+  "/posts/Quantization/": 25
   "/archives": 1
   "/tags": 1
   "/posts/glibc-libc/": 33
@@ -108,7 +108,7 @@ pages:
   "/page5/": 5
   "/posts/Linux-Remote/": 8
   "/archives/": 11
-  "/posts/tun/": 74
+  "/posts/tun/": 77
   "/categories/fix/": 4
   "/categories/development-tools/": 3
   "/tags/can/": 1
