@@ -1,21 +1,21 @@
 ---
 pages:
-  "/": 437
+  "/": 442
   "/posts/op4a05/": 18
   "/posts/mpu0/": 23
   "/posts/op4a01/": 62
   "/posts/Linux-Lichee01/": 30
   "/posts/Linux-Lichee03/": 20
-  "/posts/mpu2/": 33
+  "/posts/mpu2/": 34
   "/posts/mpu1/": 37
   "/posts/op4a04/": 18
   "/posts/op4a03/": 29
   "/page3/": 19
   "/posts/MCU-Pico3/": 16
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 39
+  "/posts/Linux-Lichee05/": 40
   "/posts/Linux-Lichee02/": 46
-  "/posts/Linux-BBB-serial/": 37
+  "/posts/Linux-BBB-serial/": 38
   "/tags/lichee/": 10
   "/posts/Linux-Lichee04/": 29
   "/posts/Buildroot/": 3
@@ -25,20 +25,20 @@ pages:
   "/tags/sharing/": 7
   "/tags/bbb/": 6
   "/tags/cortexm/": 2
-  "/tags/npu/": 6
+  "/tags/npu/": 7
   "/tags/riscv/": 4
   "/tags/build-system/": 6
-  "/posts/op4a02/": 23
+  "/posts/op4a02/": 24
   "/posts/Linux-BBB-wlan/": 15
   "/posts/Fix-vmware/": 119
   "/posts/Linux-udev/": 56
-  "/posts/MCU-Pico2/": 79
+  "/posts/MCU-Pico2/": 80
   "/posts/SIMD/": 39
   "/posts/MCU-Pico4/": 79
   "/about/": 16
   "/categories/": 34
   "/posts/CH32V003-01/": 54
-  "/posts/Linux-BBB-eth/": 23
+  "/posts/Linux-BBB-eth/": 25
   "/posts/Clang/": 49
   "/posts/MCU-DP1/": 16
   "/posts/Arm-Cortex-FPU/": 18
@@ -50,7 +50,7 @@ pages:
   "/posts/MCU-DP4/": 17
   "/posts/Arm-Cortex-FPU2/": 20
   "/posts/MCU-Pico1/": 26
-  "/posts/Timing/": 104
+  "/posts/Timing/": 105
   "/posts/devicetree/": 38
   "/posts/Linux-BBB/": 20
   "/posts/OpenOcd/": 39
@@ -63,7 +63,7 @@ pages:
   "/page2/": 12
   "/posts/gitspare/": 39
   "/posts/early-console": 1
-  "/posts/PCAN/": 73
+  "/posts/PCAN/": 74
   "/posts/Early-console/": 21
   "/posts/op4a06/": 15
   "/posts/Memorylayout/": 70
@@ -107,8 +107,8 @@ pages:
   "/posts/Hallo/": 5
   "/page5/": 5
   "/posts/Linux-Remote/": 8
-  "/archives/": 12
-  "/posts/tun/": 79
+  "/archives/": 15
+  "/posts/tun/": 80
   "/categories/fix/": 4
   "/categories/development-tools/": 4
   "/tags/can/": 1
@@ -128,14 +128,14 @@ pages:
   "/tags/git/": 2
   "/tags/toolchain/": 2
   "/tags/u-boot/": 2
-  "/index.html": 13
+  "/index.html": 14
   "/posts/fix-vmware": 1
   "/tags/linux": 1
-  "/posts/trip0/": 16
+  "/posts/trip0/": 18
   "/page7/": 7
   "/tags/riscv": 1
   "/posts/op4a02/index.html": 1
-  "/posts/imx-dram/": 8
+  "/posts/imx-dram/": 9
   "/posts/linux-bbb-eth": 1
   "/categories/pico/": 1
   "/posts/mpu1": 1
