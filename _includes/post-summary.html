@@ -1,0 +1,9 @@
+{%- comment -%}
+  Override theme's post-summary.html to disable auto-generated
+  content preview on the home page. Only an explicit `description`
+  front matter field will be shown; otherwise nothing is rendered.
+{%- endcomment -%}
+
+{%- if post.description -%}
+  {{- post.description -}}
+{%- endif -%}
