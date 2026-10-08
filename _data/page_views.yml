@@ -1,25 +1,25 @@
 ---
 pages:
-  "/": 518
+  "/": 525
   "/posts/op4a05/": 19
   "/posts/mpu0/": 31
-  "/posts/op4a01/": 73
-  "/posts/Linux-Lichee01/": 37
+  "/posts/op4a01/": 76
+  "/posts/Linux-Lichee01/": 38
   "/posts/Linux-Lichee03/": 30
   "/posts/mpu2/": 40
   "/posts/mpu1/": 49
   "/posts/op4a04/": 22
-  "/posts/op4a03/": 37
+  "/posts/op4a03/": 38
   "/page3/": 22
   "/posts/MCU-Pico3/": 18
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 53
-  "/posts/Linux-Lichee02/": 61
+  "/posts/Linux-Lichee05/": 55
+  "/posts/Linux-Lichee02/": 65
   "/posts/Linux-BBB-serial/": 40
   "/tags/lichee/": 10
   "/posts/Linux-Lichee04/": 33
   "/posts/Buildroot/": 5
-  "/tags/linux/": 6
+  "/tags/linux/": 7
   "/tags/mcu/": 16
   "/tags/arm/": 25
   "/tags/sharing/": 7
@@ -28,30 +28,30 @@ pages:
   "/tags/npu/": 7
   "/tags/riscv/": 4
   "/tags/build-system/": 6
-  "/posts/op4a02/": 32
+  "/posts/op4a02/": 33
   "/posts/Linux-BBB-wlan/": 19
-  "/posts/Fix-vmware/": 145
-  "/posts/Linux-udev/": 66
-  "/posts/MCU-Pico2/": 97
-  "/posts/SIMD/": 47
+  "/posts/Fix-vmware/": 148
+  "/posts/Linux-udev/": 67
+  "/posts/MCU-Pico2/": 98
+  "/posts/SIMD/": 48
   "/posts/MCU-Pico4/": 93
   "/about/": 17
   "/categories/": 38
-  "/posts/CH32V003-01/": 69
+  "/posts/CH32V003-01/": 72
   "/posts/Linux-BBB-eth/": 30
-  "/posts/Clang/": 65
+  "/posts/Clang/": 69
   "/posts/MCU-DP1/": 17
-  "/posts/Arm-Cortex-FPU/": 26
+  "/posts/Arm-Cortex-FPU/": 27
   "/posts/MCU-Pico/": 38
-  "/posts/Debugger/": 57
+  "/posts/Debugger/": 60
   "/posts/MCU-DP2/": 17
   "/tags/cortexm": 1
   "/posts/Terminal/": 14
   "/posts/MCU-DP4/": 19
   "/posts/Arm-Cortex-FPU2/": 23
   "/posts/MCU-Pico1/": 30
-  "/posts/Timing/": 134
-  "/posts/devicetree/": 44
+  "/posts/Timing/": 135
+  "/posts/devicetree/": 46
   "/posts/Linux-BBB/": 23
   "/posts/OpenOcd/": 53
   "/posts/tmux/": 46
@@ -61,12 +61,12 @@ pages:
   "/posts/timing": 2
   "/posts/arm-cortex-fpu2": 1
   "/page2/": 15
-  "/posts/gitspare/": 42
+  "/posts/gitspare/": 43
   "/posts/early-console": 1
-  "/posts/PCAN/": 86
+  "/posts/PCAN/": 88
   "/posts/Early-console/": 27
   "/posts/op4a06/": 18
-  "/posts/Memorylayout/": 85
+  "/posts/Memorylayout/": 86
   "/posts/op4a05": 1
   "/posts/PortableFW/": 17
   "/posts/Linux-BBB-mount/": 11
@@ -74,7 +74,7 @@ pages:
   "/posts/Quantization/": 29
   "/archives": 1
   "/tags": 1
-  "/posts/glibc-libc/": 49
+  "/posts/glibc-libc/": 51
   "/posts/simd": 1
   "/posts/MCU-DP3/": 13
   "/posts/openocd": 2
@@ -105,21 +105,21 @@ pages:
   "/categories/embedded-systems/": 5
   "/page6/": 8
   "/posts/Hallo/": 6
-  "/page5/": 6
-  "/posts/Linux-Remote/": 9
+  "/page5/": 7
+  "/posts/Linux-Remote/": 10
   "/archives/": 17
-  "/posts/tun/": 99
+  "/posts/tun/": 101
   "/categories/fix/": 5
   "/categories/development-tools/": 4
   "/tags/can/": 1
   "/categories/ch32v/": 3
   "/categories/git/": 3
   "/posts/ripgrep-vs-grep/": 20
-  "/posts/Linux-BBB-screen/": 5
+  "/posts/Linux-BBB-screen/": 6
   "/categories/mcu/": 4
   "/posts/Cmake0/": 6
   "/categories/beaglebone/": 3
-  "/page4/": 9
+  "/page4/": 10
   "/tags/tools/": 4
   "/categories/tools/": 1
   "/categories/design-pattern/": 2
@@ -135,7 +135,7 @@ pages:
   "/page7/": 8
   "/tags/riscv": 1
   "/posts/op4a02/index.html": 1
-  "/posts/imx-dram/": 15
+  "/posts/imx-dram/": 17
   "/posts/linux-bbb-eth": 1
   "/categories/pico/": 1
   "/posts/mpu1": 1
@@ -146,6 +146,6 @@ pages:
   "/posts/trip1/": 8
   "/posts/trip2/": 11
   "/categories/poetry/": 1
-  "/posts/mcu-pico": 1
+  "/posts/mcu-pico": 2
   "/posts/linux-bbb-serial": 1
   "/posts/ripgrep-vs-grep": 1
