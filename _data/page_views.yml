@@ -1,20 +1,20 @@
 ---
 pages:
-  "/": 538
+  "/": 543
   "/posts/op4a05/": 19
-  "/posts/mpu0/": 32
-  "/posts/op4a01/": 76
+  "/posts/mpu0/": 33
+  "/posts/op4a01/": 77
   "/posts/Linux-Lichee01/": 39
-  "/posts/Linux-Lichee03/": 34
-  "/posts/mpu2/": 42
-  "/posts/mpu1/": 49
+  "/posts/Linux-Lichee03/": 35
+  "/posts/mpu2/": 43
+  "/posts/mpu1/": 50
   "/posts/op4a04/": 22
-  "/posts/op4a03/": 39
+  "/posts/op4a03/": 40
   "/page3/": 22
   "/posts/MCU-Pico3/": 18
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 56
-  "/posts/Linux-Lichee02/": 66
+  "/posts/Linux-Lichee05/": 57
+  "/posts/Linux-Lichee02/": 67
   "/posts/Linux-BBB-serial/": 41
   "/tags/lichee/": 10
   "/posts/Linux-Lichee04/": 36
@@ -28,31 +28,31 @@ pages:
   "/tags/npu/": 7
   "/tags/riscv/": 5
   "/tags/build-system/": 6
-  "/posts/op4a02/": 33
+  "/posts/op4a02/": 34
   "/posts/Linux-BBB-wlan/": 19
-  "/posts/Fix-vmware/": 151
-  "/posts/Linux-udev/": 67
+  "/posts/Fix-vmware/": 152
+  "/posts/Linux-udev/": 68
   "/posts/MCU-Pico2/": 103
   "/posts/SIMD/": 49
-  "/posts/MCU-Pico4/": 94
+  "/posts/MCU-Pico4/": 95
   "/about/": 18
-  "/categories/": 39
-  "/posts/CH32V003-01/": 73
+  "/categories/": 40
+  "/posts/CH32V003-01/": 75
   "/posts/Linux-BBB-eth/": 31
-  "/posts/Clang/": 72
+  "/posts/Clang/": 73
   "/posts/MCU-DP1/": 17
   "/posts/Arm-Cortex-FPU/": 28
   "/posts/MCU-Pico/": 38
-  "/posts/Debugger/": 64
+  "/posts/Debugger/": 66
   "/posts/MCU-DP2/": 18
   "/tags/cortexm": 1
   "/posts/Terminal/": 14
   "/posts/MCU-DP4/": 21
-  "/posts/Arm-Cortex-FPU2/": 24
+  "/posts/Arm-Cortex-FPU2/": 25
   "/posts/MCU-Pico1/": 30
-  "/posts/Timing/": 142
+  "/posts/Timing/": 143
   "/posts/devicetree/": 49
-  "/posts/Linux-BBB/": 24
+  "/posts/Linux-BBB/": 25
   "/posts/OpenOcd/": 56
   "/posts/tmux/": 46
   "/posts/poetry": 1
@@ -108,7 +108,7 @@ pages:
   "/page5/": 7
   "/posts/Linux-Remote/": 10
   "/archives/": 18
-  "/posts/tun/": 105
+  "/posts/tun/": 107
   "/categories/fix/": 5
   "/categories/development-tools/": 4
   "/tags/can/": 1
@@ -131,11 +131,11 @@ pages:
   "/index.html": 19
   "/posts/fix-vmware": 1
   "/tags/linux": 1
-  "/posts/trip0/": 28
+  "/posts/trip0/": 31
   "/page7/": 8
   "/tags/riscv": 1
   "/posts/op4a02/index.html": 1
-  "/posts/imx-dram/": 21
+  "/posts/imx-dram/": 22
   "/posts/linux-bbb-eth": 1
   "/categories/pico/": 1
   "/posts/mpu1": 1
