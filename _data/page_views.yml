@@ -3,17 +3,17 @@ pages:
   "/": 553
   "/posts/op4a05/": 20
   "/posts/mpu0/": 34
-  "/posts/op4a01/": 79
+  "/posts/op4a01/": 80
   "/posts/Linux-Lichee01/": 39
   "/posts/Linux-Lichee03/": 35
   "/posts/mpu2/": 45
-  "/posts/mpu1/": 51
+  "/posts/mpu1/": 52
   "/posts/op4a04/": 22
   "/posts/op4a03/": 41
   "/page3/": 23
   "/posts/MCU-Pico3/": 18
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 58
+  "/posts/Linux-Lichee05/": 59
   "/posts/Linux-Lichee02/": 71
   "/posts/Linux-BBB-serial/": 41
   "/tags/lichee/": 11
@@ -29,31 +29,31 @@ pages:
   "/tags/riscv/": 5
   "/tags/build-system/": 6
   "/posts/op4a02/": 35
-  "/posts/Linux-BBB-wlan/": 20
-  "/posts/Fix-vmware/": 159
-  "/posts/Linux-udev/": 68
-  "/posts/MCU-Pico2/": 110
+  "/posts/Linux-BBB-wlan/": 21
+  "/posts/Fix-vmware/": 161
+  "/posts/Linux-udev/": 69
+  "/posts/MCU-Pico2/": 111
   "/posts/SIMD/": 49
-  "/posts/MCU-Pico4/": 97
+  "/posts/MCU-Pico4/": 99
   "/about/": 18
   "/categories/": 41
-  "/posts/CH32V003-01/": 77
+  "/posts/CH32V003-01/": 78
   "/posts/Linux-BBB-eth/": 31
   "/posts/Clang/": 76
   "/posts/MCU-DP1/": 17
   "/posts/Arm-Cortex-FPU/": 29
   "/posts/MCU-Pico/": 40
-  "/posts/Debugger/": 69
+  "/posts/Debugger/": 70
   "/posts/MCU-DP2/": 18
   "/tags/cortexm": 1
   "/posts/Terminal/": 14
   "/posts/MCU-DP4/": 21
   "/posts/Arm-Cortex-FPU2/": 26
   "/posts/MCU-Pico1/": 31
-  "/posts/Timing/": 145
+  "/posts/Timing/": 146
   "/posts/devicetree/": 49
   "/posts/Linux-BBB/": 25
-  "/posts/OpenOcd/": 60
+  "/posts/OpenOcd/": 61
   "/posts/tmux/": 48
   "/posts/poetry": 1
   "/categories/poetry": 1
@@ -63,8 +63,8 @@ pages:
   "/page2/": 15
   "/posts/gitspare/": 46
   "/posts/early-console": 1
-  "/posts/PCAN/": 94
-  "/posts/Early-console/": 28
+  "/posts/PCAN/": 96
+  "/posts/Early-console/": 29
   "/posts/op4a06/": 20
   "/posts/Memorylayout/": 89
   "/posts/op4a05": 1
@@ -98,17 +98,17 @@ pages:
   "/posts/hallo": 1
   "/posts/Cmake1/": 8
   "/posts/miniconda/": 18
-  "/posts/Poetry/": 18
+  "/posts/Poetry/": 19
   "/categories/ai/": 6
   "/categories/licheepi/": 4
   "/posts/Arm-CortexM/": 16
   "/categories/embedded-systems/": 5
   "/page6/": 9
   "/posts/Hallo/": 7
-  "/page5/": 7
-  "/posts/Linux-Remote/": 10
+  "/page5/": 8
+  "/posts/Linux-Remote/": 11
   "/archives/": 18
-  "/posts/tun/": 111
+  "/posts/tun/": 113
   "/categories/fix/": 5
   "/categories/development-tools/": 4
   "/tags/can/": 1
@@ -144,7 +144,7 @@ pages:
   "/tags/life/": 1
   "/tags/tools": 1
   "/posts/trip1/": 9
-  "/posts/trip2/": 12
+  "/posts/trip2/": 13
   "/categories/poetry/": 1
   "/posts/mcu-pico": 2
   "/posts/linux-bbb-serial": 1
