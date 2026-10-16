@@ -2,14 +2,14 @@
 pages:
   "/": 553
   "/posts/op4a05/": 20
-  "/posts/mpu0/": 34
-  "/posts/op4a01/": 80
+  "/posts/mpu0/": 35
+  "/posts/op4a01/": 81
   "/posts/Linux-Lichee01/": 39
   "/posts/Linux-Lichee03/": 35
-  "/posts/mpu2/": 45
+  "/posts/mpu2/": 46
   "/posts/mpu1/": 52
-  "/posts/op4a04/": 23
-  "/posts/op4a03/": 42
+  "/posts/op4a04/": 25
+  "/posts/op4a03/": 43
   "/page3/": 23
   "/posts/MCU-Pico3/": 18
   "/verify-ignore-build-test": 1
@@ -28,11 +28,11 @@ pages:
   "/tags/npu/": 7
   "/tags/riscv/": 5
   "/tags/build-system/": 6
-  "/posts/op4a02/": 35
+  "/posts/op4a02/": 36
   "/posts/Linux-BBB-wlan/": 21
-  "/posts/Fix-vmware/": 162
+  "/posts/Fix-vmware/": 163
   "/posts/Linux-udev/": 69
-  "/posts/MCU-Pico2/": 115
+  "/posts/MCU-Pico2/": 119
   "/posts/SIMD/": 51
   "/posts/MCU-Pico4/": 102
   "/about/": 18
@@ -41,20 +41,20 @@ pages:
   "/posts/Linux-BBB-eth/": 32
   "/posts/Clang/": 77
   "/posts/MCU-DP1/": 17
-  "/posts/Arm-Cortex-FPU/": 29
+  "/posts/Arm-Cortex-FPU/": 30
   "/posts/MCU-Pico/": 40
   "/posts/Debugger/": 72
   "/posts/MCU-DP2/": 18
   "/tags/cortexm": 1
   "/posts/Terminal/": 14
   "/posts/MCU-DP4/": 22
-  "/posts/Arm-Cortex-FPU2/": 26
+  "/posts/Arm-Cortex-FPU2/": 28
   "/posts/MCU-Pico1/": 31
   "/posts/Timing/": 150
-  "/posts/devicetree/": 51
+  "/posts/devicetree/": 52
   "/posts/Linux-BBB/": 25
   "/posts/OpenOcd/": 62
-  "/posts/tmux/": 48
+  "/posts/tmux/": 49
   "/posts/poetry": 1
   "/categories/poetry": 1
   "/posts/glibc-libc": 1
@@ -63,18 +63,18 @@ pages:
   "/page2/": 15
   "/posts/gitspare/": 46
   "/posts/early-console": 1
-  "/posts/PCAN/": 99
+  "/posts/PCAN/": 101
   "/posts/Early-console/": 30
-  "/posts/op4a06/": 20
+  "/posts/op4a06/": 21
   "/posts/Memorylayout/": 90
   "/posts/op4a05": 1
   "/posts/PortableFW/": 17
   "/posts/Linux-BBB-mount/": 11
   "/posts/Linux-usermod/": 32
-  "/posts/Quantization/": 32
+  "/posts/Quantization/": 33
   "/archives": 1
   "/tags": 1
-  "/posts/glibc-libc/": 58
+  "/posts/glibc-libc/": 59
   "/posts/simd": 1
   "/posts/MCU-DP3/": 15
   "/posts/openocd": 2
@@ -114,7 +114,7 @@ pages:
   "/tags/can/": 1
   "/categories/ch32v/": 3
   "/categories/git/": 4
-  "/posts/ripgrep-vs-grep/": 21
+  "/posts/ripgrep-vs-grep/": 22
   "/posts/Linux-BBB-screen/": 6
   "/categories/mcu/": 4
   "/posts/Cmake0/": 7
