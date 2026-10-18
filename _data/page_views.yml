@@ -1,11 +1,11 @@
 ---
 pages:
-  "/": 554
+  "/": 557
   "/posts/op4a05/": 20
-  "/posts/mpu0/": 35
+  "/posts/mpu0/": 36
   "/posts/op4a01/": 81
-  "/posts/Linux-Lichee01/": 40
-  "/posts/Linux-Lichee03/": 36
+  "/posts/Linux-Lichee01/": 41
+  "/posts/Linux-Lichee03/": 37
   "/posts/mpu2/": 46
   "/posts/mpu1/": 53
   "/posts/op4a04/": 25
@@ -14,14 +14,14 @@ pages:
   "/posts/MCU-Pico3/": 18
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 60
-  "/posts/Linux-Lichee02/": 73
-  "/posts/Linux-BBB-serial/": 41
+  "/posts/Linux-Lichee02/": 76
+  "/posts/Linux-BBB-serial/": 42
   "/tags/lichee/": 11
   "/posts/Linux-Lichee04/": 36
   "/posts/Buildroot/": 6
   "/tags/linux/": 7
   "/tags/mcu/": 18
-  "/tags/arm/": 25
+  "/tags/arm/": 27
   "/tags/sharing/": 7
   "/tags/bbb/": 7
   "/tags/cortexm/": 3
@@ -30,27 +30,27 @@ pages:
   "/tags/build-system/": 6
   "/posts/op4a02/": 37
   "/posts/Linux-BBB-wlan/": 21
-  "/posts/Fix-vmware/": 163
+  "/posts/Fix-vmware/": 168
   "/posts/Linux-udev/": 69
-  "/posts/MCU-Pico2/": 121
+  "/posts/MCU-Pico2/": 126
   "/posts/SIMD/": 51
   "/posts/MCU-Pico4/": 102
   "/about/": 18
-  "/categories/": 41
-  "/posts/CH32V003-01/": 79
+  "/categories/": 42
+  "/posts/CH32V003-01/": 80
   "/posts/Linux-BBB-eth/": 32
-  "/posts/Clang/": 77
+  "/posts/Clang/": 78
   "/posts/MCU-DP1/": 17
   "/posts/Arm-Cortex-FPU/": 30
   "/posts/MCU-Pico/": 40
-  "/posts/Debugger/": 72
+  "/posts/Debugger/": 74
   "/posts/MCU-DP2/": 18
   "/tags/cortexm": 1
   "/posts/Terminal/": 14
-  "/posts/MCU-DP4/": 22
-  "/posts/Arm-Cortex-FPU2/": 30
+  "/posts/MCU-DP4/": 24
+  "/posts/Arm-Cortex-FPU2/": 31
   "/posts/MCU-Pico1/": 31
-  "/posts/Timing/": 153
+  "/posts/Timing/": 154
   "/posts/devicetree/": 53
   "/posts/Linux-BBB/": 26
   "/posts/OpenOcd/": 62
@@ -66,7 +66,7 @@ pages:
   "/posts/PCAN/": 102
   "/posts/Early-console/": 30
   "/posts/op4a06/": 21
-  "/posts/Memorylayout/": 90
+  "/posts/Memorylayout/": 91
   "/posts/op4a05": 1
   "/posts/PortableFW/": 18
   "/posts/Linux-BBB-mount/": 11
@@ -108,7 +108,7 @@ pages:
   "/page5/": 8
   "/posts/Linux-Remote/": 11
   "/archives/": 18
-  "/posts/tun/": 116
+  "/posts/tun/": 117
   "/categories/fix/": 5
   "/categories/development-tools/": 4
   "/tags/can/": 1
