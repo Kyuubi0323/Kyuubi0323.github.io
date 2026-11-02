@@ -97,7 +97,6 @@ $ LD_LIBRARY_PATH=. ./app_dynamic     # works
 Ways to tell the loader where to look:
 
 - `LD_LIBRARY_PATH` - quick, for development only.
-- `-Wl,-rpath,'$ORIGIN'` - bake a search path into the binary.
 - Install into `/usr/lib` or `/usr/local/lib` and run `sudo ldconfig`.
 
 Inspect it:
@@ -122,35 +121,6 @@ libmath.so.1.0.0                         (the real file)
 
 ```bash
 gcc -shared -Wl,-soname,libmath.so.1 -o libmath.so.1.0.0 mathlib.o
-```
-
-Bump the **major** number when the ABI breaks; apps built against `.so.1` keep using `.so.1` while `.so.2` is installed side by side.
-
----
-
-
-<h3 id="dlopen" style="font-weight: bold;">Loading at Run Time with dlopen</h3>
-
-Dynamic libraries can also be loaded on demand, which is how plugins work:
-
-```c
-#include <dlfcn.h>
-#include <stdio.h>
-
-int main(void) {
-    void *h = dlopen("./libmath.so", RTLD_NOW);
-    if (!h) { fprintf(stderr, "%s\n", dlerror()); return 1; }
-
-    int (*add)(int, int) = dlsym(h, "add");
-    printf("%d\n", add(2, 3));
-
-    dlclose(h);
-    return 0;
-}
-```
-
-```bash
-gcc plugin.c -ldl -o plugin      # -ldl not needed on glibc >= 2.34
 ```
 
 ---
@@ -194,7 +164,7 @@ $ ./app_static
 add(2, 3) = 6
 ```
 
-This is the whole trade-off: with a `.so` you ship one file and every app gets the fix on its next start, with a `.a` you must relink and redeploy every app. It is also why a bad `.so` update (changed signature, different behavior) breaks apps without them being rebuilt.
+This is the whole trade-off: with a `.so` you ship one file and every app gets the fix on its next start, with a `.a` you must relink and redeploy every app. 
 
 ---
 
@@ -227,17 +197,14 @@ $ gcc -fPIC -shared -o libmath.so v1.c && ./app
 add(2, 3) = 5
 
 $ gcc -fPIC -shared -o libmath.so v2.c && ./app    # app NOT rebuilt
-add(2, 3) = -736414659
+add(2, 3) = -736414659 (unidentified)
 ```
-
-Nothing fails: the symbol `add` still exists, so the loader is happy. The app just passes two arguments and the library reads a third from whatever garbage is in the register. The result is wrong values or a crash, and the C ABI carries no type information that could catch it. The same happens when a struct layout changes.
 
 How to reduce the risk:
 
-- Use the **soname** scheme above and bump the major version on any ABI break, so old apps keep loading `.so.1`.
-- Never change the signature, struct layout or meaning of an exported function in place. Add a new function instead.
+- Use the **soname** scheme above and bump the major version on any ABI break
 - Keep structs opaque (pointer + accessor functions) so their layout can change safely.
-- Ship the exact `.so` version you tested with (or pin it via `rpath`), and check with `ldd` on the target.
+- Ship the exact `.so` version you tested with, and check with `ldd` on the target.
 
 With a static library none of this can happen at run time: any mismatch is a compile or link error, found before you ship.
 
@@ -255,9 +222,5 @@ With a static library none of this can happen at run time: any mismatch is a com
 - Many programs share one library (saves disk and RAM).
 - You need to patch a library (e.g. a security fix in OpenSSL) without rebuilding every app.
 
-**Summary**
 
-- Linking order matters for static libs: put libraries *after* the objects that use them (`main.c -lmath`, not `-lmath main.c`).
-- Duplicate symbol in both static and dynamic variants? The linker prefers `.so` unless you pass `-static` or `-l:libmath.a`.
-- "Dependency hell": an incompatible ABI change in a `.so` breaks apps at run time, not build time.
 ---
