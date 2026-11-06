@@ -1,19 +1,19 @@
 ---
 pages:
-  "/": 609
+  "/": 614
   "/posts/op4a05/": 24
-  "/posts/mpu0/": 54
-  "/posts/op4a01/": 98
-  "/posts/Linux-Lichee01/": 55
+  "/posts/mpu0/": 55
+  "/posts/op4a01/": 101
+  "/posts/Linux-Lichee01/": 56
   "/posts/Linux-Lichee03/": 58
   "/posts/mpu2/": 56
-  "/posts/mpu1/": 65
-  "/posts/op4a04/": 43
-  "/posts/op4a03/": 64
+  "/posts/mpu1/": 66
+  "/posts/op4a04/": 44
+  "/posts/op4a03/": 65
   "/page3/": 28
   "/posts/MCU-Pico3/": 31
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 83
+  "/posts/Linux-Lichee05/": 85
   "/posts/Linux-Lichee02/": 101
   "/posts/Linux-BBB-serial/": 48
   "/tags/lichee/": 11
@@ -30,28 +30,28 @@ pages:
   "/tags/build-system/": 6
   "/posts/op4a02/": 46
   "/posts/Linux-BBB-wlan/": 27
-  "/posts/Fix-vmware/": 210
-  "/posts/Linux-udev/": 90
+  "/posts/Fix-vmware/": 212
+  "/posts/Linux-udev/": 94
   "/posts/MCU-Pico2/": 161
-  "/posts/SIMD/": 68
-  "/posts/MCU-Pico4/": 127
+  "/posts/SIMD/": 70
+  "/posts/MCU-Pico4/": 128
   "/about/": 28
   "/categories/": 51
   "/posts/CH32V003-01/": 102
   "/posts/Linux-BBB-eth/": 47
-  "/posts/Clang/": 90
+  "/posts/Clang/": 91
   "/posts/MCU-DP1/": 22
   "/posts/Arm-Cortex-FPU/": 45
   "/posts/MCU-Pico/": 49
-  "/posts/Debugger/": 97
+  "/posts/Debugger/": 100
   "/posts/MCU-DP2/": 32
   "/tags/cortexm": 1
   "/posts/Terminal/": 17
   "/posts/MCU-DP4/": 27
   "/posts/Arm-Cortex-FPU2/": 45
   "/posts/MCU-Pico1/": 46
-  "/posts/Timing/": 183
-  "/posts/devicetree/": 86
+  "/posts/Timing/": 186
+  "/posts/devicetree/": 87
   "/posts/Linux-BBB/": 35
   "/posts/OpenOcd/": 82
   "/posts/tmux/": 59
@@ -61,7 +61,7 @@ pages:
   "/posts/timing": 2
   "/posts/arm-cortex-fpu2": 1
   "/page2/": 21
-  "/posts/gitspare/": 61
+  "/posts/gitspare/": 64
   "/posts/early-console": 1
   "/posts/PCAN/": 118
   "/posts/Early-console/": 48
@@ -84,7 +84,7 @@ pages:
   "/tags/": 21
   "/categories/linux/": 7
   "/categories/til/": 7
-  "/posts/gitchrypick/": 13
+  "/posts/gitchrypick/": 14
   "/posts/Buildroot": 3
   "/posts/op4a03": 1
   "/tags/sharing": 2
@@ -108,7 +108,7 @@ pages:
   "/page5/": 10
   "/posts/Linux-Remote/": 20
   "/archives/": 24
-  "/posts/tun/": 143
+  "/posts/tun/": 145
   "/categories/fix/": 5
   "/categories/development-tools/": 5
   "/tags/can/": 1
@@ -144,12 +144,12 @@ pages:
   "/tags/life/": 1
   "/tags/tools": 1
   "/posts/trip1/": 16
-  "/posts/trip2/": 25
+  "/posts/trip2/": 26
   "/categories/poetry/": 1
   "/posts/mcu-pico": 2
   "/posts/linux-bbb-serial": 1
   "/posts/ripgrep-vs-grep": 1
   "/posts/mpu2": 1
   "/posts/static-dynamic-lib/": 3
-  "/posts/kb-shortcut/": 3
+  "/posts/kb-shortcut/": 4
   "/tags/build-system": 1
