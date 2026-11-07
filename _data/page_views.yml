@@ -1,23 +1,23 @@
 ---
 pages:
-  "/": 614
+  "/": 622
   "/posts/op4a05/": 24
-  "/posts/mpu0/": 55
+  "/posts/mpu0/": 56
   "/posts/op4a01/": 101
-  "/posts/Linux-Lichee01/": 56
-  "/posts/Linux-Lichee03/": 58
-  "/posts/mpu2/": 56
+  "/posts/Linux-Lichee01/": 59
+  "/posts/Linux-Lichee03/": 60
+  "/posts/mpu2/": 57
   "/posts/mpu1/": 66
-  "/posts/op4a04/": 44
+  "/posts/op4a04/": 45
   "/posts/op4a03/": 65
   "/page3/": 28
   "/posts/MCU-Pico3/": 31
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 85
-  "/posts/Linux-Lichee02/": 101
+  "/posts/Linux-Lichee05/": 87
+  "/posts/Linux-Lichee02/": 103
   "/posts/Linux-BBB-serial/": 48
   "/tags/lichee/": 11
-  "/posts/Linux-Lichee04/": 46
+  "/posts/Linux-Lichee04/": 47
   "/posts/Buildroot/": 18
   "/tags/linux/": 7
   "/tags/mcu/": 21
@@ -28,32 +28,32 @@ pages:
   "/tags/npu/": 8
   "/tags/riscv/": 6
   "/tags/build-system/": 6
-  "/posts/op4a02/": 46
+  "/posts/op4a02/": 47
   "/posts/Linux-BBB-wlan/": 27
-  "/posts/Fix-vmware/": 212
-  "/posts/Linux-udev/": 94
-  "/posts/MCU-Pico2/": 161
+  "/posts/Fix-vmware/": 215
+  "/posts/Linux-udev/": 95
+  "/posts/MCU-Pico2/": 166
   "/posts/SIMD/": 70
   "/posts/MCU-Pico4/": 128
-  "/about/": 28
-  "/categories/": 51
+  "/about/": 29
+  "/categories/": 53
   "/posts/CH32V003-01/": 102
-  "/posts/Linux-BBB-eth/": 47
+  "/posts/Linux-BBB-eth/": 48
   "/posts/Clang/": 91
-  "/posts/MCU-DP1/": 22
+  "/posts/MCU-DP1/": 23
   "/posts/Arm-Cortex-FPU/": 45
-  "/posts/MCU-Pico/": 49
-  "/posts/Debugger/": 100
+  "/posts/MCU-Pico/": 50
+  "/posts/Debugger/": 103
   "/posts/MCU-DP2/": 32
   "/tags/cortexm": 1
   "/posts/Terminal/": 17
   "/posts/MCU-DP4/": 27
   "/posts/Arm-Cortex-FPU2/": 45
   "/posts/MCU-Pico1/": 46
-  "/posts/Timing/": 186
+  "/posts/Timing/": 188
   "/posts/devicetree/": 87
   "/posts/Linux-BBB/": 35
-  "/posts/OpenOcd/": 82
+  "/posts/OpenOcd/": 83
   "/posts/tmux/": 59
   "/posts/poetry": 1
   "/categories/poetry": 1
@@ -61,10 +61,10 @@ pages:
   "/posts/timing": 2
   "/posts/arm-cortex-fpu2": 1
   "/page2/": 21
-  "/posts/gitspare/": 64
+  "/posts/gitspare/": 65
   "/posts/early-console": 1
   "/posts/PCAN/": 118
-  "/posts/Early-console/": 48
+  "/posts/Early-console/": 49
   "/posts/op4a06/": 26
   "/posts/Memorylayout/": 116
   "/posts/op4a05": 1
@@ -74,14 +74,14 @@ pages:
   "/posts/Quantization/": 44
   "/archives": 1
   "/tags": 1
-  "/posts/glibc-libc/": 74
+  "/posts/glibc-libc/": 75
   "/posts/simd": 1
   "/posts/MCU-DP3/": 15
   "/posts/openocd": 2
   "/categories/fix": 1
   "/posts/mcu-pico1": 1
   "/posts/linux-remote": 2
-  "/tags/": 21
+  "/tags/": 22
   "/categories/linux/": 7
   "/categories/til/": 7
   "/posts/gitchrypick/": 14
@@ -100,15 +100,15 @@ pages:
   "/posts/miniconda/": 20
   "/posts/Poetry/": 33
   "/categories/ai/": 8
-  "/categories/licheepi/": 5
+  "/categories/licheepi/": 6
   "/posts/Arm-CortexM/": 34
   "/categories/embedded-systems/": 6
   "/page6/": 11
   "/posts/Hallo/": 8
   "/page5/": 10
   "/posts/Linux-Remote/": 20
-  "/archives/": 24
-  "/posts/tun/": 145
+  "/archives/": 26
+  "/posts/tun/": 147
   "/categories/fix/": 5
   "/categories/development-tools/": 5
   "/tags/can/": 1
@@ -128,28 +128,29 @@ pages:
   "/tags/git/": 2
   "/tags/toolchain/": 2
   "/tags/u-boot/": 3
-  "/index.html": 23
+  "/index.html": 24
   "/posts/fix-vmware": 1
   "/tags/linux": 1
-  "/posts/trip0/": 36
+  "/posts/trip0/": 37
   "/page7/": 10
   "/tags/riscv": 1
   "/posts/op4a02/index.html": 1
-  "/posts/imx-dram/": 41
+  "/posts/imx-dram/": 43
   "/posts/linux-bbb-eth": 1
   "/categories/pico/": 1
   "/posts/mpu1": 1
   "/categories/experience/": 1
   "/categories/travel/": 1
-  "/tags/life/": 1
+  "/tags/life/": 2
   "/tags/tools": 1
-  "/posts/trip1/": 16
+  "/posts/trip1/": 17
   "/posts/trip2/": 26
   "/categories/poetry/": 1
   "/posts/mcu-pico": 2
   "/posts/linux-bbb-serial": 1
   "/posts/ripgrep-vs-grep": 1
   "/posts/mpu2": 1
-  "/posts/static-dynamic-lib/": 3
+  "/posts/static-dynamic-lib/": 6
   "/posts/kb-shortcut/": 4
   "/tags/build-system": 1
+  "/posts/sigsys01/": 3
