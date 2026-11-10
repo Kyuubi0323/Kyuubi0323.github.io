@@ -5,19 +5,19 @@ pages:
   "/posts/mpu0/": 58
   "/posts/op4a01/": 102
   "/posts/Linux-Lichee01/": 60
-  "/posts/Linux-Lichee03/": 61
+  "/posts/Linux-Lichee03/": 62
   "/posts/mpu2/": 57
   "/posts/mpu1/": 67
-  "/posts/op4a04/": 46
-  "/posts/op4a03/": 65
+  "/posts/op4a04/": 47
+  "/posts/op4a03/": 66
   "/page3/": 28
   "/posts/MCU-Pico3/": 31
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 88
+  "/posts/Linux-Lichee05/": 89
   "/posts/Linux-Lichee02/": 105
   "/posts/Linux-BBB-serial/": 49
   "/tags/lichee/": 11
-  "/posts/Linux-Lichee04/": 49
+  "/posts/Linux-Lichee04/": 50
   "/posts/Buildroot/": 18
   "/tags/linux/": 10
   "/tags/mcu/": 22
@@ -28,33 +28,33 @@ pages:
   "/tags/npu/": 8
   "/tags/riscv/": 6
   "/tags/build-system/": 6
-  "/posts/op4a02/": 51
+  "/posts/op4a02/": 52
   "/posts/Linux-BBB-wlan/": 27
-  "/posts/Fix-vmware/": 220
-  "/posts/Linux-udev/": 99
-  "/posts/MCU-Pico2/": 170
-  "/posts/SIMD/": 71
+  "/posts/Fix-vmware/": 221
+  "/posts/Linux-udev/": 101
+  "/posts/MCU-Pico2/": 171
+  "/posts/SIMD/": 72
   "/posts/MCU-Pico4/": 133
   "/about/": 29
   "/categories/": 53
   "/posts/CH32V003-01/": 103
-  "/posts/Linux-BBB-eth/": 48
-  "/posts/Clang/": 92
+  "/posts/Linux-BBB-eth/": 49
+  "/posts/Clang/": 94
   "/posts/MCU-DP1/": 25
   "/posts/Arm-Cortex-FPU/": 47
   "/posts/MCU-Pico/": 50
-  "/posts/Debugger/": 105
+  "/posts/Debugger/": 106
   "/posts/MCU-DP2/": 32
   "/tags/cortexm": 1
   "/posts/Terminal/": 17
   "/posts/MCU-DP4/": 28
   "/posts/Arm-Cortex-FPU2/": 46
   "/posts/MCU-Pico1/": 47
-  "/posts/Timing/": 191
-  "/posts/devicetree/": 88
+  "/posts/Timing/": 194
+  "/posts/devicetree/": 90
   "/posts/Linux-BBB/": 36
-  "/posts/OpenOcd/": 83
-  "/posts/tmux/": 60
+  "/posts/OpenOcd/": 85
+  "/posts/tmux/": 61
   "/posts/poetry": 1
   "/categories/poetry": 1
   "/posts/glibc-libc": 1
@@ -63,7 +63,7 @@ pages:
   "/page2/": 21
   "/posts/gitspare/": 66
   "/posts/early-console": 1
-  "/posts/PCAN/": 121
+  "/posts/PCAN/": 123
   "/posts/Early-console/": 50
   "/posts/op4a06/": 27
   "/posts/Memorylayout/": 119
@@ -106,8 +106,8 @@ pages:
   "/page6/": 11
   "/posts/Hallo/": 8
   "/page5/": 10
-  "/posts/Linux-Remote/": 21
-  "/archives/": 26
+  "/posts/Linux-Remote/": 22
+  "/archives/": 27
   "/posts/tun/": 151
   "/categories/fix/": 5
   "/categories/development-tools/": 5
