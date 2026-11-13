@@ -1,6 +1,6 @@
 ---
 pages:
-  "/": 629
+  "/": 631
   "/posts/op4a05/": 25
   "/posts/mpu0/": 58
   "/posts/op4a01/": 107
@@ -8,10 +8,10 @@ pages:
   "/posts/Linux-Lichee03/": 63
   "/posts/mpu2/": 57
   "/posts/mpu1/": 68
-  "/posts/op4a04/": 47
+  "/posts/op4a04/": 48
   "/posts/op4a03/": 67
   "/page3/": 28
-  "/posts/MCU-Pico3/": 31
+  "/posts/MCU-Pico3/": 32
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 89
   "/posts/Linux-Lichee02/": 105
@@ -28,11 +28,11 @@ pages:
   "/tags/npu/": 8
   "/tags/riscv/": 6
   "/tags/build-system/": 6
-  "/posts/op4a02/": 52
+  "/posts/op4a02/": 53
   "/posts/Linux-BBB-wlan/": 28
-  "/posts/Fix-vmware/": 224
-  "/posts/Linux-udev/": 102
-  "/posts/MCU-Pico2/": 176
+  "/posts/Fix-vmware/": 226
+  "/posts/Linux-udev/": 103
+  "/posts/MCU-Pico2/": 177
   "/posts/SIMD/": 72
   "/posts/MCU-Pico4/": 135
   "/about/": 30
@@ -43,7 +43,7 @@ pages:
   "/posts/MCU-DP1/": 26
   "/posts/Arm-Cortex-FPU/": 48
   "/posts/MCU-Pico/": 50
-  "/posts/Debugger/": 109
+  "/posts/Debugger/": 110
   "/posts/MCU-DP2/": 33
   "/tags/cortexm": 1
   "/posts/Terminal/": 18
@@ -51,7 +51,7 @@ pages:
   "/posts/Arm-Cortex-FPU2/": 46
   "/posts/MCU-Pico1/": 48
   "/posts/Timing/": 194
-  "/posts/devicetree/": 90
+  "/posts/devicetree/": 91
   "/posts/Linux-BBB/": 37
   "/posts/OpenOcd/": 85
   "/posts/tmux/": 61
@@ -63,15 +63,15 @@ pages:
   "/page2/": 21
   "/posts/gitspare/": 67
   "/posts/early-console": 1
-  "/posts/PCAN/": 123
+  "/posts/PCAN/": 124
   "/posts/Early-console/": 50
-  "/posts/op4a06/": 27
+  "/posts/op4a06/": 28
   "/posts/Memorylayout/": 122
   "/posts/op4a05": 1
-  "/posts/PortableFW/": 24
+  "/posts/PortableFW/": 25
   "/posts/Linux-BBB-mount/": 20
   "/posts/Linux-usermod/": 43
-  "/posts/Quantization/": 46
+  "/posts/Quantization/": 47
   "/archives": 1
   "/tags": 1
   "/posts/glibc-libc/": 76
@@ -101,21 +101,21 @@ pages:
   "/posts/Poetry/": 33
   "/categories/ai/": 8
   "/categories/licheepi/": 6
-  "/posts/Arm-CortexM/": 39
+  "/posts/Arm-CortexM/": 40
   "/categories/embedded-systems/": 6
   "/page6/": 11
   "/posts/Hallo/": 8
   "/page5/": 10
   "/posts/Linux-Remote/": 22
   "/archives/": 28
-  "/posts/tun/": 152
+  "/posts/tun/": 153
   "/categories/fix/": 6
   "/categories/development-tools/": 5
   "/tags/can/": 1
   "/categories/ch32v/": 4
   "/categories/git/": 6
   "/posts/ripgrep-vs-grep/": 31
-  "/posts/Linux-BBB-screen/": 7
+  "/posts/Linux-BBB-screen/": 8
   "/categories/mcu/": 4
   "/posts/Cmake0/": 12
   "/categories/beaglebone/": 3
