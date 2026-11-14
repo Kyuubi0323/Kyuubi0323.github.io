@@ -1,10 +1,10 @@
 ---
 pages:
-  "/": 631
+  "/": 636
   "/posts/op4a05/": 25
   "/posts/mpu0/": 58
   "/posts/op4a01/": 107
-  "/posts/Linux-Lichee01/": 61
+  "/posts/Linux-Lichee01/": 62
   "/posts/Linux-Lichee03/": 63
   "/posts/mpu2/": 57
   "/posts/mpu1/": 68
@@ -14,12 +14,12 @@ pages:
   "/posts/MCU-Pico3/": 32
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 89
-  "/posts/Linux-Lichee02/": 105
+  "/posts/Linux-Lichee02/": 106
   "/posts/Linux-BBB-serial/": 49
   "/tags/lichee/": 11
   "/posts/Linux-Lichee04/": 50
   "/posts/Buildroot/": 18
-  "/tags/linux/": 10
+  "/tags/linux/": 11
   "/tags/mcu/": 22
   "/tags/arm/": 28
   "/tags/sharing/": 8
@@ -30,11 +30,11 @@ pages:
   "/tags/build-system/": 6
   "/posts/op4a02/": 53
   "/posts/Linux-BBB-wlan/": 28
-  "/posts/Fix-vmware/": 226
+  "/posts/Fix-vmware/": 227
   "/posts/Linux-udev/": 103
-  "/posts/MCU-Pico2/": 177
-  "/posts/SIMD/": 72
-  "/posts/MCU-Pico4/": 135
+  "/posts/MCU-Pico2/": 178
+  "/posts/SIMD/": 73
+  "/posts/MCU-Pico4/": 137
   "/about/": 30
   "/categories/": 55
   "/posts/CH32V003-01/": 105
@@ -43,11 +43,11 @@ pages:
   "/posts/MCU-DP1/": 26
   "/posts/Arm-Cortex-FPU/": 48
   "/posts/MCU-Pico/": 50
-  "/posts/Debugger/": 110
+  "/posts/Debugger/": 111
   "/posts/MCU-DP2/": 33
   "/tags/cortexm": 1
   "/posts/Terminal/": 18
-  "/posts/MCU-DP4/": 28
+  "/posts/MCU-DP4/": 29
   "/posts/Arm-Cortex-FPU2/": 46
   "/posts/MCU-Pico1/": 48
   "/posts/Timing/": 194
@@ -106,9 +106,9 @@ pages:
   "/page6/": 11
   "/posts/Hallo/": 8
   "/page5/": 10
-  "/posts/Linux-Remote/": 22
+  "/posts/Linux-Remote/": 23
   "/archives/": 28
-  "/posts/tun/": 153
+  "/posts/tun/": 154
   "/categories/fix/": 6
   "/categories/development-tools/": 5
   "/tags/can/": 1
@@ -135,7 +135,7 @@ pages:
   "/page7/": 10
   "/tags/riscv": 1
   "/posts/op4a02/index.html": 1
-  "/posts/imx-dram/": 45
+  "/posts/imx-dram/": 46
   "/posts/linux-bbb-eth": 1
   "/categories/pico/": 1
   "/posts/mpu1": 1
@@ -143,15 +143,15 @@ pages:
   "/categories/travel/": 1
   "/tags/life/": 2
   "/tags/tools": 1
-  "/posts/trip1/": 17
-  "/posts/trip2/": 26
+  "/posts/trip1/": 18
+  "/posts/trip2/": 27
   "/categories/poetry/": 1
   "/posts/mcu-pico": 2
   "/posts/linux-bbb-serial": 1
   "/posts/ripgrep-vs-grep": 1
   "/posts/mpu2": 1
-  "/posts/static-dynamic-lib/": 8
-  "/posts/kb-shortcut/": 6
+  "/posts/static-dynamic-lib/": 9
+  "/posts/kb-shortcut/": 7
   "/tags/build-system": 1
   "/posts/sigsys01/": 3
   "/tags/mcu": 1
