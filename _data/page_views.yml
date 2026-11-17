@@ -14,7 +14,7 @@ pages:
   "/posts/MCU-Pico3/": 32
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 89
-  "/posts/Linux-Lichee02/": 107
+  "/posts/Linux-Lichee02/": 108
   "/posts/Linux-BBB-serial/": 49
   "/tags/lichee/": 11
   "/posts/Linux-Lichee04/": 51
@@ -26,18 +26,18 @@ pages:
   "/tags/bbb/": 8
   "/tags/cortexm/": 4
   "/tags/npu/": 8
-  "/tags/riscv/": 6
+  "/tags/riscv/": 7
   "/tags/build-system/": 6
   "/posts/op4a02/": 54
   "/posts/Linux-BBB-wlan/": 28
-  "/posts/Fix-vmware/": 228
-  "/posts/Linux-udev/": 104
+  "/posts/Fix-vmware/": 231
+  "/posts/Linux-udev/": 105
   "/posts/MCU-Pico2/": 179
   "/posts/SIMD/": 73
   "/posts/MCU-Pico4/": 137
   "/about/": 30
   "/categories/": 55
-  "/posts/CH32V003-01/": 106
+  "/posts/CH32V003-01/": 107
   "/posts/Linux-BBB-eth/": 50
   "/posts/Clang/": 96
   "/posts/MCU-DP1/": 26
@@ -49,7 +49,7 @@ pages:
   "/posts/Terminal/": 18
   "/posts/MCU-DP4/": 29
   "/posts/Arm-Cortex-FPU2/": 47
-  "/posts/MCU-Pico1/": 48
+  "/posts/MCU-Pico1/": 49
   "/posts/Timing/": 196
   "/posts/devicetree/": 92
   "/posts/Linux-BBB/": 38
@@ -66,7 +66,7 @@ pages:
   "/posts/PCAN/": 128
   "/posts/Early-console/": 50
   "/posts/op4a06/": 30
-  "/posts/Memorylayout/": 124
+  "/posts/Memorylayout/": 125
   "/posts/op4a05": 1
   "/posts/PortableFW/": 25
   "/posts/Linux-BBB-mount/": 20
@@ -113,7 +113,7 @@ pages:
   "/categories/development-tools/": 5
   "/tags/can/": 1
   "/categories/ch32v/": 4
-  "/categories/git/": 6
+  "/categories/git/": 7
   "/posts/ripgrep-vs-grep/": 31
   "/posts/Linux-BBB-screen/": 8
   "/categories/mcu/": 4
