@@ -1,24 +1,24 @@
 ---
 pages:
-  "/": 642
+  "/": 643
   "/posts/op4a05/": 25
   "/posts/mpu0/": 60
   "/posts/op4a01/": 108
-  "/posts/Linux-Lichee01/": 63
+  "/posts/Linux-Lichee01/": 70
   "/posts/Linux-Lichee03/": 63
-  "/posts/mpu2/": 57
+  "/posts/mpu2/": 58
   "/posts/mpu1/": 68
-  "/posts/op4a04/": 48
+  "/posts/op4a04/": 49
   "/posts/op4a03/": 67
   "/page3/": 28
   "/posts/MCU-Pico3/": 32
   "/verify-ignore-build-test": 1
-  "/posts/Linux-Lichee05/": 89
+  "/posts/Linux-Lichee05/": 90
   "/posts/Linux-Lichee02/": 108
   "/posts/Linux-BBB-serial/": 50
-  "/tags/lichee/": 11
+  "/tags/lichee/": 12
   "/posts/Linux-Lichee04/": 51
-  "/posts/Buildroot/": 18
+  "/posts/Buildroot/": 19
   "/tags/linux/": 11
   "/tags/mcu/": 23
   "/tags/arm/": 29
@@ -29,21 +29,21 @@ pages:
   "/tags/riscv/": 7
   "/tags/build-system/": 6
   "/posts/op4a02/": 55
-  "/posts/Linux-BBB-wlan/": 28
-  "/posts/Fix-vmware/": 231
-  "/posts/Linux-udev/": 105
-  "/posts/MCU-Pico2/": 179
+  "/posts/Linux-BBB-wlan/": 29
+  "/posts/Fix-vmware/": 232
+  "/posts/Linux-udev/": 106
+  "/posts/MCU-Pico2/": 181
   "/posts/SIMD/": 73
   "/posts/MCU-Pico4/": 137
   "/about/": 30
   "/categories/": 56
   "/posts/CH32V003-01/": 107
   "/posts/Linux-BBB-eth/": 50
-  "/posts/Clang/": 96
+  "/posts/Clang/": 97
   "/posts/MCU-DP1/": 26
   "/posts/Arm-Cortex-FPU/": 48
   "/posts/MCU-Pico/": 51
-  "/posts/Debugger/": 113
+  "/posts/Debugger/": 114
   "/posts/MCU-DP2/": 33
   "/tags/cortexm": 1
   "/posts/Terminal/": 18
@@ -63,7 +63,7 @@ pages:
   "/page2/": 21
   "/posts/gitspare/": 67
   "/posts/early-console": 1
-  "/posts/PCAN/": 128
+  "/posts/PCAN/": 129
   "/posts/Early-console/": 52
   "/posts/op4a06/": 30
   "/posts/Memorylayout/": 125
@@ -104,11 +104,11 @@ pages:
   "/posts/Arm-CortexM/": 41
   "/categories/embedded-systems/": 6
   "/page6/": 11
-  "/posts/Hallo/": 8
+  "/posts/Hallo/": 9
   "/page5/": 10
   "/posts/Linux-Remote/": 23
   "/archives/": 28
-  "/posts/tun/": 155
+  "/posts/tun/": 156
   "/categories/fix/": 6
   "/categories/development-tools/": 5
   "/tags/can/": 1
@@ -131,7 +131,7 @@ pages:
   "/index.html": 25
   "/posts/fix-vmware": 1
   "/tags/linux": 1
-  "/posts/trip0/": 37
+  "/posts/trip0/": 38
   "/page7/": 10
   "/tags/riscv": 1
   "/posts/op4a02/index.html": 1
