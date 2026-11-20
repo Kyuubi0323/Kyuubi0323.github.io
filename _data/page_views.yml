@@ -1,6 +1,6 @@
 ---
 pages:
-  "/": 643
+  "/": 648
   "/posts/op4a05/": 25
   "/posts/mpu0/": 60
   "/posts/op4a01/": 108
@@ -8,7 +8,7 @@ pages:
   "/posts/Linux-Lichee03/": 63
   "/posts/mpu2/": 58
   "/posts/mpu1/": 68
-  "/posts/op4a04/": 49
+  "/posts/op4a04/": 50
   "/posts/op4a03/": 67
   "/page3/": 28
   "/posts/MCU-Pico3/": 32
@@ -28,9 +28,9 @@ pages:
   "/tags/npu/": 8
   "/tags/riscv/": 7
   "/tags/build-system/": 6
-  "/posts/op4a02/": 55
+  "/posts/op4a02/": 56
   "/posts/Linux-BBB-wlan/": 29
-  "/posts/Fix-vmware/": 232
+  "/posts/Fix-vmware/": 234
   "/posts/Linux-udev/": 106
   "/posts/MCU-Pico2/": 181
   "/posts/SIMD/": 73
@@ -42,7 +42,7 @@ pages:
   "/posts/Clang/": 97
   "/posts/MCU-DP1/": 26
   "/posts/Arm-Cortex-FPU/": 48
-  "/posts/MCU-Pico/": 51
+  "/posts/MCU-Pico/": 52
   "/posts/Debugger/": 114
   "/posts/MCU-DP2/": 33
   "/tags/cortexm": 1
@@ -68,7 +68,7 @@ pages:
   "/posts/op4a06/": 30
   "/posts/Memorylayout/": 125
   "/posts/op4a05": 1
-  "/posts/PortableFW/": 25
+  "/posts/PortableFW/": 26
   "/posts/Linux-BBB-mount/": 25
   "/posts/Linux-usermod/": 43
   "/posts/Quantization/": 47
@@ -86,7 +86,7 @@ pages:
   "/categories/til/": 7
   "/posts/gitchrypick/": 14
   "/posts/Buildroot": 3
-  "/posts/op4a03": 1
+  "/posts/op4a03": 2
   "/tags/sharing": 2
   "/posts/linux-bbb-screen": 2
   "/tags/lichee": 1
@@ -108,7 +108,7 @@ pages:
   "/page5/": 10
   "/posts/Linux-Remote/": 23
   "/archives/": 28
-  "/posts/tun/": 156
+  "/posts/tun/": 157
   "/categories/fix/": 6
   "/categories/development-tools/": 5
   "/tags/can/": 1
