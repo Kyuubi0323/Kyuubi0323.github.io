@@ -28,11 +28,11 @@ pages:
   "/tags/npu/": 8
   "/tags/riscv/": 7
   "/tags/build-system/": 6
-  "/posts/op4a02/": 56
+  "/posts/op4a02/": 57
   "/posts/Linux-BBB-wlan/": 29
   "/posts/Fix-vmware/": 234
-  "/posts/Linux-udev/": 106
-  "/posts/MCU-Pico2/": 181
+  "/posts/Linux-udev/": 107
+  "/posts/MCU-Pico2/": 182
   "/posts/SIMD/": 73
   "/posts/MCU-Pico4/": 137
   "/about/": 30
@@ -43,18 +43,18 @@ pages:
   "/posts/MCU-DP1/": 26
   "/posts/Arm-Cortex-FPU/": 48
   "/posts/MCU-Pico/": 52
-  "/posts/Debugger/": 114
+  "/posts/Debugger/": 115
   "/posts/MCU-DP2/": 33
   "/tags/cortexm": 1
   "/posts/Terminal/": 18
-  "/posts/MCU-DP4/": 29
+  "/posts/MCU-DP4/": 30
   "/posts/Arm-Cortex-FPU2/": 47
-  "/posts/MCU-Pico1/": 49
-  "/posts/Timing/": 196
+  "/posts/MCU-Pico1/": 50
+  "/posts/Timing/": 197
   "/posts/devicetree/": 92
-  "/posts/Linux-BBB/": 38
+  "/posts/Linux-BBB/": 39
   "/posts/OpenOcd/": 86
-  "/posts/tmux/": 61
+  "/posts/tmux/": 62
   "/posts/poetry": 1
   "/categories/poetry": 1
   "/posts/glibc-libc": 1
@@ -63,7 +63,7 @@ pages:
   "/page2/": 21
   "/posts/gitspare/": 67
   "/posts/early-console": 1
-  "/posts/PCAN/": 129
+  "/posts/PCAN/": 130
   "/posts/Early-console/": 52
   "/posts/op4a06/": 30
   "/posts/Memorylayout/": 125
@@ -135,7 +135,7 @@ pages:
   "/page7/": 10
   "/tags/riscv": 1
   "/posts/op4a02/index.html": 1
-  "/posts/imx-dram/": 46
+  "/posts/imx-dram/": 47
   "/posts/linux-bbb-eth": 1
   "/categories/pico/": 1
   "/posts/mpu1": 1
