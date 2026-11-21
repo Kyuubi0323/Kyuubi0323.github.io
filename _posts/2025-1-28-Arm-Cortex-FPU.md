@@ -1,17 +1,17 @@
 ---
 title: Floating Point Unit 
-date: 2025-1-10 10:30:00 +0700;
+date: 2025-1-18 10:30:00 +0700
 categories: [Embedded Systems, AI]
 tags: [ARM, CortexM]    
 ---
 
 ---
-<h3><h3>ST-Floating Point Unit</h3></h3>
-Some STM32 microcontrollers have an internal FPU (Floating-Point Unit) that can accelerate floating-point arithmetic operations by executing them in hardware instead of software emulation for these operations which takes a bit longer time compared to the hardware FPU performance.  
+<h3 id="FPU" style="font-weight: bold;">ST-Floating Point Unit</h3>
+Some STM32 microcontrollers have an internal FPU (Floating-Point Unit). It runs floating-point operations in hardware, which is much faster than the software emulation the compiler falls back to when there is no FPU.
 
-ARM Cortex-M cores support a hardware FPU with only single-precision (SP), double-precision (DP), or no FPU at all.  
--  Single Precision: M4, M33, M35P, M55
--  Double Precision: M7
+Depending on the core, an ARM Cortex-M can have a single-precision FPU, a double-precision FPU, or none. On most cores the FPU is an optional feature, so check the specific chip's datasheet, not just the core name.
+-  Single precision: M4, M33, M35P (optional)
+-  Single or double precision: M7, M55 (optional)
 -  No FPU: M0, M0+, M1, M23, M3
 <h3 id="Overview" style="font-weight: bold;">Overview</h3>
 The various types of floating-point implementations over the years led the IEEE to standardize the following elements:
@@ -24,24 +24,20 @@ The various types of floating-point implementations over the years led the IEEE 
 
 All values are composed of three fields:
 -  Sign: s
--  Biased exponents:
-    -  sum of the exponents = e
-    -  constant value = bias
+-  Biased exponent: e = real exponent + bias (a constant that depends on the format)
 -  Fraction (or mantissa): f
 The values can be coded on various lengths:
 -  16-bit: half precision format
 -  32-bit: single precision format
 -  64-bit: double precision format
-![Desktop View](assets/img/2025-1-28-Arm-Cortex-FPU/format_fpu.png){: .normal }
+![Desktop View](/assets/img/2025-1-28-Arm-Cortex-FPU/format_fpu.png){: .normal }
 <h3 id="Normalized numbers" style="font-weight: bold;">Normalized numbers</h3>  
 Normalized numbers are given by the formula below:
-![Desktop View](assets/img/2025-1-28-Arm-Cortex-FPU/formula.png){: .normal }
-The bias is a fixed value defined for each format (8-bit, 16-bit, 32-bit and 64-bit)
-![Desktop View](assets/img/2025-1-28-Arm-Cortex-FPU/number_range.png){: .normal }
+![Desktop View](/assets/img/2025-1-28-Arm-Cortex-FPU/formula.png){: .normal }
+For normalized numbers: value = (-1)^s × 1.f × 2^(e - bias). The exponent width and bias depend on the format: half has 5 exponent bits (bias 15), single has 8 (bias 127), double has 11 (bias 1023).
+![Desktop View](/assets/img/2025-1-28-Arm-Cortex-FPU/number_range.png){: .normal }
 <h3 id="Denormalized" style="font-weight: bold;">Denormalized</h3>  
-Denormalized (or subnormal) numbers are used when the value to represent is too small to be encoded as a normalized number. In this case, the exponent is set to zero, and the precision is slightly reduced to allow for gradual underflow.
-
-This ensures smoother transitions around zero and allows representation of values closer to zero than what normalized numbers can express.
+Denormalized (or subnormal) numbers are used when the value to represent is too small to be encoded as a normalized number. In this case the exponent field is 0 and the implicit leading 1 is dropped: value = (-1)^s × 0.f × 2^(1 - bias). Precision shrinks as the value gets smaller, but the numbers go to zero gradually instead of jumping straight from the smallest normalized value to 0.
 
 | Format | Min Denormalized Value |
 |--------|-------------------------|
@@ -49,7 +45,7 @@ This ensures smoother transitions around zero and allows representation of value
 | Single | ~1.4×10⁻⁴⁵              |
 | Double | ~4.94×10⁻³²⁴            |
 
-### 🔁 Example 1: Convert Decimal to IEEE 754 Single-Precision  
+### Example 1: Convert Decimal to IEEE 754 Single-Precision  
 **Input:** `-7.0`  
 We'll convert `-7.0` to IEEE 754 **single-precision (32-bit)** floating-point format.
 
@@ -81,7 +77,7 @@ In Hex:
 
 ---
 
-### 🔁 Example 2: Convert IEEE 754 Hex to Decimal  
+### Example 2: Convert IEEE 754 Hex to Decimal  
 **Input:** `0xC0E00000`
 
 #### Step 1: Binary Breakdown  
@@ -104,14 +100,6 @@ Binary `1.11` = `1 + 0.5 + 0.25 = 1.75`
 
 ---
 
-###  Summary Table
-
-| Decimal | IEEE 754 Binary                     | Hex         |
-|---------|-------------------------------------|-------------|
-| -7.0    | `1 10000001 11000000000000000000000`| `0xC0E00000`|
-
-
-
 <h3 id="Special-Values" style="font-weight: bold;">Special Values in IEEE 754</h3>  
 IEEE 754 defines several special cases in floating-point representation:
 
@@ -121,14 +109,15 @@ IEEE 754 defines several special cases in floating-point representation:
 
 - NaN (Not-a-Number): Used to represent undefined or unrepresentable values such as 0/0 or sqrt(-1).
 
-- Quiet NaN (QNaN): Propagates silently through most operations.
+- Quiet NaN (QNaN): top bit of the fraction is 1. Propagates silently through most operations.
 
-- Signaling NaN (SNaN): Triggers an exception when used.  
+- Signaling NaN (SNaN): top bit of the fraction is 0. Raises the Invalid Operation exception when used.  
 
 | Sign | Exponent | Fraction | Meaning     |
 |------|----------|----------|-------------|
 | 0    | 0        | 0        | +0          |
 | 1    | 0        | 0        | -0          |
+| x    | 0        | ≠0       | Denormalized|
 | 0    | Max      | 0        | +∞          |
 | 1    | Max      | 0        | -∞          |
 | x    | Max      | ≠0       | NaN (Q/S)   |
@@ -144,7 +133,7 @@ IEEE 754 specifies 4 rounding modes, which affect how results are approximated w
 
 - Round Toward −∞: Rounds down.
 
-- Rounding mode can be selected via the FPU configuration registers such as FPSCR or FPDSCR.
+The mode is selected by the RMode bits [23:22] of FPSCR (FPDSCR holds the default value).
 
 <h3 id="Exceptions" style="font-weight: bold;">Exception Handling</h3>  
 Floating-point operations can raise exceptions in five situations:
@@ -161,24 +150,44 @@ Floating-point operations can raise exceptions in five situations:
 
 In STM32:
 
-- Exceptions are handled via interrupts, not traps.
+- Cortex-M does not trap: the operation finishes and a sticky flag is set in FPSCR (IOC, DZC, OFC, UFC, IXC, plus IDC for denormal input).
 
-- Flags like IOC, DZC, OFC, UFC, IXC are set in FPSCR.
+- The flags stay set until you clear them, so read FPSCR and clear it yourself if you care.
 
-- You can monitor or clear these flags manually.
+- Some STM32 parts (e.g. F4) also route these to a dedicated FPU interrupt in the NVIC.
 
-<h3 id="STM32-Usage" style="font-weight: bold;">Using FPU in STM32 Projects</h3>  
-To benefit from the hardware FPU on STM32:
+<h3 id="Examples" style="font-weight: bold;">Examples</h3>
 
- Enable FPU in Compiler Settings  
-MDK-ARM (Keil): Enable -mfpu=fpv4-sp-d16 or fpv5-d16 based on your target.
+**0.1 can't be stored exactly.** In binary, 0.1 is `0.000110011001100...` repeating forever, so single precision has to round it:
+```c
+float x = 0.1f;   // bits = 0x3DCCCCCD
+                  // actual value = 0.100000001490116...
+```
+That's the "Inexact" exception from above: almost every decimal fraction triggers it.
 
-GCC: Use -mfpu=fpv4-sp-d16 -mfloat-abi=hard for single-precision FPU.
+**Precision runs out.** A float has 24 significant bits (23 + the implicit 1), so above 2^24 = 16777216 it can no longer represent every integer:
+```c
+float a = 16777216.0f;
+float b = a + 1.0f;   // b == 16777216.0f, the +1 is rounded away
+```
+This is why a `float` counter or timestamp in milliseconds stops counting after about 4.6 hours.
 
-⚙ Use Native Float Instructions
-Use float or double in your C code. The compiler will generate optimized FPU instructions if -mfloat-abi=hard is set.
+**Special values in practice:**
+```c
+float zero = 0.0f;
+float inf  = 1.0f / zero;    // +inf  (0x7F800000), sets DZC
+float nan  = zero / zero;    // NaN   (0x7FC00000), sets IOC
 
- Avoid Mixing Soft/Hard FPU
-Mixing -mfloat-abi=soft and -mfloat-abi=hard across modules may lead to linking errors. Stick to one strategy.
+if (nan != nan) { /* the only way to detect NaN without isnan() */ }
+```
 
- Context Saving
+**Smallest denormal:** the bit pattern `0x00000001` is exponent 0, fraction 1, so its value is 2^-23 × 2^-126 = 2^-149 ≈ 1.4×10⁻⁴⁵, matching the table above.
+
+**Reading the exception flags on Cortex-M:**
+```c
+__set_FPSCR(__get_FPSCR() & ~0x9FU);     // clear IOC, DZC, OFC, UFC, IXC, IDC
+volatile float r = 1.0f / zero;
+if (__get_FPSCR() & (1U << 1)) {         // DZC
+    // a division by zero happened
+}
+```
