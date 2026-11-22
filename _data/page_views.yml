@@ -1,9 +1,9 @@
 ---
 pages:
-  "/": 648
+  "/": 649
   "/posts/op4a05/": 25
-  "/posts/mpu0/": 60
-  "/posts/op4a01/": 108
+  "/posts/mpu0/": 61
+  "/posts/op4a01/": 109
   "/posts/Linux-Lichee01/": 70
   "/posts/Linux-Lichee03/": 63
   "/posts/mpu2/": 58
@@ -20,7 +20,7 @@ pages:
   "/posts/Linux-Lichee04/": 51
   "/posts/Buildroot/": 19
   "/tags/linux/": 11
-  "/tags/mcu/": 23
+  "/tags/mcu/": 24
   "/tags/arm/": 29
   "/tags/sharing/": 8
   "/tags/bbb/": 8
@@ -32,13 +32,13 @@ pages:
   "/posts/Linux-BBB-wlan/": 29
   "/posts/Fix-vmware/": 234
   "/posts/Linux-udev/": 107
-  "/posts/MCU-Pico2/": 182
-  "/posts/SIMD/": 73
-  "/posts/MCU-Pico4/": 137
+  "/posts/MCU-Pico2/": 183
+  "/posts/SIMD/": 74
+  "/posts/MCU-Pico4/": 138
   "/about/": 30
   "/categories/": 56
   "/posts/CH32V003-01/": 107
-  "/posts/Linux-BBB-eth/": 50
+  "/posts/Linux-BBB-eth/": 51
   "/posts/Clang/": 97
   "/posts/MCU-DP1/": 26
   "/posts/Arm-Cortex-FPU/": 48
@@ -48,7 +48,7 @@ pages:
   "/tags/cortexm": 1
   "/posts/Terminal/": 18
   "/posts/MCU-DP4/": 30
-  "/posts/Arm-Cortex-FPU2/": 47
+  "/posts/Arm-Cortex-FPU2/": 48
   "/posts/MCU-Pico1/": 50
   "/posts/Timing/": 197
   "/posts/devicetree/": 92
@@ -66,11 +66,11 @@ pages:
   "/posts/PCAN/": 130
   "/posts/Early-console/": 52
   "/posts/op4a06/": 30
-  "/posts/Memorylayout/": 125
+  "/posts/Memorylayout/": 126
   "/posts/op4a05": 1
   "/posts/PortableFW/": 26
   "/posts/Linux-BBB-mount/": 25
-  "/posts/Linux-usermod/": 43
+  "/posts/Linux-usermod/": 47
   "/posts/Quantization/": 47
   "/archives": 1
   "/tags": 1
