@@ -1,10 +1,10 @@
 ---
 pages:
-  "/": 649
+  "/": 658
   "/posts/op4a05/": 25
   "/posts/mpu0/": 61
   "/posts/op4a01/": 109
-  "/posts/Linux-Lichee01/": 70
+  "/posts/Linux-Lichee01/": 71
   "/posts/Linux-Lichee03/": 63
   "/posts/mpu2/": 58
   "/posts/mpu1/": 68
@@ -15,13 +15,13 @@ pages:
   "/verify-ignore-build-test": 1
   "/posts/Linux-Lichee05/": 90
   "/posts/Linux-Lichee02/": 108
-  "/posts/Linux-BBB-serial/": 50
+  "/posts/Linux-BBB-serial/": 51
   "/tags/lichee/": 12
   "/posts/Linux-Lichee04/": 51
   "/posts/Buildroot/": 19
   "/tags/linux/": 11
   "/tags/mcu/": 24
-  "/tags/arm/": 29
+  "/tags/arm/": 30
   "/tags/sharing/": 8
   "/tags/bbb/": 8
   "/tags/cortexm/": 4
@@ -30,28 +30,28 @@ pages:
   "/tags/build-system/": 6
   "/posts/op4a02/": 57
   "/posts/Linux-BBB-wlan/": 29
-  "/posts/Fix-vmware/": 234
-  "/posts/Linux-udev/": 107
-  "/posts/MCU-Pico2/": 183
+  "/posts/Fix-vmware/": 235
+  "/posts/Linux-udev/": 108
+  "/posts/MCU-Pico2/": 185
   "/posts/SIMD/": 74
-  "/posts/MCU-Pico4/": 138
+  "/posts/MCU-Pico4/": 139
   "/about/": 30
-  "/categories/": 56
-  "/posts/CH32V003-01/": 107
+  "/categories/": 57
+  "/posts/CH32V003-01/": 108
   "/posts/Linux-BBB-eth/": 51
   "/posts/Clang/": 97
   "/posts/MCU-DP1/": 26
-  "/posts/Arm-Cortex-FPU/": 48
+  "/posts/Arm-Cortex-FPU/": 49
   "/posts/MCU-Pico/": 52
   "/posts/Debugger/": 115
-  "/posts/MCU-DP2/": 33
+  "/posts/MCU-DP2/": 34
   "/tags/cortexm": 1
   "/posts/Terminal/": 18
   "/posts/MCU-DP4/": 30
   "/posts/Arm-Cortex-FPU2/": 48
   "/posts/MCU-Pico1/": 50
-  "/posts/Timing/": 197
-  "/posts/devicetree/": 92
+  "/posts/Timing/": 198
+  "/posts/devicetree/": 93
   "/posts/Linux-BBB/": 39
   "/posts/OpenOcd/": 86
   "/posts/tmux/": 62
@@ -98,7 +98,7 @@ pages:
   "/posts/hallo": 1
   "/posts/Cmake1/": 18
   "/posts/miniconda/": 20
-  "/posts/Poetry/": 33
+  "/posts/Poetry/": 34
   "/categories/ai/": 8
   "/categories/licheepi/": 6
   "/posts/Arm-CortexM/": 41
@@ -108,7 +108,7 @@ pages:
   "/page5/": 10
   "/posts/Linux-Remote/": 23
   "/archives/": 28
-  "/posts/tun/": 157
+  "/posts/tun/": 159
   "/categories/fix/": 6
   "/categories/development-tools/": 5
   "/tags/can/": 1
@@ -157,3 +157,5 @@ pages:
   "/tags/mcu": 1
   "/tags/c/": 1
   "/posts/mcu-pico4": 1
+  "/posts/ch32v003-01": 1
+  "/posts/trip0": 1
